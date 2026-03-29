@@ -1,0 +1,1982 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Phụ Nữ 8x Làm Chủ AI Marketing | Lộ Trình 21 Ngày</title>
+  <meta name="description" content="Hành trình từ kinh doanh truyền thống đến tự do tài chính nhờ AI - Lộ trình 21 ngày dành riêng cho phụ nữ thế hệ 8x, 9x." />
+
+  <!-- Google Fonts: Judson (headings) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Judson:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    /* --- Cấu hình màu sắc thương hiệu --- */
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            gold: {
+              light: '#F5D78E',
+              DEFAULT: '#C9A44E',
+              dark: '#9C7A2E',
+            },
+            charcoal: '#2C2C2C',
+            cream: '#FDF8F0',
+          },
+          fontFamily: {
+            heading: ['Judson', 'serif'],
+            body: ['Inter', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+
+  <style>
+    /* --- CSS tùy chỉnh bổ sung --- */
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: #2C2C2C; background-color: #FDF8F0; }
+    h1, h2, h3 { font-family: 'Judson', serif; }
+
+    /* Gradient nền hero */
+    .hero-bg {
+      background: linear-gradient(135deg, #2C2C2C 0%, #4A3728 60%, #C9A44E 100%);
+    }
+
+    /* Đường gạch dưới trang trí vàng */
+    .gold-underline::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #C9A44E;
+      border-radius: 2px;
+      margin: 12px auto 0;
+    }
+
+    /* Hiệu ứng hover cho card */
+    .card-hover {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(201,164,78,0.18);
+    }
+
+    /* Timeline connector */
+    .timeline-item:not(:last-child)::after {
+      content: '';
+      display: block;
+      width: 2px;
+      height: 32px;
+      background: #C9A44E;
+      margin: 0 auto;
+    }
+
+    /* Nút CTA chính */
+    .btn-gold {
+      background: linear-gradient(135deg, #C9A44E, #9C7A2E);
+      color: #fff;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .btn-gold:hover { opacity: 0.88; transform: scale(1.03); }
+
+    /* --- Góc nhỏ cổ vũ (Social Notification) --- */
+    #cheer-box {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      z-index: 1000;
+      max-width: 320px;
+      background-color: #2C3E50;
+      color: #ECF0F1;
+      padding: 15px 20px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      font-family: 'Inter', sans-serif;
+      font-style: italic;
+      font-size: 14px;
+      line-height: 1.5;
+      transform: translateX(-120%);
+      transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      pointer-events: none;
+      border-left: 4px solid #C9A44E;
+    }
+    #cheer-box.show {
+      transform: translateX(0);
+    }
+  </style>
+</head>
+
+<body class="antialiased">
+
+<!-- ============================================================
+     NAVIGATION BAR - Thanh điều hướng cố định
+============================================================ -->
+<nav class="fixed top-0 left-0 right-0 z-50 bg-charcoal/95 backdrop-blur-sm shadow-lg">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="#hero" class="flex items-center gap-3">
+      <span class="text-gold text-2xl">✦</span>
+      <span class="font-heading text-white text-lg leading-tight">Phụ Nữ 8x<br/><span class="text-gold text-sm font-body font-semibold tracking-widest uppercase">Làm Chủ AI</span></span>
+    </a>
+    <!-- Menu desktop -->
+    <ul class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+      <li><a href="#about" class="hover:text-gold transition-colors">Câu Chuyện</a></li>
+      <li><a href="#journey" class="hover:text-gold transition-colors">21 Ngày</a></li>
+      <li><a href="#services" class="hover:text-gold transition-colors">Chương Trình</a></li>
+      <li><a href="#testimonials" class="hover:text-gold transition-colors">Giá Trị</a></li>
+      <li>
+        <a href="#contact" class="btn-gold px-5 py-2 rounded-full text-sm">Bắt Đầu Ngay</a>
+      </li>
+    </ul>
+    <!-- Hamburger mobile (CSS toggle) -->
+    <label for="menu-toggle" class="md:hidden cursor-pointer text-white text-2xl">☰</label>
+  </div>
+  <!-- Mobile menu (hidden by default, dùng checkbox trick) -->
+  <input type="checkbox" id="menu-toggle" class="hidden peer" />
+  <div class="hidden peer-checked:flex flex-col bg-charcoal text-gray-200 text-base font-medium px-6 pb-5 gap-4 md:hidden">
+    <a href="#about" class="hover:text-gold">Câu Chuyện</a>
+    <a href="#journey" class="hover:text-gold">21 Ngày</a>
+    <a href="#services" class="hover:text-gold">Chương Trình</a>
+    <a href="#testimonials" class="hover:text-gold">Giá Trị</a>
+    <a href="#contact" class="btn-gold text-center py-2 rounded-full mt-2">Bắt Đầu Ngay</a>
+  </div>
+</nav>
+
+
+<!-- ============================================================
+     HERO SECTION - Phần tiêu đề chính
+============================================================ -->
+<section id="hero" class="hero-bg min-h-screen flex items-center pt-24 pb-16">
+  <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+    <!-- Nội dung văn bản -->
+    <div class="text-white">
+      <p class="inline-block bg-gold/20 text-gold-light text-sm font-semibold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
+        🌟 Hành Trình 21 Ngày Thay Đổi Bản Thân
+      </p>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-heading leading-tight mb-6">
+        Từ Kinh Doanh<br/>Truyền Thống<br/>
+        <span class="text-gold">Đến Tự Do Tài Chính</span><br/>Nhờ AI
+      </h1>
+      <p class="text-lg text-gray-300 leading-relaxed mb-8 max-w-md">
+        Dành cho phụ nữ thế hệ 8x, 9x đời đầu — những người dám bước ra khỏi vùng an toàn để làm chủ công nghệ, làm chủ cuộc sống.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#journey" class="btn-gold px-8 py-4 rounded-2xl text-lg text-center shadow-lg">
+          🚀 Khám Phá Lộ Trình
+        </a>
+        <a href="#about" class="border-2 border-gold text-gold px-8 py-4 rounded-2xl text-lg text-center hover:bg-gold hover:text-white transition-all">
+          Đọc Câu Chuyện Của Tôi
+        </a>
+      </div>
+      <!-- Số liệu nhanh -->
+      <div class="flex gap-8 mt-12 border-t border-white/20 pt-8">
+        <div>
+          <p class="text-3xl font-heading text-gold">21</p>
+          <p class="text-sm text-gray-400">Ngày lộ trình</p>
+        </div>
+        <div>
+          <p class="text-3xl font-heading text-gold">10+</p>
+          <p class="text-sm text-gray-400">Năm kinh nghiệm</p>
+        </div>
+        <div>
+          <p class="text-3xl font-heading text-gold">1000+</p>
+          <p class="text-sm text-gray-400">Chị em đồng hành</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ảnh / Card minh hoạ -->
+    <div class="flex justify-center">
+      <div class="relative w-72 h-72 md:w-96 md:h-96">
+        <!-- Vòng tròn trang trí -->
+        <div class="absolute inset-0 rounded-full border-4 border-gold/30 animate-pulse"></div>
+        <div class="absolute inset-4 rounded-full border-2 border-gold/20"></div>
+        <!-- Avatar placeholder với monogram -->
+        <div class="absolute inset-8 bg-gradient-to-br from-gold/40 to-gold-dark/60 rounded-full flex flex-col items-center justify-center shadow-2xl">
+          <span class="text-6xl mb-2">👩‍💼</span>
+          <p class="text-white font-heading text-xl">Chị Nguyên</p>
+          <p class="text-gold-light text-sm">AI Marketing Expert</p>
+        </div>
+        <!-- Badge nổi -->
+        <div class="absolute -top-4 -right-4 bg-gold text-white rounded-2xl px-4 py-2 shadow-lg text-sm font-bold">
+          Sinh 1983 ✦
+        </div>
+        <div class="absolute -bottom-4 -left-4 bg-white text-charcoal rounded-2xl px-4 py-2 shadow-lg text-sm font-semibold">
+          🏆 Từ "0" đến AI Pro
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     ABOUT ME - Câu chuyện của tôi
+============================================================ -->
+<section id="about" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <!-- Tiêu đề section -->
+    <div class="text-center mb-16">
+      <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-3">Câu Chuyện Của Tôi</p>
+      <h2 class="text-4xl md:text-5xl font-heading text-charcoal gold-underline">Tôi Cũng Từng Là Bạn</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-16 items-start">
+      <!-- Timeline câu chuyện -->
+      <div class="space-y-5">
+        <!-- Mốc 1 -->
+        <div class="flex gap-5 items-start p-5 bg-cream rounded-2xl border border-gold/20 card-hover">
+          <div class="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center text-2xl shrink-0">📱</div>
+          <div>
+            <p class="text-xs text-gold font-semibold uppercase tracking-wider mb-1">2006 – 2009</p>
+            <h3 class="font-heading text-xl text-charcoal mb-1">Kinh Doanh Điện Thoại</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Từ người bán hàng bình thường, học cách đọc tâm lý khách, hiểu giá trị của lòng tin trong từng giao dịch nhỏ.</p>
+          </div>
+        </div>
+        <!-- Mốc 2 -->
+        <div class="flex gap-5 items-start p-5 bg-cream rounded-2xl border border-gold/20 card-hover">
+          <div class="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center text-2xl shrink-0">🖥️</div>
+          <div>
+            <p class="text-xs text-gold font-semibold uppercase tracking-wider mb-1">2009 – 2012</p>
+            <h3 class="font-heading text-xl text-charcoal mb-1">Máy Tính & Thiết Bị Văn Phòng</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Mở rộng sang máy tính, thiết bị VP. Song song đó là những năm "chơi hụi, chơi họ, cầm đồ, cho vay" — những bài học tài chính thực tế khốc liệt.</p>
+          </div>
+        </div>
+        <!-- Mốc 3 -->
+        <div class="flex gap-5 items-start p-5 bg-red-50 rounded-2xl border border-red-200 card-hover">
+          <div class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center text-2xl shrink-0">💔</div>
+          <div>
+            <p class="text-xs text-red-500 font-semibold uppercase tracking-wider mb-1">2012</p>
+            <h3 class="font-heading text-xl text-charcoal mb-1">Vỡ Nợ — Bài Học Đắt Giá Nhất</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Một năm mà tôi không muốn nhớ nhưng không thể quên. Mất hết tiền bạc, nhưng nhận lại được bài học về tiền, về người, về chính mình.</p>
+          </div>
+        </div>
+        <!-- Mốc 4 -->
+        <div class="flex gap-5 items-start p-5 bg-cream rounded-2xl border border-gold/20 card-hover">
+          <div class="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center text-2xl shrink-0">👨‍👩‍👧‍👧</div>
+          <div>
+            <p class="text-xs text-gold font-semibold uppercase tracking-wider mb-1">2015 – 2025</p>
+            <h3 class="font-heading text-xl text-charcoal mb-1">Ở Nhà Chăm Lo Gia Đình</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              Mười năm làm mẹ toàn thời gian — chăm 3 cô công chúa nhỏ:<br>
+              👸 Cô Cả <strong>(2007)</strong> · 👸 Cô Hai <strong>(2012)</strong> · 👸 Tam Công Chúa <strong>(2022)</strong>
+            </p>
+          </div>
+        </div>
+        <!-- Mốc 5 -->
+        <div class="flex gap-5 items-start p-5 bg-gold/10 rounded-2xl border border-gold/40 card-hover">
+          <div class="w-12 h-12 bg-gold rounded-xl flex items-center justify-center text-2xl shrink-0">🤖</div>
+          <div>
+            <p class="text-xs text-gold font-semibold uppercase tracking-wider mb-1">2025 – Nay</p>
+            <h3 class="font-heading text-xl text-charcoal mb-1">Làm Chủ AI Marketing</h3>
+            <p class="text-gray-600 text-sm leading-relaxed">Sau 10 năm ở nhà, tôi tự học AI từ con số 0. Không bằng cấp, không khóa học đắt tiền — chỉ cần điện thoại và 3 tiếng mỗi ngày.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Thông điệp -->
+      <div class="md:sticky md:top-24">
+        <blockquote class="text-2xl md:text-3xl font-heading text-charcoal leading-relaxed italic border-l-4 border-gold pl-6 mb-8">
+          "Nếu một người phụ nữ từng vỡ nợ, 10 năm ở nhà chăm con, có thể làm chủ AI — thì <span class="text-gold">bạn cũng làm được.</span>"
+        </blockquote>
+        <p class="text-gray-600 text-lg leading-relaxed mb-5">
+          Tôi hiểu cảm giác bắt đầu lại từ đầu khi đã qua tuổi 40. Cái tự ti khi con cái xung quanh dùng điện thoại giỏi hơn mình. Cái sợ hãi khi nghe đến AI, công nghệ, content creator...
+        </p>
+        <p class="text-gray-600 text-lg leading-relaxed mb-8">
+          Nhưng tôi đã bắt đầu. Và hành trình đó thay đổi cuộc đời tôi. Hôm nay, tôi ở đây để chia sẻ — <strong>thực tế, không hoa mỹ, dành riêng cho thế hệ 8x của chúng ta.</strong>
+        </p>
+
+        <!-- 3 công chúa highlight -->
+        <div class="mb-6 p-4 bg-pink-50 border border-pink-200 rounded-2xl flex items-center gap-4">
+          <span class="text-4xl">👸👸👸</span>
+          <div>
+            <p class="font-heading text-charcoal text-base">Mẹ của 3 Công Chúa</p>
+            <p class="text-gray-500 text-sm">Sinh năm 2007, 2012 &amp; 2022 — động lực lớn nhất để tôi không bỏ cuộc.</p>
+          </div>
+        </div>
+
+        <div class="p-5 bg-gold/10 rounded-2xl border border-gold/30">
+          <p class="text-gold font-semibold text-lg">✦ Điều tôi mang đến cho bạn:</p>
+          <ul class="mt-3 space-y-2 text-gray-700">
+            <li>✅ Sự thấu hiểu từ người đã thực sự thất bại &amp; đứng dậy</li>
+            <li>✅ Kiến thức AI thực tế — dành cho bà mẹ bận rộn, không cần kỹ thuật</li>
+            <li>✅ Lộ trình rõ ràng — từng bước, từng ngày, chỉ 3 tiếng/ngày</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     21-DAY JOURNEY - Lộ trình 21 ngày (nội dung từ tài liệu thực tế)
+============================================================ -->
+<section id="journey" class="py-20 bg-cream">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-3">Lộ Trình Khoa Học</p>
+      <h2 class="text-4xl md:text-5xl font-heading text-charcoal gold-underline">21 Ngày Thay Đổi Bản Thân</h2>
+      <p class="mt-6 text-gray-600 text-lg max-w-2xl mx-auto">Chia thành 3 giai đoạn rõ ràng — mỗi ngày một nhiệm vụ cụ thể, không mơ hồ, không lạc lối.</p>
+    </div>
+
+    <!-- 3 giai đoạn chính -->
+    <div class="grid md:grid-cols-3 gap-8 mb-16">
+
+      <!-- Giai đoạn 1: Ngày 1-7 -->
+      <div class="bg-white rounded-3xl shadow-md overflow-hidden card-hover border border-gold/10">
+        <div class="bg-gradient-to-r from-charcoal to-gray-700 px-6 py-5">
+          <p class="text-gold text-sm font-semibold uppercase tracking-widest">Giai Đoạn 1 · Ngày 1–7</p>
+          <h3 class="text-white font-heading text-2xl mt-1">Xây Nền Tảng & Tư Duy Nội Dung</h3>
+          <p class="text-gray-400 text-xs mt-2 italic">Mục tiêu: Làm quen với AI, tìm "giọng nói" riêng và lập kênh</p>
+        </div>
+        <div class="px-6 py-6 space-y-4">
+          <div class="flex items-start gap-3">
+            <span class="w-8 h-8 rounded-full bg-gold/15 text-gold font-bold text-sm flex items-center justify-center shrink-0">1-2</span>
+            <div>
+              <p class="font-semibold text-charcoal text-sm">Kết bạn với AI</p>
+              <p class="text-gray-500 text-xs leading-relaxed">Học ChatGPT/Gemini như trò chuyện với người em trong nhà</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="w-8 h-8 rounded-full bg-gold/15 text-gold font-bold text-sm flex items-center justify-center shrink-0">3</span>
+            <div>
+              <p class="font-semibold text-charcoal text-sm">Khai phá Kho báu kinh nghiệm</p>
+              <p class="text-gray-500 text-xs leading-relaxed">AI liệt kê 50 chủ đề từ vốn sống của chị</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="w-8 h-8 rounded-full bg-gold/15 text-gold font-bold text-sm flex items-center justify-center shrink-0">4</span>
+            <div>
+              <p class="font-semibold text-charcoal text-sm">Xây Cửa hàng số</p>
+              <p class="text-gray-500 text-xs leading-relaxed">Lập kênh TikTok, Facebook Page, YouTube với tên gần gũi</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="w-8 h-8 rounded-full bg-gold/15 text-gold font-bold text-sm flex items-center justify-center shrink-0">5</span>
+            <div>
+              <p class="font-semibold text-charcoal text-sm">Nghệ thuật "Ra lệnh" (Prompting)</p>
+              <p class="text-gray-500 text-xs leading-relaxed">Công thức: Vai trò + Nhiệm vụ + Đối tượng</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="w-8 h-8 rounded-full bg-gold/15 text-gold font-bold text-sm flex items-center justify-center shrink-0">6-7</span>
+            <div>
+              <p class="font-semibold text-charcoal text-sm">Viết 3 kịch bản đầu tay</p>
+              <p class="text-gray-500 text-xs leading-relaxed">Storytelling về những lần vấp ngã thật sự trong nghề</p>
+            </div>
+          </div>
+        </div>
+        <div class="px-6 pb-6">
+          <div class="bg-cream rounded-xl p-3 text-center text-sm text-gold font-semibold">
+            🎯 Kết quả: Có kênh + kịch bản đầu tay
+          </div>
+        </div>
+      </div>
+
+      <!-- Giai đoạn 2: Ngày 8-14 -->
+      <div class="bg-white rounded-3xl shadow-md overflow-hidden card-hover border-2 border-gold relative">
+        <div class="absolute top-4 right-4 bg-gold text-white text-xs font-bold px-3 py-1 rounded-full">Quan Trọng Nhất</div>
+        <div class="bg-gradient-to-r from-gold-dark to-gold px-6 py-5">
+          <p class="text-white/80 text-sm font-semibold uppercase tracking-widest">Giai Đoạn 2 · Ngày 8–14</p>
+          <h3 class="text-white font-heading text-2xl mt-1">Sản Xuất Nội Dung Đa Phương Tiện</h3>
+          <p class="text-white/60 text-xs mt-2 italic">Mục tiêu: Biến ý tưởng thành ảnh, âm thanh và video hoàn chỉnh</p>
+        </div>
+        <div class="px-6 py-6 space-y-4">
+          <div class="flex items-start gap-3">
+            <span class="w-8 h-8 rounded-full bg-gold/20 text-gold font-bold text-sm flex items-center justify-center shrink-0">8-9</span>
+            <div>
+              <p class="font-semibold text-charcoal text-sm">Sáng tạo hình ảnh với AI</p>
+              <p class="text-gray-500 text-xs leading-relaxed">Dùng Canva thiết kế ảnh đại diện & ảnh minh hoạ bài viết</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="w-8 h-8 rounded-full bg-gold/20 text-gold font-bold text-sm flex items-center justify-center shrink-0">10-11</span>
+            <div>
+              <p class="font-semibold text-charcoal text-sm">Làm chủ âm thanh — Podcast</p>
+              <p class="text-gray-500 text-xs leading-relaxed">Dùng Vbee chuyển văn bản thành giọng nói. Tập làm Podcast ngắn</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="w-8 h-8 rounded-full bg-gold/20 text-gold font-bold text-sm flex items-center justify-center shrink-0">12-13</span>
+            <div>
+              <p class="font-semibold text-charcoal text-sm">Dựng phim bằng CapCut</p>
+              <p class="text-gray-500 text-xs leading-relaxed">Chỉ cần học 3 nút: Cắt · Thêm chữ · Thêm nhạc</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="w-8 h-8 rounded-full bg-gold/20 text-gold font-bold text-sm flex items-center justify-center shrink-0">14</span>
+            <div>
+              <p class="font-semibold text-charcoal text-sm">🎉 Lễ Ra Mắt</p>
+              <p class="text-gray-500 text-xs leading-relaxed">Đăng video đầu tiên lên mạng. Chấp nhận sự "không hoàn hảo"!</p>
+            </div>
+          </div>
+        </div>
+        <div class="px-6 pb-6">
+          <div class="bg-gold/10 rounded-xl p-3 text-center text-sm text-gold font-semibold">
+            🎯 Kết quả: Video đầu tiên lên sóng!
+          </div>
+        </div>
+      </div>
+
+      <!-- Giai đoạn 3: Ngày 15-21 -->
+      <div class="bg-white rounded-3xl shadow-md overflow-hidden card-hover border border-gold/10">
+        <div class="bg-gradient-to-r from-gray-700 to-charcoal px-6 py-5">
+          <p class="text-gold text-sm font-semibold uppercase tracking-widest">Giai Đoạn 3 · Ngày 15–21</p>
+          <h3 class="text-white font-heading text-2xl mt-1">Monetize — Tạo Ra Thu Nhập</h3>
+          <p class="text-gray-400 text-xs mt-2 italic">Mục tiêu: Gắn Affiliate, bán hàng khéo và tối ưu kết quả</p>
+        </div>
+        <div class="px-6 py-6 space-y-4">
+          <div class="flex items-start gap-3">
+            <span class="w-8 h-8 rounded-full bg-gold/15 text-gold font-bold text-sm flex items-center justify-center shrink-0">15-16</span>
+            <div>
+              <p class="font-semibold text-charcoal text-sm">Đăng ký Affiliate</p>
+              <p class="text-gray-500 text-xs leading-relaxed">Chọn sản phẩm đúng tệp khách hàng: sách, phụ kiện công nghệ</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="w-8 h-8 rounded-full bg-gold/15 text-gold font-bold text-sm flex items-center justify-center shrink-0">17</span>
+            <div>
+              <p class="font-semibold text-charcoal text-sm">Kịch bản bán hàng kiểu "Chia sẻ"</p>
+              <p class="text-gray-500 text-xs leading-relaxed">AI viết kịch bản theo phong cách tâm sự — không giống quảng cáo</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="w-8 h-8 rounded-full bg-gold/15 text-gold font-bold text-sm flex items-center justify-center shrink-0">18</span>
+            <div>
+              <p class="font-semibold text-charcoal text-sm">Kỹ thuật "Giật tít" thu hút</p>
+              <p class="text-gray-500 text-xs leading-relaxed">AI tạo 10 tiêu đề gây tò mò cho mỗi video</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="w-8 h-8 rounded-full bg-gold/15 text-gold font-bold text-sm flex items-center justify-center shrink-0">19-20</span>
+            <div>
+              <p class="font-semibold text-charcoal text-sm">Lịch đăng bài tự động</p>
+              <p class="text-gray-500 text-xs leading-relaxed">Tương tác cộng đồng & xây dựng mối quan hệ lâu dài</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="w-8 h-8 rounded-full bg-gold/15 text-gold font-bold text-sm flex items-center justify-center shrink-0">21</span>
+            <div>
+              <p class="font-semibold text-charcoal text-sm">Tổng kết & Đóng gói quy trình</p>
+              <p class="text-gray-500 text-xs leading-relaxed">Tự thưởng cho bản thân + lập kế hoạch tháng tiếp theo</p>
+            </div>
+          </div>
+        </div>
+        <div class="px-6 pb-6">
+          <div class="bg-cream rounded-xl p-3 text-center text-sm text-gold font-semibold">
+            🎯 Kết quả: Hoa hồng Affiliate đầu tiên!
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Thời gian biểu mỗi ngày -->
+    <div class="bg-white rounded-3xl shadow-md border border-gold/20 p-8 md:p-10 mb-10">
+      <h3 class="font-heading text-2xl text-charcoal mb-2 text-center">⏰ Thời Gian Biểu Mỗi Ngày <span class="text-gold">(Chỉ 3 Tiếng!)</span></h3>
+      <p class="text-center text-gray-500 text-sm mb-8">Phù hợp cho chị em vừa lo gia đình, vừa kinh doanh</p>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-amber-50 border border-amber-200 rounded-2xl p-6">
+          <p class="font-heading text-lg text-amber-800 mb-3">🌅 Buổi Sáng — 60 phút (Tư duy)</p>
+          <ul class="space-y-2 text-sm text-amber-900">
+            <li>✦ 15 phút — Đọc/xem nội dung truyền cảm hứng</li>
+            <li>✦ 30 phút — Hỏi AI để lên kịch bản & ý tưởng</li>
+            <li>✦ 15 phút — Lưu trữ ý tưởng vào sổ tay số</li>
+          </ul>
+        </div>
+        <div class="bg-indigo-50 border border-indigo-200 rounded-2xl p-6">
+          <p class="font-heading text-lg text-indigo-800 mb-3">🌙 Chiều / Tối — 120 phút (Thực thi)</p>
+          <ul class="space-y-2 text-sm text-indigo-900">
+            <li>✦ 30 phút — Thiết kế ảnh (Canva)</li>
+            <li>✦ 60 phút — Quay & dựng video (CapCut)</li>
+            <li>✦ 30 phút — Đăng bài & tương tác cộng đồng</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA giữa trang -->
+    <div class="text-center">
+      <a href="#contact" class="btn-gold px-10 py-4 rounded-2xl text-lg inline-block shadow-lg">
+        ✨ Tôi Muốn Bắt Đầu Hành Trình
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     AI TOOLS ECOSYSTEM - Hệ Sinh Thái Công Cụ AI Đồng Hành
+============================================================ -->
+<section id="ai-tools" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-3">Công Cụ Hỗ Trợ</p>
+      <h2 class="text-4xl md:text-5xl font-heading text-charcoal gold-underline">Hệ Sinh Thái Công Cụ AI Đồng Hành</h2>
+      <p class="mt-6 text-gray-600 text-lg max-w-2xl mx-auto">
+        Những "đứa em" trợ lý đắc lực giúp chị tối ưu hóa công việc, sáng tạo hình ảnh/video đỉnh cao và tạo ra thu nhập thụ động mỗi ngày.
+      </p>
+    </div>
+
+    <!-- Responsive Grid: 1 col on mobile, 3 cols on lg desktop -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <!-- ChatGPT -->
+      <div class="bg-cream rounded-3xl p-8 border border-gold/20 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 flex flex-col h-full card-hover">
+        <div class="w-14 h-14 bg-gold/15 rounded-2xl flex items-center justify-center text-gold text-2xl mb-6">
+          <i class="fas fa-robot"></i>
+        </div>
+        <h3 class="font-heading text-2xl text-charcoal mb-3 font-bold">ChatGPT</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+          Trợ lý viết kịch bản, lên kế hoạch Marketing và tư vấn chiến lược.
+        </p>
+        <a href="https://chatgpt.com" target="_blank" class="inline-block px-6 py-2 border-2 border-gold text-gold font-semibold rounded-full hover:bg-gold hover:text-white transition-colors self-start text-sm">Dùng ngay</a>
+      </div>
+
+      <!-- Gemini -->
+      <div class="bg-cream rounded-3xl p-8 border border-gold/20 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 flex flex-col h-full card-hover">
+        <div class="w-14 h-14 bg-gold/15 rounded-2xl flex items-center justify-center text-gold text-2xl mb-6">
+          <i class="fas fa-brain"></i>
+        </div>
+        <h3 class="font-heading text-2xl text-charcoal mb-3 font-bold">Gemini</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+          Công cụ tìm kiếm, phân tích dữ liệu và cập nhật xu hướng từ Google.
+        </p>
+        <a href="https://gemini.google.com" target="_blank" class="inline-block px-6 py-2 border-2 border-gold text-gold font-semibold rounded-full hover:bg-gold hover:text-white transition-colors self-start text-sm">Dùng ngay</a>
+      </div>
+
+      <!-- Claude -->
+      <div class="bg-cream rounded-3xl p-8 border border-gold/20 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 flex flex-col h-full card-hover">
+        <div class="w-14 h-14 bg-gold/15 rounded-2xl flex items-center justify-center text-gold text-2xl mb-6">
+          <i class="fas fa-file-alt"></i>
+        </div>
+        <h3 class="font-heading text-2xl text-charcoal mb-3 font-bold">Claude</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+          Chuyên gia viết nội dung dài, chuyên sâu và xử lý tài liệu cực kỳ thông minh.
+        </p>
+        <a href="https://claude.ai" target="_blank" class="inline-block px-6 py-2 border-2 border-gold text-gold font-semibold rounded-full hover:bg-gold hover:text-white transition-colors self-start text-sm">Dùng ngay</a>
+      </div>
+
+      <!-- ElevenLabs -->
+      <div class="bg-cream rounded-3xl p-8 border border-gold/20 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 flex flex-col h-full card-hover">
+        <div class="w-14 h-14 bg-gold/15 rounded-2xl flex items-center justify-center text-gold text-2xl mb-6">
+          <i class="fas fa-microphone-alt"></i>
+        </div>
+        <h3 class="font-heading text-2xl text-charcoal mb-3 font-bold">ElevenLabs</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+          Đỉnh cao giọng nói AI, biến văn bản thành tiếng nói truyền cảm, tự nhiên như người thật.
+        </p>
+        <a href="https://elevenlabs.io" target="_blank" class="inline-block px-6 py-2 border-2 border-gold text-gold font-semibold rounded-full hover:bg-gold hover:text-white transition-colors self-start text-sm">Dùng ngay</a>
+      </div>
+
+      <!-- Flow -->
+      <div class="bg-cream rounded-3xl p-8 border border-gold/20 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 flex flex-col h-full card-hover">
+        <div class="w-14 h-14 bg-gold/15 rounded-2xl flex items-center justify-center text-gold text-2xl mb-6">
+          <i class="fas fa-magic"></i>
+        </div>
+        <h3 class="font-heading text-2xl text-charcoal mb-3 font-bold">Flow</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+          Sáng tạo hình ảnh chân thực với Nano Banana 2 và dựng Video chuyên nghiệp với VEO 3.
+        </p>
+        <a href="https://labs.google" target="_blank" class="inline-block px-6 py-2 border-2 border-gold text-gold font-semibold rounded-full hover:bg-gold hover:text-white transition-colors self-start text-sm">Dùng ngay</a>
+      </div>
+
+      <!-- Whisk -->
+      <div class="bg-cream rounded-3xl p-8 border border-gold/20 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 flex flex-col h-full card-hover">
+        <div class="w-14 h-14 bg-gold/15 rounded-2xl flex items-center justify-center text-gold text-2xl mb-6">
+          <i class="fas fa-lightbulb"></i>
+        </div>
+        <h3 class="font-heading text-2xl text-charcoal mb-3 font-bold">Whisk</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+          Gợi ý ý tưởng nội dung, tạo ảnh nghệ thuật Nano Banana 2 và Video sống động với VEO 3.
+        </p>
+        <a href="https://labs.google" target="_blank" class="inline-block px-6 py-2 border-2 border-gold text-gold font-semibold rounded-full hover:bg-gold hover:text-white transition-colors self-start text-sm">Dùng ngay</a>
+      </div>
+
+      <!-- Canva -->
+      <div class="bg-cream rounded-3xl p-8 border border-gold/20 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 flex flex-col h-full card-hover">
+        <div class="w-14 h-14 bg-gold/15 rounded-2xl flex items-center justify-center text-gold text-2xl mb-6">
+          <i class="fas fa-palette"></i>
+        </div>
+        <h3 class="font-heading text-2xl text-charcoal mb-3 font-bold">Canva</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+          Thiết kế hình ảnh, biểu đồ và bài đăng mạng xã hội chuyên nghiệp chỉ bằng kéo thả.
+        </p>
+        <a href="https://www.canva.com" target="_blank" class="inline-block px-6 py-2 border-2 border-gold text-gold font-semibold rounded-full hover:bg-gold hover:text-white transition-colors self-start text-sm">Dùng ngay</a>
+      </div>
+
+      <!-- CapCut -->
+      <div class="bg-cream rounded-3xl p-8 border border-gold/20 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 flex flex-col h-full card-hover">
+        <div class="w-14 h-14 bg-gold/15 rounded-2xl flex items-center justify-center text-gold text-2xl mb-6">
+          <i class="fas fa-video"></i>
+        </div>
+        <h3 class="font-heading text-2xl text-charcoal mb-3 font-bold">CapCut</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+          Biên tập video nhanh chóng trên điện thoại với kho hiệu ứng và nhạc nền khổng lồ.
+        </p>
+        <a href="https://www.capcut.com" target="_blank" class="inline-block px-6 py-2 border-2 border-gold text-gold font-semibold rounded-full hover:bg-gold hover:text-white transition-colors self-start text-sm">Dùng ngay</a>
+      </div>
+
+      <!-- Leonardo.ai -->
+      <div class="bg-cream rounded-3xl p-8 border border-gold/20 shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 flex flex-col h-full card-hover">
+        <div class="w-14 h-14 bg-gold/15 rounded-2xl flex items-center justify-center text-gold text-2xl mb-6">
+          <i class="fas fa-paint-brush"></i>
+        </div>
+        <h3 class="font-heading text-2xl text-charcoal mb-3 font-bold">Leonardo.ai</h3>
+        <p class="text-gray-600 text-sm leading-relaxed mb-6 flex-grow">
+          Vẽ tranh và tạo ảnh minh họa nghệ thuật từ ý tưởng sáng tạo của chị.
+        </p>
+        <a href="https://leonardo.ai" target="_blank" class="inline-block px-6 py-2 border-2 border-gold text-gold font-semibold rounded-full hover:bg-gold hover:text-white transition-colors self-start text-sm">Dùng ngay</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     SERVICES - Chương trình & nội dung
+============================================================ -->
+<section id="services" class="py-20 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-3">Nội Dung Tôi Tạo Ra</p>
+      <h2 class="text-4xl md:text-5xl font-heading text-charcoal gold-underline">Chương Trình & Kiến Thức</h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Podcast -->
+      <div class="card-hover rounded-3xl border border-gold/20 overflow-hidden bg-cream">
+        <div class="h-3 bg-gradient-to-r from-gold to-gold-dark"></div>
+        <div class="p-8">
+          <div class="w-16 h-16 bg-gold/15 rounded-2xl flex items-center justify-center text-3xl mb-5">🎙️</div>
+          <h3 class="font-heading text-2xl text-charcoal mb-3">Podcast Hàng Tuần</h3>
+          <p class="text-gray-600 leading-relaxed mb-5">
+            Những câu chuyện thật, bài học thật từ hành trình của phụ nữ 8x chuyển mình sang thế giới số. Nghe mọi lúc, mọi nơi — kể cả lúc nấu cơm.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li>🎵 Phát hành thứ 3 & thứ 6 hàng tuần</li>
+            <li>🎵 Dài 20–30 phút, súc tích</li>
+            <li>🎵 Có transcript tiếng Việt</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- YouTube -->
+      <div class="card-hover rounded-3xl border border-gold/20 overflow-hidden bg-cream">
+        <div class="h-3 bg-gradient-to-r from-red-500 to-red-700"></div>
+        <div class="p-8">
+          <div class="w-16 h-16 bg-red-100 rounded-2xl flex items-center justify-center text-3xl mb-5">▶️</div>
+          <h3 class="font-heading text-2xl text-charcoal mb-3">Video YouTube</h3>
+          <p class="text-gray-600 leading-relaxed mb-5">
+            Hướng dẫn thực tế từng bước: cách dùng AI để viết bài, tạo video, chăm sóc khách hàng — tất cả được quay màn hình trực tiếp.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li>📹 Tutorial dạng "cầm tay chỉ việc"</li>
+            <li>📹 Case study thực tế từ chị em</li>
+            <li>📹 Livestream hỏi đáp hàng tháng</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Tài chính -->
+      <div class="card-hover rounded-3xl border border-gold/20 overflow-hidden bg-cream">
+        <div class="h-3 bg-gradient-to-r from-gold-dark to-amber-700"></div>
+        <div class="p-8">
+          <div class="w-16 h-16 bg-amber-100 rounded-2xl flex items-center justify-center text-3xl mb-5">💎</div>
+          <h3 class="font-heading text-2xl text-charcoal mb-3">Kiến Thức Tài Chính</h3>
+          <p class="text-gray-600 leading-relaxed mb-5">
+            Từ quản lý dòng tiền, họ hụi, đến đầu tư thụ động và affiliate — kiến thức tài chính thực tế không cần MBA.
+          </p>
+          <ul class="space-y-2 text-sm text-gray-600">
+            <li>💰 Quản lý tài chính gia đình</li>
+            <li>💰 Thu nhập thụ động từ Online</li>
+            <li>💰 Affiliate & kinh doanh số</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     KHO PROMPT AI - Thư viện Prompt đầy đủ với bộ lọc danh mục
+============================================================ -->
+<section id="prompts" class="py-20 bg-charcoal">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-12">
+      <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-3">Copy & Paste Ngay</p>
+      <h2 class="text-4xl md:text-5xl font-heading text-white gold-underline">Kho Prompt AI "Mì Ăn Liền"</h2>
+      <p class="mt-6 text-gray-400 text-lg max-w-2xl mx-auto">Hơn 30 câu lệnh sẵn sàng — chọn chủ đề, sao chép, dán vào ChatGPT/Gemini là có ngay kết quả.</p>
+    </div>
+
+    <!-- Bộ lọc danh mục (Tab filter) -->
+    <div class="flex flex-wrap justify-center gap-3 mb-10" id="prompt-filters">
+      <button onclick="filterPrompts('all')" data-cat="all"
+        class="prompt-tab active-tab px-5 py-2 rounded-full text-sm font-semibold border border-gold text-gold transition-all">
+        🌟 Tất Cả
+      </button>
+      <button onclick="filterPrompts('content')" data-cat="content"
+        class="prompt-tab px-5 py-2 rounded-full text-sm font-semibold border border-white/20 text-gray-400 hover:border-gold hover:text-gold transition-all">
+        📝 Nội Dung & Kịch Bản
+      </button>
+      <button onclick="filterPrompts('idea')" data-cat="idea"
+        class="prompt-tab px-5 py-2 rounded-full text-sm font-semibold border border-white/20 text-gray-400 hover:border-gold hover:text-gold transition-all">
+        💡 Ý Tưởng & Kênh
+      </button>
+      <button onclick="filterPrompts('finance')" data-cat="finance"
+        class="prompt-tab px-5 py-2 rounded-full text-sm font-semibold border border-white/20 text-gray-400 hover:border-gold hover:text-gold transition-all">
+        💰 Tài Chính Thực Tế
+      </button>
+      <button onclick="filterPrompts('affiliate')" data-cat="affiliate"
+        class="prompt-tab px-5 py-2 rounded-full text-sm font-semibold border border-white/20 text-gray-400 hover:border-gold hover:text-gold transition-all">
+        🛒 Bán Hàng & Affiliate
+      </button>
+      <button onclick="filterPrompts('design')" data-cat="design"
+        class="prompt-tab px-5 py-2 rounded-full text-sm font-semibold border border-white/20 text-gray-400 hover:border-gold hover:text-gold transition-all">
+        🎨 Hình Ảnh & Thiết Kế
+      </button>
+      <button onclick="filterPrompts('engage')" data-cat="engage"
+        class="prompt-tab px-5 py-2 rounded-full text-sm font-semibold border border-white/20 text-gray-400 hover:border-gold hover:text-gold transition-all">
+        💬 Tương Tác & Cộng Đồng
+      </button>
+    </div>
+
+    <!-- Lưới Prompt Cards -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4" id="prompt-grid">
+
+      <!-- ===== NHÓM: NỘI DUNG & KỊCH BẢN ===== -->
+      <div class="prompt-card" data-cat="content">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-5 h-full flex flex-col hover:border-gold/50 hover:bg-white/8 transition-all group">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="text-xs font-semibold text-gold uppercase tracking-wider">📝 Kịch bản</span>
+              <p class="text-white font-heading text-base mt-1">Kết bạn với AI lần đầu</p>
+            </div>
+            <button onclick="copyPrompt(this)" class="copy-btn shrink-0 ml-3 w-8 h-8 rounded-lg bg-gold/20 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-all" title="Sao chép">
+              📋
+            </button>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed flex-1 prompt-text">Chị sinh năm 1983, từng bán điện thoại và máy tính hơn 20 năm. Hãy là thầy giáo AI kiên nhẫn, dạy chị làm Marketing online theo cách dễ hiểu nhất, dùng ngôn ngữ của người phụ nữ trung niên bận rộn.</p>
+        </div>
+      </div>
+
+      <div class="prompt-card" data-cat="content">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-5 h-full flex flex-col hover:border-gold/50 hover:bg-white/8 transition-all group">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="text-xs font-semibold text-gold uppercase tracking-wider">📝 Kịch bản</span>
+              <p class="text-white font-heading text-base mt-1">Kịch bản TikTok 60 giây</p>
+            </div>
+            <button onclick="copyPrompt(this)" class="copy-btn shrink-0 ml-3 w-8 h-8 rounded-lg bg-gold/20 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-all" title="Sao chép">📋</button>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed flex-1 prompt-text">Viết kịch bản video TikTok 60 giây kể về chiếc điện thoại đầu tiên tôi bán được năm 20 tuổi. Phong cách: tâm sự thật lòng, có cao trào cảm xúc, kết thúc bằng bài học ý nghĩa. Giọng: phụ nữ miền Nam ấm áp.</p>
+        </div>
+      </div>
+
+      <div class="prompt-card" data-cat="content">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-5 h-full flex flex-col hover:border-gold/50 hover:bg-white/8 transition-all group">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="text-xs font-semibold text-gold uppercase tracking-wider">📝 Kịch bản</span>
+              <p class="text-white font-heading text-base mt-1">Tâm sự 45 giây về thất bại</p>
+            </div>
+            <button onclick="copyPrompt(this)" class="copy-btn shrink-0 ml-3 w-8 h-8 rounded-lg bg-gold/20 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-all" title="Sao chép">📋</button>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed flex-1 prompt-text">Viết kịch bản video 45 giây tâm sự về lần tôi mất tiền do cho vay không đúng người. Không phán xét, không oán trách — chỉ chia sẻ bài học để giúp người xem tránh vết xe đổ.</p>
+        </div>
+      </div>
+
+      <div class="prompt-card" data-cat="content">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-5 h-full flex flex-col hover:border-gold/50 hover:bg-white/8 transition-all group">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="text-xs font-semibold text-gold uppercase tracking-wider">📝 Podcast</span>
+              <p class="text-white font-heading text-base mt-1">Dàn ý Podcast 10 phút</p>
+            </div>
+            <button onclick="copyPrompt(this)" class="copy-btn shrink-0 ml-3 w-8 h-8 rounded-lg bg-gold/20 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-all" title="Sao chép">📋</button>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed flex-1 prompt-text">Tạo dàn ý 10 phút cho tập Podcast với chủ đề: "Tiền bạc phân minh, ái tình dứt khoát — bài học từ 20 năm buôn bán". Chia 3 phần: mở đầu câu chuyện thật → bài học cụ thể → lời khuyên thực tế.</p>
+        </div>
+      </div>
+
+      <div class="prompt-card" data-cat="content">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-5 h-full flex flex-col hover:border-gold/50 hover:bg-white/8 transition-all group">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="text-xs font-semibold text-gold uppercase tracking-wider">📝 Bài viết</span>
+              <p class="text-white font-heading text-base mt-1">Caption Facebook cảm xúc</p>
+            </div>
+            <button onclick="copyPrompt(this)" class="copy-btn shrink-0 ml-3 w-8 h-8 rounded-lg bg-gold/20 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-all" title="Sao chép">📋</button>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed flex-1 prompt-text">Viết caption Facebook 150 từ chia sẻ câu chuyện: [Nội dung của bạn]. Giọng văn: chân thật như tâm sự với bạn bè, có emoji phù hợp, kết thúc bằng câu hỏi mời mọi người bình luận.</p>
+        </div>
+      </div>
+
+      <div class="prompt-card" data-cat="content">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-5 h-full flex flex-col hover:border-gold/50 hover:bg-white/8 transition-all group">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="text-xs font-semibold text-gold uppercase tracking-wider">📝 Bài viết</span>
+              <p class="text-white font-heading text-base mt-1">Sửa văn phong có cảm xúc</p>
+            </div>
+            <button onclick="copyPrompt(this)" class="copy-btn shrink-0 ml-3 w-8 h-8 rounded-lg bg-gold/20 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-all" title="Sao chép">📋</button>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed flex-1 prompt-text">Sửa đoạn văn sau cho bớt khô khan, thêm cảm xúc của người từng trải, giữ nguyên ý nghĩa nhưng viết như đang nói chuyện thật lòng với bạn bè: [Dán đoạn văn của bạn vào đây]</p>
+        </div>
+      </div>
+
+      <!-- ===== NHÓM: Ý TƯỞNG & KÊNH ===== -->
+      <div class="prompt-card" data-cat="idea">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-5 h-full flex flex-col hover:border-gold/50 hover:bg-white/8 transition-all group">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="text-xs font-semibold text-amber-400 uppercase tracking-wider">💡 Ý Tưởng</span>
+              <p class="text-white font-heading text-base mt-1">50 ý tưởng từ vốn sống</p>
+            </div>
+            <button onclick="copyPrompt(this)" class="copy-btn shrink-0 ml-3 w-8 h-8 rounded-lg bg-gold/20 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-all" title="Sao chép">📋</button>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed flex-1 prompt-text">Tôi là phụ nữ 1983, từng bán điện thoại, máy tính, tham gia họ hụi, cho vay tiêu dùng. Hãy gợi ý 50 chủ đề nội dung video/bài viết hấp dẫn từ những kinh nghiệm đó, phù hợp để đăng TikTok và Facebook.</p>
+        </div>
+      </div>
+
+      <div class="prompt-card" data-cat="idea">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-5 h-full flex flex-col hover:border-gold/50 hover:bg-white/8 transition-all group">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="text-xs font-semibold text-amber-400 uppercase tracking-wider">💡 Ý Tưởng</span>
+              <p class="text-white font-heading text-base mt-1">Đặt tên kênh YouTube</p>
+            </div>
+            <button onclick="copyPrompt(this)" class="copy-btn shrink-0 ml-3 w-8 h-8 rounded-lg bg-gold/20 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-all" title="Sao chép">📋</button>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed flex-1 prompt-text">Gợi ý 10 tên kênh YouTube/TikTok cho phụ nữ 8x chia sẻ về tài chính cá nhân và AI Marketing. Yêu cầu: tên tiếng Việt, dễ nhớ, có chất riêng, không quá formal, nghe là biết ngay nội dung kênh.</p>
+        </div>
+      </div>
+
+      <div class="prompt-card" data-cat="idea">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-5 h-full flex flex-col hover:border-gold/50 hover:bg-white/8 transition-all group">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="text-xs font-semibold text-amber-400 uppercase tracking-wider">💡 Kênh</span>
+              <p class="text-white font-heading text-base mt-1">Bio hồ sơ chuyên nghiệp</p>
+            </div>
+            <button onclick="copyPrompt(this)" class="copy-btn shrink-0 ml-3 w-8 h-8 rounded-lg bg-gold/20 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-all" title="Sao chép">📋</button>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed flex-1 prompt-text">Viết phần giới thiệu Bio (dưới 150 ký tự) cho trang Facebook/TikTok của tôi. Thông tin: phụ nữ 1983, 20 năm bán điện thoại, nay dạy phụ nữ 8x làm AI Marketing. Giọng: tự tin, gần gũi, đáng tin.</p>
+        </div>
+      </div>
+
+      <div class="prompt-card" data-cat="idea">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-5 h-full flex flex-col hover:border-gold/50 hover:bg-white/8 transition-all group">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="text-xs font-semibold text-amber-400 uppercase tracking-wider">💡 Tiêu đề</span>
+              <p class="text-white font-heading text-base mt-1">Giật tít gây tò mò</p>
+            </div>
+            <button onclick="copyPrompt(this)" class="copy-btn shrink-0 ml-3 w-8 h-8 rounded-lg bg-gold/20 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-all" title="Sao chép">📋</button>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed flex-1 prompt-text">Tạo 10 tiêu đề video gây tò mò tối đa về chủ đề: [Chủ đề của bạn]. Sử dụng các công thức: "Bí mật...", "Cảnh báo...", "Tại sao...", "X điều mà...", "Sự thật về...". Viết cho đối tượng phụ nữ 35–50 tuổi.</p>
+        </div>
+      </div>
+
+      <div class="prompt-card" data-cat="idea">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-5 h-full flex flex-col hover:border-gold/50 hover:bg-white/8 transition-all group">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="text-xs font-semibold text-amber-400 uppercase tracking-wider">💡 Thương hiệu</span>
+              <p class="text-white font-heading text-base mt-1">Khẩu hiệu thương hiệu cá nhân</p>
+            </div>
+            <button onclick="copyPrompt(this)" class="copy-btn shrink-0 ml-3 w-8 h-8 rounded-lg bg-gold/20 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-all" title="Sao chép">📋</button>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed flex-1 prompt-text">Viết 5 câu khẩu hiệu (tagline) ngắn gọn, sắc bén cho thương hiệu cá nhân của phụ nữ 8x làm chủ AI. Yêu cầu: tiếng Việt thuần, truyền cảm hứng, dễ nhớ, có thể dùng làm caption viral.</p>
+        </div>
+      </div>
+
+      <!-- ===== NHÓM: TÀI CHÍNH THỰC TẾ ===== -->
+      <div class="prompt-card" data-cat="finance">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-5 h-full flex flex-col hover:border-gold/50 hover:bg-white/8 transition-all group">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">💰 Tài chính</span>
+              <p class="text-white font-heading text-base mt-1">Phân tích rủi ro chơi họ</p>
+            </div>
+            <button onclick="copyPrompt(this)" class="copy-btn shrink-0 ml-3 w-8 h-8 rounded-lg bg-gold/20 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-all" title="Sao chép">📋</button>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed flex-1 prompt-text">Gợi ý 10 chủ đề video ngắn về rủi ro khi chơi họ/hụi dành cho phụ nữ trung niên. Mỗi chủ đề phải dựa trên tình huống thực tế, gần gũi, không mang tính lý thuyết hay học thuật.</p>
+        </div>
+      </div>
+
+      <div class="prompt-card" data-cat="finance">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-5 h-full flex flex-col hover:border-gold/50 hover:bg-white/8 transition-all group">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">💰 Tài chính</span>
+              <p class="text-white font-heading text-base mt-1">Bài học quản lý dòng tiền</p>
+            </div>
+            <button onclick="copyPrompt(this)" class="copy-btn shrink-0 ml-3 w-8 h-8 rounded-lg bg-gold/20 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-all" title="Sao chép">📋</button>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed flex-1 prompt-text">Viết bài viết Facebook chia sẻ 3 bài học quản lý dòng tiền mà tôi học được từ nghề bán lẻ điện thoại. Giọng văn như người chị lớn chia sẻ thật lòng, không giảng đạo, có ví dụ số liệu cụ thể.</p>
+        </div>
+      </div>
+
+      <div class="prompt-card" data-cat="finance">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-5 h-full flex flex-col hover:border-gold/50 hover:bg-white/8 transition-all group">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">💰 Nghiên cứu</span>
+              <p class="text-white font-heading text-base mt-1">Tâm lý khách hàng phụ nữ 40+</p>
+            </div>
+            <button onclick="copyPrompt(this)" class="copy-btn shrink-0 ml-3 w-8 h-8 rounded-lg bg-gold/20 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-all" title="Sao chép">📋</button>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed flex-1 prompt-text">Phân tích tâm lý của phụ nữ 35–50 tuổi khi mua điện thoại/máy tính cũ: họ lo lắng điều gì, cần được tư vấn như thế nào, câu nói nào giúp họ ra quyết định mua? Đưa ra 5 insight cụ thể.</p>
+        </div>
+      </div>
+
+      <div class="prompt-card" data-cat="finance">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-5 h-full flex flex-col hover:border-gold/50 hover:bg-white/8 transition-all group">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="text-xs font-semibold text-emerald-400 uppercase tracking-wider">💰 Tài chính</span>
+              <p class="text-white font-heading text-base mt-1">Hướng dẫn tích lũy từ số 0</p>
+            </div>
+            <button onclick="copyPrompt(this)" class="copy-btn shrink-0 ml-3 w-8 h-8 rounded-lg bg-gold/20 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-all" title="Sao chép">📋</button>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed flex-1 prompt-text">Viết kịch bản video 90 giây hướng dẫn cách tích lũy 5–10 triệu/tháng từ thu nhập buôn bán nhỏ lẻ. Dành cho phụ nữ 40 tuổi chưa có quỹ tiết kiệm. Thực tế, không lý thuyết, có bước hành động ngay.</p>
+        </div>
+      </div>
+
+      <!-- ===== NHÓM: BÁN HÀNG & AFFILIATE ===== -->
+      <div class="prompt-card" data-cat="affiliate">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-5 h-full flex flex-col hover:border-gold/50 hover:bg-white/8 transition-all group">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="text-xs font-semibold text-rose-400 uppercase tracking-wider">🛒 Affiliate</span>
+              <p class="text-white font-heading text-base mt-1">Kịch bản giới thiệu sản phẩm</p>
+            </div>
+            <button onclick="copyPrompt(this)" class="copy-btn shrink-0 ml-3 w-8 h-8 rounded-lg bg-gold/20 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-all" title="Sao chép">📋</button>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed flex-1 prompt-text">Viết kịch bản 60 giây giới thiệu sản phẩm [Tên sản phẩm] theo phong cách "chia sẻ kinh nghiệm thật" — không giống quảng cáo, không dùng từ "mua ngay", không có giá cả — chỉ chia sẻ lý do tôi dùng và thấy tốt.</p>
+        </div>
+      </div>
+
+      <div class="prompt-card" data-cat="affiliate">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-5 h-full flex flex-col hover:border-gold/50 hover:bg-white/8 transition-all group">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="text-xs font-semibold text-rose-400 uppercase tracking-wider">🛒 Bán hàng</span>
+              <p class="text-white font-heading text-base mt-1">Script mở đầu Livestream bán hàng</p>
+            </div>
+            <button onclick="copyPrompt(this)" class="copy-btn shrink-0 ml-3 w-8 h-8 rounded-lg bg-gold/20 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-all" title="Sao chép">📋</button>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed flex-1 prompt-text">Viết lời mở đầu livestream 2 phút: chào hỏi khán giả → giới thiệu bản thân ngắn gọn → hé lộ nội dung hôm nay → tạo kỳ vọng. Chủ đề live: [Chủ đề của bạn]. Giọng nhiệt tình, chân thật, không cứng nhắc.</p>
+        </div>
+      </div>
+
+      <div class="prompt-card" data-cat="affiliate">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-5 h-full flex flex-col hover:border-gold/50 hover:bg-white/8 transition-all group">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="text-xs font-semibold text-rose-400 uppercase tracking-wider">🛒 Affiliate</span>
+              <p class="text-white font-heading text-base mt-1">So sánh sản phẩm khách quan</p>
+            </div>
+            <button onclick="copyPrompt(this)" class="copy-btn shrink-0 ml-3 w-8 h-8 rounded-lg bg-gold/20 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-all" title="Sao chép">📋</button>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed flex-1 prompt-text">Viết bài so sánh [Sản phẩm A] và [Sản phẩm B] dưới góc nhìn người đã dùng qua cả hai. Ưu nhược điểm thật, không thiên vị, cuối bài đưa ra gợi ý phù hợp cho từng loại người dùng cụ thể.</p>
+        </div>
+      </div>
+
+      <div class="prompt-card" data-cat="affiliate">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-5 h-full flex flex-col hover:border-gold/50 hover:bg-white/8 transition-all group">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="text-xs font-semibold text-rose-400 uppercase tracking-wider">🛒 Email</span>
+              <p class="text-white font-heading text-base mt-1">Email cảm ơn khách hàng</p>
+            </div>
+            <button onclick="copyPrompt(this)" class="copy-btn shrink-0 ml-3 w-8 h-8 rounded-lg bg-gold/20 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-all" title="Sao chép">📋</button>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed flex-1 prompt-text">Viết email cảm ơn gửi đến khách hàng đã mua/ủng hộ kênh của tôi. Giọng văn ấm áp như người thân, không quá formal. Có 1 điều gợi ý để khách quay lại, và 1 câu kêu gọi chia sẻ cho bạn bè.</p>
+        </div>
+      </div>
+
+      <!-- ===== NHÓM: HÌNH ẢNH & THIẾT KẾ ===== -->
+      <div class="prompt-card" data-cat="design">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-5 h-full flex flex-col hover:border-gold/50 hover:bg-white/8 transition-all group">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">🎨 Hình ảnh</span>
+              <p class="text-white font-heading text-base mt-1">Mô tả ảnh đại diện AI</p>
+            </div>
+            <button onclick="copyPrompt(this)" class="copy-btn shrink-0 ml-3 w-8 h-8 rounded-lg bg-gold/20 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-all" title="Sao chép">📋</button>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed flex-1 prompt-text">Mô tả hình ảnh để tạo avatar cho kênh mạng xã hội: phụ nữ Việt Nam 40 tuổi, bản lĩnh, thân thiện, ngồi làm việc với laptop trong không gian ấm cúng. Phong cách: hiện đại nhưng gần gũi, màu vàng đồng và trắng chủ đạo.</p>
+        </div>
+      </div>
+
+      <div class="prompt-card" data-cat="design">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-5 h-full flex flex-col hover:border-gold/50 hover:bg-white/8 transition-all group">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">🎨 Thumbnail</span>
+              <p class="text-white font-heading text-base mt-1">Mô tả thumbnail video</p>
+            </div>
+            <button onclick="copyPrompt(this)" class="copy-btn shrink-0 ml-3 w-8 h-8 rounded-lg bg-gold/20 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-all" title="Sao chép">📋</button>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed flex-1 prompt-text">Mô tả thiết kế thumbnail cho video YouTube về chủ đề "[Chủ đề của bạn]". Bao gồm: màu nền nổi bật, font chữ lớn dễ đọc, biểu cảm khuôn mặt phù hợp, và các yếu tố hình ảnh hỗ trợ. Phù hợp cho màn hình điện thoại nhỏ.</p>
+        </div>
+      </div>
+
+      <div class="prompt-card" data-cat="design">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-5 h-full flex flex-col hover:border-gold/50 hover:bg-white/8 transition-all group">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="text-xs font-semibold text-purple-400 uppercase tracking-wider">🎨 Ảnh bìa</span>
+              <p class="text-white font-heading text-base mt-1">Ảnh bìa Facebook tài chính</p>
+            </div>
+            <button onclick="copyPrompt(this)" class="copy-btn shrink-0 ml-3 w-8 h-8 rounded-lg bg-gold/20 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-all" title="Sao chép">📋</button>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed flex-1 prompt-text">Mô tả ảnh bìa Facebook cho kênh tài chính cá nhân của phụ nữ. Yếu tố cần có: tên kênh nổi bật, câu tagline truyền cảm hứng, hình ảnh biểu trưng cho tiết kiệm và tự do tài chính. Tông màu: vàng đồng + trắng ngà.</p>
+        </div>
+      </div>
+
+      <!-- ===== NHÓM: TƯƠNG TÁC & CỘNG ĐỒNG ===== -->
+      <div class="prompt-card" data-cat="engage">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-5 h-full flex flex-col hover:border-gold/50 hover:bg-white/8 transition-all group">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="text-xs font-semibold text-sky-400 uppercase tracking-wider">💬 Tương tác</span>
+              <p class="text-white font-heading text-base mt-1">Trả lời bình luận khéo léo</p>
+            </div>
+            <button onclick="copyPrompt(this)" class="copy-btn shrink-0 ml-3 w-8 h-8 rounded-lg bg-gold/20 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-all" title="Sao chép">📋</button>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed flex-1 prompt-text">Viết 5 mẫu trả lời bình luận cho các tình huống: (1) người hỏi mua hàng, (2) người khen video, (3) người nghi ngờ thông tin, (4) người chia sẻ câu chuyện của họ, (5) người hỏi học ở đâu. Giọng ấm áp, chân thành.</p>
+        </div>
+      </div>
+
+      <div class="prompt-card" data-cat="engage">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-5 h-full flex flex-col hover:border-gold/50 hover:bg-white/8 transition-all group">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="text-xs font-semibold text-sky-400 uppercase tracking-wider">💬 Cộng đồng</span>
+              <p class="text-white font-heading text-base mt-1">Câu hỏi tạo tương tác</p>
+            </div>
+            <button onclick="copyPrompt(this)" class="copy-btn shrink-0 ml-3 w-8 h-8 rounded-lg bg-gold/20 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-all" title="Sao chép">📋</button>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed flex-1 prompt-text">Tạo 10 câu hỏi mini-poll hoặc fill-in-the-blank để đăng Facebook/TikTok kích thích tương tác từ phụ nữ 35–50 tuổi. Chủ đề: tiền bạc, gia đình, kinh doanh nhỏ, công nghệ. Câu hỏi ngắn, dễ trả lời trong 5 giây.</p>
+        </div>
+      </div>
+
+      <div class="prompt-card" data-cat="engage">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-5 h-full flex flex-col hover:border-gold/50 hover:bg-white/8 transition-all group">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="text-xs font-semibold text-sky-400 uppercase tracking-wider">💬 Nghiên cứu</span>
+              <p class="text-white font-heading text-base mt-1">Phân tích nội dung cạnh tranh</p>
+            </div>
+            <button onclick="copyPrompt(this)" class="copy-btn shrink-0 ml-3 w-8 h-8 rounded-lg bg-gold/20 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-all" title="Sao chép">📋</button>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed flex-1 prompt-text">Phân tích 5 kênh YouTube/TikTok của đối thủ cạnh tranh trực tiếp. Đánh giá điểm mạnh, điểm yếu, và đề xuất 3 ý tưởng nội dung mới lạ để tôi có thể áp dụng và tạo sự khác biệt.</p>
+        </div>
+      </div>
+
+      <div class="prompt-card" data-cat="engage">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-5 h-full flex flex-col hover:border-gold/50 hover:bg-white/8 transition-all group">
+          <div class="flex items-start justify-between mb-3">
+            <div>
+              <span class="text-xs font-semibold text-sky-400 uppercase tracking-wider">💬 Tóm tắt</span>
+              <p class="text-white font-heading text-base mt-1">Tóm tắt video thành bài viết</p>
+            </div>
+            <button onclick="copyPrompt(this)" class="copy-btn shrink-0 ml-3 w-8 h-8 rounded-lg bg-gold/20 text-gold flex items-center justify-center hover:bg-gold hover:text-white transition-all" title="Sao chép">📋</button>
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed flex-1 prompt-text">Tóm tắt nội dung sau đây thành bài viết Facebook 200 từ: [Dán transcript/nội dung video của bạn]. Giữ nguyên giọng điệu tâm sự, chọn lọc 3 ý chính hay nhất, thêm hashtag phù hợp cuối bài.</p>
+        </div>
+      </div>
+
+    </div><!-- end prompt-grid -->
+
+    <!-- Đếm số prompt đang hiện -->
+    <p class="text-center text-gray-500 text-sm mt-6" id="prompt-count">Hiển thị 30 prompt</p>
+
+    <!-- CTA -->
+    <div class="mt-8 text-center">
+      <a href="#contact" class="btn-gold px-8 py-3 rounded-2xl inline-block">🎁 Đăng Ký Nhận Thêm Prompt Độc Quyền</a>
+    </div>
+  </div>
+
+  <!-- Toast thông báo copy -->
+  <div id="copy-toast" class="fixed bottom-24 left-1/2 -translate-x-1/2 bg-gold text-white px-6 py-3 rounded-full font-semibold text-sm shadow-xl opacity-0 pointer-events-none transition-all duration-300 z-50">
+    ✅ Đã sao chép prompt!
+  </div>
+</section>
+
+<script>
+  /* -------------------------------------------------------
+     Bộ lọc danh mục Prompt
+  ------------------------------------------------------- */
+  function filterPrompts(cat) {
+    // Cập nhật tab active
+    document.querySelectorAll('.prompt-tab').forEach(btn => {
+      if (btn.dataset.cat === cat) {
+        btn.classList.add('active-tab', 'bg-gold/20');
+        btn.classList.remove('text-gray-400', 'border-white/20');
+        btn.classList.add('text-gold', 'border-gold');
+      } else {
+        btn.classList.remove('active-tab', 'bg-gold/20');
+        btn.classList.add('text-gray-400', 'border-white/20');
+        btn.classList.remove('text-gold', 'border-gold');
+      }
+    });
+
+    // Hiện/ẩn card
+    const cards = document.querySelectorAll('.prompt-card');
+    let count = 0;
+    cards.forEach(card => {
+      if (cat === 'all' || card.dataset.cat === cat) {
+        card.style.display = '';
+        count++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+    document.getElementById('prompt-count').textContent = `Hiển thị ${count} prompt`;
+  }
+
+  /* -------------------------------------------------------
+     Sao chép Prompt vào clipboard
+  ------------------------------------------------------- */
+  function copyPrompt(btn) {
+    const promptText = btn.closest('.bg-white\\/5').querySelector('.prompt-text').innerText;
+    navigator.clipboard.writeText(promptText).then(() => {
+      // Đổi icon nút
+      btn.textContent = '✅';
+      setTimeout(() => { btn.textContent = '📋'; }, 2000);
+      // Hiện toast
+      const toast = document.getElementById('copy-toast');
+      toast.classList.remove('opacity-0');
+      toast.classList.add('opacity-100');
+      setTimeout(() => {
+        toast.classList.add('opacity-0');
+        toast.classList.remove('opacity-100');
+      }, 2000);
+    });
+  }
+</script>
+
+
+<!-- ============================================================
+     TESTIMONIALS - Bài học xương máu & Giá trị
+============================================================ -->
+<section id="testimonials" class="py-20 bg-charcoal">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-3">Bài Học Thực Tế</p>
+      <h2 class="text-4xl md:text-5xl font-heading text-white gold-underline">Những Điều Tôi Muốn Bạn Biết</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-8 mb-16">
+      <!-- Bài học 1 -->
+      <div class="bg-white/5 border border-gold/20 rounded-3xl p-8 card-hover">
+        <p class="text-4xl mb-4">🔥</p>
+        <h3 class="font-heading text-xl text-gold mb-3">"Tuổi không phải rào cản — sự trì hoãn mới là."</h3>
+        <p class="text-gray-400 leading-relaxed">
+          Tôi bắt đầu học AI ở tuổi 40. Cộng đồng xung quanh hoài nghi, bản thân hoài nghi. Nhưng 6 tháng sau, tôi có thu nhập online đầu tiên. Bài học: Bắt đầu muộn vẫn tốt hơn không bắt đầu.
+        </p>
+      </div>
+      <!-- Bài học 2 -->
+      <div class="bg-white/5 border border-gold/20 rounded-3xl p-8 card-hover">
+        <p class="text-4xl mb-4">💡</p>
+        <h3 class="font-heading text-xl text-gold mb-3">"Kinh nghiệm truyền thống là vũ khí bí mật của bạn."</h3>
+        <p class="text-gray-400 leading-relaxed">
+          20 năm bán hàng dạy tôi cách đọc người, hiểu nhu cầu, xây dựng lòng tin. AI chỉ là công cụ — nhưng tư duy bán hàng của bạn chính là thứ AI không thể thay thế.
+        </p>
+      </div>
+      <!-- Bài học 3 -->
+      <div class="bg-white/5 border border-gold/20 rounded-3xl p-8 card-hover">
+        <p class="text-4xl mb-4">🌙</p>
+        <h3 class="font-heading text-xl text-gold mb-3">"Đừng so sánh bước đi của mình với người khác."</h3>
+        <p class="text-gray-400 leading-relaxed">
+          Mỗi người có xuất phát điểm khác nhau. Chị em 8x chúng ta có con cái, gia đình, trách nhiệm — lộ trình phải phù hợp với cuộc sống thực, không phải cuộc sống lý tưởng.
+        </p>
+      </div>
+      <!-- Bài học 4 -->
+      <div class="bg-white/5 border border-gold/20 rounded-3xl p-8 card-hover">
+        <p class="text-4xl mb-4">🤝</p>
+        <h3 class="font-heading text-xl text-gold mb-3">"Cộng đồng là tài sản lớn nhất."</h3>
+        <p class="text-gray-400 leading-relaxed">
+          Một mình học rất chậm và dễ bỏ cuộc. Khi có nhóm chị em cùng hành trình, sẻ chia kinh nghiệm — mọi thứ trở nên nhẹ nhàng và vui hơn rất nhiều.
+        </p>
+      </div>
+    </div>
+
+    <!-- Lời khen từ cộng đồng (giả định) -->
+    <h3 class="text-center font-heading text-2xl text-white mb-10">Chị Em Nói Gì Về Hành Trình?</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white/8 rounded-2xl p-6 border border-white/10">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-full bg-gold/30 flex items-center justify-center text-xl">👩</div>
+          <div>
+            <p class="text-white font-semibold">Chị Lan, 42 tuổi</p>
+            <p class="text-gold text-xs">Hà Nội</p>
+          </div>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed italic">"Trước đây tôi nghĩ AI là thứ dành cho dân kỹ thuật. Giờ thì tôi dùng ChatGPT viết content mỗi ngày, tiết kiệm 3 tiếng đồng hồ!"</p>
+        <div class="flex mt-3 text-gold text-sm">★★★★★</div>
+      </div>
+      <div class="bg-white/8 rounded-2xl p-6 border border-white/10">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-full bg-gold/30 flex items-center justify-center text-xl">👩‍🦱</div>
+          <div>
+            <p class="text-white font-semibold">Chị Hương, 39 tuổi</p>
+            <p class="text-gold text-xs">TP. HCM</p>
+          </div>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed italic">"Lộ trình 21 ngày rất thực tế, không lý thuyết suông. Tuần 2 tôi đã có đơn hàng đầu tiên từ khách online!"</p>
+        <div class="flex mt-3 text-gold text-sm">★★★★★</div>
+      </div>
+      <div class="bg-white/8 rounded-2xl p-6 border border-white/10">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-12 h-12 rounded-full bg-gold/30 flex items-center justify-center text-xl">👩‍🦳</div>
+          <div>
+            <p class="text-white font-semibold">Chị Mai, 45 tuổi</p>
+            <p class="text-gold text-xs">Đà Nẵng</p>
+          </div>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed italic">"Cách giải thích rất dễ hiểu, như đang nói chuyện với người trong gia đình. Tôi không cảm thấy bị lạc lõng dù không rành công nghệ."</p>
+        <div class="flex mt-3 text-gold text-sm">★★★★★</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     KẾT QUẢ & BÍ QUYẾT - Sau 21 ngày bạn đạt được gì?
+============================================================ -->
+<section id="results" class="py-20 bg-cream">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-3">Sau 21 Ngày</p>
+      <h2 class="text-4xl md:text-5xl font-heading text-charcoal gold-underline">Bạn Sẽ Có Được Gì?</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-10 items-start">
+      <!-- Kết quả cụ thể -->
+      <div class="space-y-5">
+        <div class="flex items-start gap-4 bg-white rounded-2xl p-5 shadow-sm border border-gold/15 card-hover">
+          <span class="text-3xl shrink-0">🛠️</span>
+          <div>
+            <p class="font-heading text-lg text-charcoal">Kỹ Năng AI Thực Chiến</p>
+            <p class="text-gray-600 text-sm leading-relaxed">Biết dùng AI viết bài, vẽ ảnh, làm video, lồng tiếng — tất cả chỉ từ điện thoại trong tay.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-white rounded-2xl p-5 shadow-sm border border-gold/15 card-hover">
+          <span class="text-3xl shrink-0">📱</span>
+          <div>
+            <p class="font-heading text-lg text-charcoal">Tài Sản Số Đầu Tiên</p>
+            <p class="text-gray-600 text-sm leading-relaxed">1 kênh TikTok/YouTube có ít nhất 5–10 video chất lượng, sẵn sàng thu hút khách hàng.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-white rounded-2xl p-5 shadow-sm border border-gold/15 card-hover">
+          <span class="text-3xl shrink-0">💸</span>
+          <div>
+            <p class="font-heading text-lg text-charcoal">Tín Hiệu Thu Nhập Đầu Tiên</p>
+            <p class="text-gray-600 text-sm leading-relaxed">Những hoa hồng Affiliate đầu tiên từ nội dung bạn đã tạo ra — tiền thật, không ảo.</p>
+          </div>
+        </div>
+        <div class="flex items-start gap-4 bg-white rounded-2xl p-5 shadow-sm border border-gold/15 card-hover">
+          <span class="text-3xl shrink-0">💪</span>
+          <div>
+            <p class="font-heading text-lg text-charcoal">Tâm Thế Mới Hoàn Toàn</p>
+            <p class="text-gray-600 text-sm leading-relaxed">Trở thành phiên bản 1983 hiện đại — tự tin, không còn sợ internet và thế giới số.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bí quyết kiên trì -->
+      <div>
+        <p class="text-gold font-semibold uppercase tracking-wider text-sm mb-5">🔑 Bí Quyết Để Không Bỏ Cuộc</p>
+        <div class="bg-charcoal rounded-3xl p-8 text-white space-y-6">
+          <div class="border-b border-white/10 pb-5">
+            <p class="font-heading text-xl text-gold mb-2">Quy tắc "Không Có Ngày Số 0"</p>
+            <p class="text-gray-300 text-sm leading-relaxed">Dù bận đến mấy — chỉ cần mở AI ra hỏi 1 câu. Đó là ngày không bị bỏ qua. Thói quen nhỏ tạo ra sự thay đổi lớn.</p>
+          </div>
+          <div>
+            <p class="font-heading text-xl text-gold mb-2">Chia Nhỏ Chiến Thắng</p>
+            <p class="text-gray-300 text-sm leading-relaxed">Vui khi làm xong 1 cái ảnh. Hạnh phúc khi đăng xong 1 video. Mỗi hành động nhỏ là một bước tiến thật sự — đừng chờ đến lúc "hoàn hảo" mới bắt đầu.</p>
+          </div>
+          <blockquote class="border-l-4 border-gold pl-4 italic text-gold-light text-base">
+            "Hành trình vạn dặm bắt đầu từ một tin nhắn cho AI."
+          </blockquote>
+        </div>
+
+        <!-- Niche định hướng -->
+        <p class="text-gold font-semibold uppercase tracking-wider text-sm mt-8 mb-5">🎯 Hai Ngách Nội Dung Chính</p>
+        <div class="space-y-4">
+          <div class="bg-white rounded-2xl p-5 border border-gold/20 card-hover">
+            <p class="font-heading text-lg text-charcoal mb-1">💰 Ngách 1: Tài Chính Thực Tế</p>
+            <p class="text-gray-500 text-sm">Bài học về tiền bạc, quản lý rủi ro từ chuyện chơi họ, kinh nghiệm cho vay và tích lũy — những chuyện không sách nào dạy.</p>
+          </div>
+          <div class="bg-white rounded-2xl p-5 border border-gold/20 card-hover">
+            <p class="font-heading text-lg text-charcoal mb-1">📱 Ngách 2: Review Công Nghệ Bình Dân</p>
+            <p class="text-gray-500 text-sm">Hướng dẫn chọn điện thoại/máy tính cũ cho người không chuyên — dựa trên 20 năm kinh nghiệm bán hàng thực tế.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     BẢNG THEO DÕI 21 NGÀY - Timeline chi tiết từng ngày
+============================================================ -->
+<section id="tracker" class="py-20 bg-white">
+  <div class="max-w-7xl mx-auto px-4 md:px-6">
+    <div class="text-center mb-14">
+      <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-3">Kế Hoạch Chi Tiết</p>
+      <h2 class="text-4xl md:text-5xl font-heading text-charcoal gold-underline">Bảng Theo Dõi 21 Ngày Thực Chiến</h2>
+      <p class="mt-6 text-gray-500 text-lg max-w-2xl mx-auto">Mỗi ngày một nhiệm vụ cụ thể — biết làm gì, dùng công cụ gì, đạt được gì.</p>
+    </div>
+
+    <!-- ===== GIAI ĐOẠN 1 ===== -->
+    <div class="mb-10">
+      <div class="inline-flex items-center gap-3 bg-charcoal text-white px-6 py-2 rounded-full mb-6">
+        <span class="text-gold font-bold">Giai Đoạn 1</span>
+        <span class="text-gray-300 text-sm">Ngày 1–7 · Xây Nền Tảng & Tư Duy Nội Dung</span>
+      </div>
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
+
+        <!-- Ngày 01 -->
+        <div class="bg-cream border border-gold/20 rounded-2xl p-5 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-full bg-gold text-white font-heading font-bold flex items-center justify-center text-lg shrink-0">01</span>
+            <div>
+              <p class="font-heading text-base text-charcoal">Kết Bạn Với AI</p>
+              <p class="text-xs text-gold">🔧 ChatGPT, Gemini</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-3">
+            <span class="font-semibold text-amber-700">Sáng:</span> Làm quen ChatGPT/Gemini.<br/>
+            <span class="font-semibold text-indigo-700">Chiều:</span> Cài app, nhắn tin hỏi han như người em.
+          </p>
+          <div class="bg-white rounded-xl p-3 text-xs text-gray-500 border border-gold/10">
+            <p class="font-semibold text-charcoal mb-1">🎯 Mục tiêu:</p>
+            <p>Đăng nhập & nhắn tin được</p>
+            <p class="mt-2 text-gold italic">💡 Đừng sợ sai, AI không biết mắng đâu chị.</p>
+          </div>
+        </div>
+
+        <!-- Ngày 02 -->
+        <div class="bg-cream border border-gold/20 rounded-2xl p-5 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-full bg-gold text-white font-heading font-bold flex items-center justify-center text-lg shrink-0">02</span>
+            <div>
+              <p class="font-heading text-base text-charcoal">Định Vị Bản Thân</p>
+              <p class="text-xs text-gold">🔧 ChatGPT</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-3">
+            <span class="font-semibold text-amber-700">Sáng:</span> Kể kinh nghiệm bán điện thoại/cho vay.<br/>
+            <span class="font-semibold text-indigo-700">Chiều:</span> Nhờ AI phân tích thế mạnh.
+          </p>
+          <div class="bg-white rounded-xl p-3 text-xs text-gray-500 border border-gold/10">
+            <p class="font-semibold text-charcoal mb-1">🎯 Mục tiêu:</p>
+            <p>Có bản mô tả bản thân</p>
+            <p class="mt-2 text-gold italic">💡 Hãy kể thật chi tiết những lần "vấp ngã" cho AI nghe.</p>
+          </div>
+        </div>
+
+        <!-- Ngày 03 -->
+        <div class="bg-cream border border-gold/20 rounded-2xl p-5 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-full bg-gold text-white font-heading font-bold flex items-center justify-center text-lg shrink-0">03</span>
+            <div>
+              <p class="font-heading text-base text-charcoal">Khai Quật Mỏ Vàng</p>
+              <p class="text-xs text-gold">🔧 Gemini</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-3">
+            <span class="font-semibold text-amber-700">Sáng:</span> Tìm 50 ý tưởng nội dung.<br/>
+            <span class="font-semibold text-indigo-700">Chiều:</span> Chọn ra 10 ý tưởng tâm đắc nhất.
+          </p>
+          <div class="bg-white rounded-xl p-3 text-xs text-gray-500 border border-gold/10">
+            <p class="font-semibold text-charcoal mb-1">🎯 Mục tiêu:</p>
+            <p>Danh sách 10 chủ đề "xương máu"</p>
+            <p class="mt-2 text-gold italic">💡 Ưu tiên chuyện "lòng người" trong kinh doanh.</p>
+          </div>
+        </div>
+
+        <!-- Ngày 04 -->
+        <div class="bg-cream border border-gold/20 rounded-2xl p-5 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-full bg-gold text-white font-heading font-bold flex items-center justify-center text-lg shrink-0">04</span>
+            <div>
+              <p class="font-heading text-base text-charcoal">Xây Nhà Trên Mạng</p>
+              <p class="text-xs text-gold">🔧 TikTok, Facebook</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-3">
+            <span class="font-semibold text-amber-700">Sáng:</span> Lập TikTok/Facebook Page.<br/>
+            <span class="font-semibold text-indigo-700">Chiều:</span> Đặt tên, viết Bio (Dùng AI gợi ý).
+          </p>
+          <div class="bg-white rounded-xl p-3 text-xs text-gray-500 border border-gold/10">
+            <p class="font-semibold text-charcoal mb-1">🎯 Mục tiêu:</p>
+            <p>02 kênh sẵn sàng</p>
+            <p class="mt-2 text-gold italic">💡 Tên kênh nên có tên thật để tạo lòng tin.</p>
+          </div>
+        </div>
+
+        <!-- Ngày 05 -->
+        <div class="bg-cream border border-gold/20 rounded-2xl p-5 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-full bg-gold text-white font-heading font-bold flex items-center justify-center text-lg shrink-0">05</span>
+            <div>
+              <p class="font-heading text-base text-charcoal">Nghệ Thuật Ra Lệnh</p>
+              <p class="text-xs text-gold">🔧 ChatGPT</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-3">
+            <span class="font-semibold text-amber-700">Sáng:</span> Học công thức Prompt.<br/>
+            <span class="font-semibold text-indigo-700">Chiều:</span> Sai bảo AI viết 5 câu châm ngôn tiền bạc.
+          </p>
+          <div class="bg-white rounded-xl p-3 text-xs text-gray-500 border border-gold/10">
+            <p class="font-semibold text-charcoal mb-1">🎯 Mục tiêu:</p>
+            <p>Hiểu cách ra lệnh đúng</p>
+            <p class="mt-2 text-gold italic">💡 Hãy coi AI là "đứa em" mới học việc, phải chỉ bảo kỹ.</p>
+          </div>
+        </div>
+
+        <!-- Ngày 06 -->
+        <div class="bg-cream border border-gold/20 rounded-2xl p-5 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-full bg-gold text-white font-heading font-bold flex items-center justify-center text-lg shrink-0">06</span>
+            <div>
+              <p class="font-heading text-base text-charcoal">Kịch Bản Đầu Tay</p>
+              <p class="text-xs text-gold">🔧 ChatGPT</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-3">
+            <span class="font-semibold text-amber-700">Sáng:</span> Viết kịch bản Storytelling.<br/>
+            <span class="font-semibold text-indigo-700">Chiều:</span> Chỉnh sửa theo giọng văn của chị.
+          </p>
+          <div class="bg-white rounded-xl p-3 text-xs text-gray-500 border border-gold/10">
+            <p class="font-semibold text-charcoal mb-1">🎯 Mục tiêu:</p>
+            <p>01 Kịch bản video tâm sự</p>
+            <p class="mt-2 text-gold italic">💡 Đọc to kịch bản lên, chỗ nào vấp thì sửa lại cho xuôi.</p>
+          </div>
+        </div>
+
+        <!-- Ngày 07 -->
+        <div class="bg-cream border border-gold/20 rounded-2xl p-5 card-hover md:col-span-2 xl:col-span-1">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-full bg-gold text-white font-heading font-bold flex items-center justify-center text-lg shrink-0">07</span>
+            <div>
+              <p class="font-heading text-base text-charcoal">Kịch Bản Tài Chính</p>
+              <p class="text-xs text-gold">🔧 Gemini</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-3">
+            <span class="font-semibold text-amber-700">Sáng:</span> Viết kịch bản "Rủi ro chơi họ".<br/>
+            <span class="font-semibold text-indigo-700">Chiều:</span> Căn thời gian đọc dưới 60 giây.
+          </p>
+          <div class="bg-white rounded-xl p-3 text-xs text-gray-500 border border-gold/10">
+            <p class="font-semibold text-charcoal mb-1">🎯 Mục tiêu:</p>
+            <p>01 Kịch bản cảnh báo</p>
+            <p class="mt-2 text-gold italic">💡 Đánh mạnh vào tâm lý "giữ tiền" của phụ nữ.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===== GIAI ĐOẠN 2 ===== -->
+    <div class="mb-10">
+      <div class="inline-flex items-center gap-3 bg-gradient-to-r from-gold-dark to-gold text-white px-6 py-2 rounded-full mb-6">
+        <span class="font-bold">Giai Đoạn 2</span>
+        <span class="text-white/80 text-sm">Ngày 8–14 · Sản Xuất Nội Dung Đa Phương Tiện</span>
+      </div>
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
+
+        <!-- Ngày 08 -->
+        <div class="bg-gold/5 border border-gold/30 rounded-2xl p-5 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-full bg-gold-dark text-white font-heading font-bold flex items-center justify-center text-lg shrink-0">08</span>
+            <div>
+              <p class="font-heading text-base text-charcoal">Vẽ Ảnh Bằng AI</p>
+              <p class="text-xs text-gold">🔧 Canva / Leonardo</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-3">
+            <span class="font-semibold text-amber-700">Sáng:</span> Học cách mô tả ảnh cho AI.<br/>
+            <span class="font-semibold text-indigo-700">Chiều:</span> Tạo ảnh đại diện / ảnh bìa kênh.
+          </p>
+          <div class="bg-white rounded-xl p-3 text-xs text-gray-500 border border-gold/10">
+            <p class="font-semibold text-charcoal mb-1">🎯 Mục tiêu:</p>
+            <p>Ảnh đại diện đẹp & chuyên nghiệp</p>
+            <p class="mt-2 text-gold italic">💡 Dùng ảnh thật làm mẫu để AI vẽ hoạt hình hóa.</p>
+          </div>
+        </div>
+
+        <!-- Ngày 09 -->
+        <div class="bg-gold/5 border border-gold/30 rounded-2xl p-5 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-full bg-gold-dark text-white font-heading font-bold flex items-center justify-center text-lg shrink-0">09</span>
+            <div>
+              <p class="font-heading text-base text-charcoal">Ảnh Minh Họa</p>
+              <p class="text-xs text-gold">🔧 Canva</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-3">
+            <span class="font-semibold text-amber-700">Sáng:</span> Tạo 5 tấm ảnh cho kịch bản.<br/>
+            <span class="font-semibold text-indigo-700">Chiều:</span> Thiết kế chữ đè lên ảnh.
+          </p>
+          <div class="bg-white rounded-xl p-3 text-xs text-gray-500 border border-gold/10">
+            <p class="font-semibold text-charcoal mb-1">🎯 Mục tiêu:</p>
+            <p>Bộ sưu tập ảnh minh họa</p>
+            <p class="mt-2 text-gold italic">💡 Chữ trên ảnh phải to, rõ, dễ đọc cho người lớn tuổi.</p>
+          </div>
+        </div>
+
+        <!-- Ngày 10 -->
+        <div class="bg-gold/5 border border-gold/30 rounded-2xl p-5 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-full bg-gold-dark text-white font-heading font-bold flex items-center justify-center text-lg shrink-0">10</span>
+            <div>
+              <p class="font-heading text-base text-charcoal">Lồng Tiếng AI</p>
+              <p class="text-xs text-gold">🔧 Vbee / CapCut</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-3">
+            <span class="font-semibold text-amber-700">Sáng:</span> Chuyển văn bản thành giọng nói.<br/>
+            <span class="font-semibold text-indigo-700">Chiều:</span> Chọn giọng đọc truyền cảm nhất.
+          </p>
+          <div class="bg-white rounded-xl p-3 text-xs text-gray-500 border border-gold/10">
+            <p class="font-semibold text-charcoal mb-1">🎯 Mục tiêu:</p>
+            <p>File âm thanh hoàn chỉnh</p>
+            <p class="mt-2 text-gold italic">💡 Chọn giọng Bắc hoặc Nam tùy theo khán giả.</p>
+          </div>
+        </div>
+
+        <!-- Ngày 11 -->
+        <div class="bg-gold/5 border border-gold/30 rounded-2xl p-5 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-full bg-gold-dark text-white font-heading font-bold flex items-center justify-center text-lg shrink-0">11</span>
+            <div>
+              <p class="font-heading text-base text-charcoal">Podcast Đơn Giản</p>
+              <p class="text-xs text-gold">🔧 YouTube Studio</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-3">
+            <span class="font-semibold text-amber-700">Sáng:</span> Kết hợp ảnh + giọng AI.<br/>
+            <span class="font-semibold text-indigo-700">Chiều:</span> Đăng lên tính năng Podcast YouTube.
+          </p>
+          <div class="bg-white rounded-xl p-3 text-xs text-gray-500 border border-gold/10">
+            <p class="font-semibold text-charcoal mb-1">🎯 Mục tiêu:</p>
+            <p>01 Bản Podcast đầu tiên</p>
+            <p class="mt-2 text-gold italic">💡 Podcast không cần hình đẹp, chỉ cần chuyện hay.</p>
+          </div>
+        </div>
+
+        <!-- Ngày 12 -->
+        <div class="bg-gold/5 border border-gold/30 rounded-2xl p-5 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-full bg-gold-dark text-white font-heading font-bold flex items-center justify-center text-lg shrink-0">12</span>
+            <div>
+              <p class="font-heading text-base text-charcoal">Cắt Ghép Video</p>
+              <p class="text-xs text-gold">🔧 CapCut (Điện thoại)</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-3">
+            <span class="font-semibold text-amber-700">Sáng:</span> Học chèn video/ảnh vào CapCut.<br/>
+            <span class="font-semibold text-indigo-700">Chiều:</span> Thực hành cắt bỏ đoạn thừa.
+          </p>
+          <div class="bg-white rounded-xl p-3 text-xs text-gray-500 border border-gold/10">
+            <p class="font-semibold text-charcoal mb-1">🎯 Mục tiêu:</p>
+            <p>Biết cắt ghép cơ bản</p>
+            <p class="mt-2 text-gold italic">💡 Chỉ học 3 nút: Cắt, Thêm ảnh, Thêm nhạc.</p>
+          </div>
+        </div>
+
+        <!-- Ngày 13 -->
+        <div class="bg-gold/5 border border-gold/30 rounded-2xl p-5 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-full bg-gold-dark text-white font-heading font-bold flex items-center justify-center text-lg shrink-0">13</span>
+            <div>
+              <p class="font-heading text-base text-charcoal">Hiệu Ứng & Chữ</p>
+              <p class="text-xs text-gold">🔧 CapCut</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-3">
+            <span class="font-semibold text-amber-700">Sáng:</span> Dùng "Phụ đề tự động".<br/>
+            <span class="font-semibold text-indigo-700">Chiều:</span> Chèn nhạc nền nhẹ nhàng.
+          </p>
+          <div class="bg-white rounded-xl p-3 text-xs text-gray-500 border border-gold/10">
+            <p class="font-semibold text-charcoal mb-1">🎯 Mục tiêu:</p>
+            <p>Video có chữ chạy tự động</p>
+            <p class="mt-2 text-gold italic">💡 Nhạc nền đừng quá to làm át tiếng nói.</p>
+          </div>
+        </div>
+
+        <!-- Ngày 14 -->
+        <div class="bg-gradient-to-br from-gold/20 to-gold/5 border-2 border-gold rounded-2xl p-5 card-hover md:col-span-2 xl:col-span-3">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-12 h-12 rounded-full bg-gold text-white font-heading font-bold flex items-center justify-center text-xl shrink-0">14</span>
+            <div>
+              <p class="font-heading text-xl text-charcoal">🎉 Lễ Ra Mắt — Đăng Video Đầu Tiên!</p>
+              <p class="text-xs text-gold">🔧 TikTok, Facebook Reels</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-3">
+            <span class="font-semibold text-amber-700">Sáng:</span> Kiểm tra lại video lần cuối. &nbsp;
+            <span class="font-semibold text-indigo-700">Chiều:</span> Đăng video lên TikTok / Reels.
+          </p>
+          <div class="bg-white rounded-xl p-3 text-xs text-gray-700 border border-gold/20">
+            <p class="font-semibold text-charcoal mb-1">🎯 Mục tiêu: Đã đăng video đầu tiên lên mạng!</p>
+            <p class="text-gold italic">💡 Đừng xem số lượt xem ngay — hãy đi ngủ một giấc. Bạn đã làm được điều phi thường!</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ===== GIAI ĐOẠN 3 ===== -->
+    <div>
+      <div class="inline-flex items-center gap-3 bg-charcoal text-white px-6 py-2 rounded-full mb-6">
+        <span class="text-gold font-bold">Giai Đoạn 3</span>
+        <span class="text-gray-300 text-sm">Ngày 15–21 · Monetize — Tạo Ra Thu Nhập</span>
+      </div>
+      <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-4">
+
+        <!-- Ngày 15 -->
+        <div class="bg-cream border border-gold/20 rounded-2xl p-5 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-full bg-charcoal text-gold font-heading font-bold flex items-center justify-center text-lg shrink-0">15</span>
+            <div>
+              <p class="font-heading text-base text-charcoal">Nghề Tay Trái</p>
+              <p class="text-xs text-gold">🔧 Shopee / TikTok Shop</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-3">
+            <span class="font-semibold text-amber-700">Sáng:</span> Đăng ký Affiliate.<br/>
+            <span class="font-semibold text-indigo-700">Chiều:</span> Tìm 3 sản phẩm (sách/phụ kiện) tốt.
+          </p>
+          <div class="bg-white rounded-xl p-3 text-xs text-gray-500 border border-gold/10">
+            <p class="font-semibold text-charcoal mb-1">🎯 Mục tiêu:</p>
+            <p>Có tài khoản Affiliate</p>
+            <p class="mt-2 text-gold italic">💡 Chọn món đồ chị đã dùng và thấy thực sự bền.</p>
+          </div>
+        </div>
+
+        <!-- Ngày 16 -->
+        <div class="bg-cream border border-gold/20 rounded-2xl p-5 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-full bg-charcoal text-gold font-heading font-bold flex items-center justify-center text-lg shrink-0">16</span>
+            <div>
+              <p class="font-heading text-base text-charcoal">Lựa Chọn Sản Phẩm</p>
+              <p class="text-xs text-gold">🔧 ChatGPT</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-3">
+            <span class="font-semibold text-amber-700">Sáng:</span> Nhờ AI phân tích sản phẩm.<br/>
+            <span class="font-semibold text-indigo-700">Chiều:</span> Lưu link sản phẩm vào sổ tay.
+          </p>
+          <div class="bg-white rounded-xl p-3 text-xs text-gray-500 border border-gold/10">
+            <p class="font-semibold text-charcoal mb-1">🎯 Mục tiêu:</p>
+            <p>Danh sách sản phẩm chiến lược</p>
+            <p class="mt-2 text-gold italic">💡 Ghi chú lý do chị tin dùng sản phẩm đó.</p>
+          </div>
+        </div>
+
+        <!-- Ngày 17 -->
+        <div class="bg-cream border border-gold/20 rounded-2xl p-5 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-full bg-charcoal text-gold font-heading font-bold flex items-center justify-center text-lg shrink-0">17</span>
+            <div>
+              <p class="font-heading text-base text-charcoal">Kịch Bản Bán Hàng</p>
+              <p class="text-xs text-gold">🔧 ChatGPT + CapCut</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-3">
+            <span class="font-semibold text-amber-700">Sáng:</span> Viết kịch bản gắn sản phẩm.<br/>
+            <span class="font-semibold text-indigo-700">Chiều:</span> Quay hoặc làm video từ ảnh.
+          </p>
+          <div class="bg-white rounded-xl p-3 text-xs text-gray-500 border border-gold/10">
+            <p class="font-semibold text-charcoal mb-1">🎯 Mục tiêu:</p>
+            <p>01 Video bán hàng khéo léo</p>
+            <p class="mt-2 text-gold italic">💡 "Bán mà như không bán" bằng cách chia sẻ thật.</p>
+          </div>
+        </div>
+
+        <!-- Ngày 18 -->
+        <div class="bg-cream border border-gold/20 rounded-2xl p-5 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-full bg-charcoal text-gold font-heading font-bold flex items-center justify-center text-lg shrink-0">18</span>
+            <div>
+              <p class="font-heading text-base text-charcoal">Kỹ Thuật Giật Tít</p>
+              <p class="text-xs text-gold">🔧 Gemini</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-3">
+            <span class="font-semibold text-amber-700">Sáng:</span> Tạo 10 tiêu đề gây tò mò.<br/>
+            <span class="font-semibold text-indigo-700">Chiều:</span> Thay tiêu đề cho các video cũ.
+          </p>
+          <div class="bg-white rounded-xl p-3 text-xs text-gray-500 border border-gold/10">
+            <p class="font-semibold text-charcoal mb-1">🎯 Mục tiêu:</p>
+            <p>Biết cách làm tiêu đề "cuốn"</p>
+            <p class="mt-2 text-gold italic">💡 Bắt đầu bằng: "Bí mật...", "Cảnh báo...".</p>
+          </div>
+        </div>
+
+        <!-- Ngày 19 -->
+        <div class="bg-cream border border-gold/20 rounded-2xl p-5 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-full bg-charcoal text-gold font-heading font-bold flex items-center justify-center text-lg shrink-0">19</span>
+            <div>
+              <p class="font-heading text-base text-charcoal">Lập Lịch Đăng Bài</p>
+              <p class="text-xs text-gold">🔧 TikTok / Facebook</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-3">
+            <span class="font-semibold text-amber-700">Sáng:</span> Tìm khung giờ vàng đăng bài.<br/>
+            <span class="font-semibold text-indigo-700">Chiều:</span> Chuẩn bị 3 video để đăng dần.
+          </p>
+          <div class="bg-white rounded-xl p-3 text-xs text-gray-500 border border-gold/10">
+            <p class="font-semibold text-charcoal mb-1">🎯 Mục tiêu:</p>
+            <p>Kế hoạch đăng bài 1 tuần</p>
+            <p class="mt-2 text-gold italic">💡 Đăng đều đặn quan trọng hơn đăng nhiều.</p>
+          </div>
+        </div>
+
+        <!-- Ngày 20 -->
+        <div class="bg-cream border border-gold/20 rounded-2xl p-5 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-full bg-charcoal text-gold font-heading font-bold flex items-center justify-center text-lg shrink-0">20</span>
+            <div>
+              <p class="font-heading text-base text-charcoal">Phân Tích Đối Thủ</p>
+              <p class="text-xs text-gold">🔧 ChatGPT</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-600 leading-relaxed mb-3">
+            <span class="font-semibold text-amber-700">Sáng:</span> Xem video người khác làm tốt.<br/>
+            <span class="font-semibold text-indigo-700">Chiều:</span> Hỏi AI cách cải thiện nội dung.
+          </p>
+          <div class="bg-white rounded-xl p-3 text-xs text-gray-500 border border-gold/10">
+            <p class="font-semibold text-charcoal mb-1">🎯 Mục tiêu:</p>
+            <p>Biết mình cần sửa chỗ nào</p>
+            <p class="mt-2 text-gold italic">💡 Đừng bắt chước, hãy giữ cái "chất" riêng của chị.</p>
+          </div>
+        </div>
+
+        <!-- Ngày 21 -->
+        <div class="bg-gradient-to-br from-charcoal to-gray-800 border-2 border-gold rounded-2xl p-5 card-hover md:col-span-2 xl:col-span-3">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-12 h-12 rounded-full bg-gold text-charcoal font-heading font-bold flex items-center justify-center text-xl shrink-0">21</span>
+            <div>
+              <p class="font-heading text-xl text-gold">🏆 Tổng Kết & Tự Thưởng!</p>
+              <p class="text-xs text-gray-400">🔧 Công cụ: Google Sheets / Sổ tay</p>
+            </div>
+          </div>
+          <p class="text-sm text-gray-300 leading-relaxed mb-3">
+            <span class="font-semibold text-amber-400">Sáng:</span> Viết ra quy trình 3h/ngày đã hình thành. &nbsp;
+            <span class="font-semibold text-indigo-300">Chiều:</span> Tự thưởng và lên kế hoạch tháng mới.
+          </p>
+          <div class="bg-white/10 rounded-xl p-3 text-xs text-gray-300 border border-gold/30">
+            <p class="font-semibold text-gold mb-1">🎯 Mục tiêu: Thành thạo quy trình AI Marketing</p>
+            <p class="text-gold-light italic">💡 Hãy mua một món quà nhỏ tặng bản thân chị nhé! Bạn đã hoàn thành 21 ngày thực chiến!</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Ghi chú theo dõi -->
+    <div class="mt-12 bg-gold/10 border border-gold/30 rounded-2xl p-6 md:p-8">
+      <p class="font-heading text-xl text-charcoal mb-4">📊 Theo Dõi Tiến Trình Của Bạn</p>
+      <div class="grid md:grid-cols-3 gap-4 text-sm text-gray-600">
+        <div class="flex items-start gap-3">
+          <span class="text-2xl">🔗</span>
+          <div><p class="font-semibold text-charcoal">Link Video</p><p>Dán link từng video đã đăng để theo dõi lịch sử</p></div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="text-2xl">👁️</span>
+          <div><p class="font-semibold text-charcoal">Số Lượt Xem / Tim</p><p>Ghi lại sau mỗi tuần để thấy mình đang tiến bộ</p></div>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="text-2xl">💬</span>
+          <div><p class="font-semibold text-charcoal">Cảm Xúc Hôm Nay</p><p>Vui hay nản? Nhìn lại để thấy mình đã kiên trì thế nào</p></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ============================================================
+     CONTACT / CTA - Kêu gọi hành động
+============================================================ -->
+<section id="contact" class="py-20 bg-cream">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <p class="text-gold font-semibold uppercase tracking-widest text-sm mb-3">Sẵn Sàng Chưa?</p>
+    <h2 class="text-4xl md:text-5xl font-heading text-charcoal mb-6">Bắt Đầu Hành Trình<br/><span class="text-gold">21 Ngày Của Bạn</span></h2>
+    <p class="text-gray-600 text-lg mb-10 max-w-xl mx-auto leading-relaxed">
+      Đăng ký nhận bản đồ lộ trình miễn phí + video hướng dẫn ngày đầu tiên. Không cần kinh nghiệm, không cần biết gì về AI.
+    </p>
+
+    <!-- Form đăng ký đơn giản -->
+    <form class="bg-white rounded-3xl shadow-xl p-8 md:p-10 max-w-lg mx-auto border border-gold/20">
+      <div class="space-y-4 text-left">
+        <div>
+          <label class="block text-sm font-semibold text-charcoal mb-2">Họ và tên *</label>
+          <input type="text" placeholder="Ví dụ: Nguyễn Thị Hoa" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none text-base transition-all" />
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-charcoal mb-2">Số điện thoại *</label>
+          <input type="tel" placeholder="0912 345 678" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none text-base transition-all" />
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-charcoal mb-2">Email</label>
+          <input type="email" placeholder="email@gmail.com" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none text-base transition-all" />
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-charcoal mb-2">Bạn đang kinh doanh gì?</label>
+          <select class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-gold focus:ring-2 focus:ring-gold/20 outline-none text-base text-gray-600 transition-all">
+            <option value="">-- Chọn lĩnh vực --</option>
+            <option>Bán lẻ / Tạp hoá</option>
+            <option>Thời trang / Mỹ phẩm</option>
+            <option>Thực phẩm / F&B</option>
+            <option>Dịch vụ gia đình</option>
+            <option>Chưa có, muốn bắt đầu</option>
+            <option>Khác</option>
+          </select>
+        </div>
+      </div>
+      <button type="submit" class="btn-gold w-full mt-6 py-4 rounded-2xl text-lg shadow-lg">
+        🎁 Nhận Lộ Trình Miễn Phí Ngay
+      </button>
+      <p class="text-xs text-gray-400 mt-4 text-center">🔒 Thông tin của bạn được bảo mật tuyệt đối. Không spam.</p>
+    </form>
+
+    <!-- Liên hệ trực tiếp -->
+    <div class="mt-12 flex flex-wrap justify-center gap-4">
+      <a href="https://www.facebook.com" target="_blank" rel="noopener" class="flex items-center gap-2 bg-blue-600 text-white px-6 py-3 rounded-full font-semibold hover:opacity-85 transition-opacity">
+        <span>📘</span> Facebook
+      </a>
+      <a href="https://www.tiktok.com" target="_blank" rel="noopener" class="flex items-center gap-2 bg-charcoal text-white px-6 py-3 rounded-full font-semibold hover:opacity-85 transition-opacity">
+        <span>🎵</span> TikTok
+      </a>
+      <a href="https://www.youtube.com" target="_blank" rel="noopener" class="flex items-center gap-2 bg-red-600 text-white px-6 py-3 rounded-full font-semibold hover:opacity-85 transition-opacity">
+        <span>▶️</span> YouTube
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER - Chân trang
+============================================================ -->
+<footer class="bg-charcoal text-gray-400 py-12">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-3 gap-10 mb-10">
+      <!-- Thương hiệu -->
+      <div>
+        <div class="flex items-center gap-3 mb-4">
+          <span class="text-gold text-2xl">✦</span>
+          <span class="font-heading text-white text-xl">Phụ Nữ 8x Làm Chủ AI</span>
+        </div>
+        <p class="text-sm leading-relaxed">
+          Hành trình từ kinh doanh truyền thống đến tự do tài chính nhờ trí tuệ nhân tạo — dành riêng cho thế hệ 8x, 9x đời đầu.
+        </p>
+      </div>
+      <!-- Liên kết nhanh -->
+      <div>
+        <h4 class="text-white font-semibold mb-4">Khám Phá</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#about" class="hover:text-gold transition-colors">Câu Chuyện Của Tôi</a></li>
+          <li><a href="#journey" class="hover:text-gold transition-colors">Lộ Trình 21 Ngày</a></li>
+          <li><a href="#services" class="hover:text-gold transition-colors">Chương Trình</a></li>
+          <li><a href="#contact" class="hover:text-gold transition-colors">Đăng Ký Miễn Phí</a></li>
+        </ul>
+      </div>
+      <!-- Liên hệ -->
+      <div>
+        <h4 class="text-white font-semibold mb-4">Kết Nối</h4>
+        <ul class="space-y-2 text-sm">
+          <li>📘 <a href="#" class="hover:text-gold transition-colors">Facebook: /PhuNu8xLamChuAI</a></li>
+          <li>🎵 <a href="#" class="hover:text-gold transition-colors">TikTok: @phunu8x.ai</a></li>
+          <li>▶️ <a href="#" class="hover:text-gold transition-colors">YouTube: Phụ Nữ 8x AI</a></li>
+          <li>📧 <a href="mailto:hello@phunu8x.com" class="hover:text-gold transition-colors">hello@phunu8x.com</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-white/10 pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-gray-500">
+      <p>© 2025 Phụ Nữ 8x Làm Chủ AI. Tất cả quyền được bảo lưu.</p>
+      <p>Được xây dựng với ❤️ dành cho thế hệ phụ nữ dám thay đổi.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Nút cuộn lên đầu trang -->
+<button onclick="window.scrollTo({top:0,behavior:'smooth'})"
+  class="fixed bottom-6 right-6 w-12 h-12 bg-gold text-white rounded-full shadow-lg flex items-center justify-center text-xl hover:bg-gold-dark transition-colors z-40"
+  title="Lên đầu trang">↑</button>
+
+<!-- ============================================================
+     GÓC NHỎ CỔ VŨ - SOCIAL NOTIFICATION
+============================================================ -->
+<div id="cheer-box"></div>
+
+<script>
+  (function() {
+    const quotes = [
+      "Chị ơi, hôm nay chị đã tiến bộ hơn hôm qua 1% rồi đó. Cứ thong thả mà đi, chị nhé!",
+      "AI chỉ là bàn tay thôi, chính kinh nghiệm 20 năm của chị mới là 'linh hồn' của nội dung này.",
+      "Mỗi lần bấm nút là một lần chị chiến thắng nỗi sợ công nghệ. Chị giỏi lắm!",
+      "Đừng lo video chưa đẹp, một video dở còn tốt hơn vạn lần một video chưa bao giờ được đăng.",
+      "Kinh nghiệm từ những lần chơi họ, bán điện thoại của chị là mỏ vàng mà giới trẻ không có đâu.",
+      "Chị 1983 nhưng tinh thần luôn trẻ trung. Internet đang chờ nghe câu chuyện của chị.",
+      "Mệt thì mình nghỉ một chút, rồi lại cùng 'đứa em' AI tiếp tục hành trình chị nha.",
+      "Hãy tưởng tượng ngày chị nhận được hoa hồng đầu tiên, mọi nỗ lực hôm nay đều xứng đáng!",
+      "Không phải ai ở tuổi chị cũng dám bắt đầu cái mới. Chị thực sự là một phụ nữ bản lĩnh!",
+      "Ngày hôm nay của chị thật tuyệt vời vì chị đã chọn không bỏ cuộc. Chúc chị ngủ ngon và mơ về triệu view!"
+    ];
+
+    const cheerBox = document.getElementById('cheer-box');
+    
+    function showNotification() {
+      const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+      cheerBox.innerText = randomQuote;
+      cheerBox.classList.add('show');
+      
+      // Tự động ẩn sau 10 giây
+      setTimeout(() => {
+        cheerBox.classList.remove('show');
+      }, 10000);
+    }
+
+    // Chạy lần đầu sau 5 giây khi mở trang
+    setTimeout(showNotification, 5000);
+
+    // Lặp lại mỗi 20 giây
+    setInterval(showNotification, 20000);
+  })();
+</script>
+
+</body>
+</html>
