@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Estate Mastery · Bình Chánh 2026-2030</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { 1:'#46707D', 2:'#7099A5', 3:'#2F93A9', 4:'#3E69A3', 5:'#1371A3' },
+                        blue: {
+                            50:'#f0f5f7', 100:'#dce5e8', 200:'#7099A5', 300:'#7099A5',
+                            400:'#46707D', 500:'#2F93A9', 600:'#3E69A3', 700:'#1371A3',
+                            800:'#105e8a', 900:'#0c4667'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap');
+        body { font-family:'Inter',sans-serif; scroll-behavior:smooth; }
+
+        .bg-hero {
+            background: linear-gradient(135deg, rgba(11,22,42,0.96) 0%, rgba(19,113,163,0.85) 100%),
+                        url('https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&q=80');
+            background-size:cover; background-position:center;
+        }
+        .gradient-text {
+            background: linear-gradient(135deg,#2F93A9,#1371A3);
+            -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+        }
+        .card-hover { transition:transform .25s ease, box-shadow .25s ease; }
+        .card-hover:hover { transform:translateY(-4px); box-shadow:0 20px 40px rgba(19,113,163,.15); }
+        .bar-fill { transition:width 1.4s cubic-bezier(.4,0,.2,1); }
+        .pulse-dot { animation:pulse 2s infinite; }
+        @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+        .section-tag {
+            display:inline-block; font-size:.7rem; font-weight:700; letter-spacing:.12em;
+            text-transform:uppercase; padding:.25rem .9rem; border-radius:9999px;
+            background:rgba(47,147,169,.12); color:#2F93A9; border:1px solid rgba(47,147,169,.3);
+            margin-bottom:1rem;
+        }
+        .timeline-line::before {
+            content:''; position:absolute; top:50%; left:0; width:100%; height:2px;
+            background:linear-gradient(90deg,#3E69A3,#2F93A9); z-index:0;
+        }
+        table { width:100%; border-collapse:collapse; }
+        th { background:#1e293b; color:#94a3b8; font-size:.7rem; letter-spacing:.08em; text-transform:uppercase; padding:.6rem 1rem; text-align:left; }
+        td { padding:.65rem 1rem; border-bottom:1px solid #1e293b; font-size:.85rem; }
+        tr:hover td { background:rgba(47,147,169,.05); }
+        .badge-high   { background:#052e16; color:#86efac; border:1px solid #166534; }
+        .badge-mid    { background:#422006; color:#fed7aa; border:1px solid #9a3412; }
+        .badge-low    { background:#1c1917; color:#a8a29e; border:1px solid #44403c; }
+        .badge-watch  { background:#3b0764; color:#d8b4fe; border:1px solid #7e22ce; }
+        .kpi-card { background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); backdrop-filter:blur(8px); }
+        .scenario-bull  { border-left:4px solid #22c55e; }
+        .scenario-base  { border-left:4px solid #f59e0b; }
+        .scenario-bear  { border-left:4px solid #ef4444; }
+        .checklist-item { display:flex; align-items:flex-start; gap:.75rem; padding:.85rem 1rem;
+            border-radius:.75rem; background:#0f172a; border:1px solid #1e293b; margin-bottom:.5rem; }
+        .sticky-nav { position:sticky; top:0; z-index:50; background:rgba(255,255,255,.9);
+            backdrop-filter:blur(12px); border-bottom:1px solid #e2e8f0; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100">
+
+<!-- ===================== NAV ===================== -->
+<nav class="sticky-nav">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16 items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-8 h-8 rounded-lg bg-blue-600 flex items-center justify-center">
+                    <i class="fas fa-building text-white text-xs"></i>
+                </div>
+                <span class="text-sm font-bold text-slate-800 hidden sm:block">PHẠM MỸ MINH THẢO</span>
+                <span class="text-slate-300 text-xs hidden sm:block">· Real Estate Mastery</span>
+            </div>
+            <nav class="hidden md:flex gap-6 text-sm font-medium text-slate-600">
+                <a href="#thesis" class="hover:text-blue-600 transition">Luận điểm</a>
+                <a href="#market" class="hover:text-blue-600 transition">Thị trường</a>
+                <a href="#micromarket" class="hover:text-blue-600 transition">Khu vực</a>
+                <a href="#infra" class="hover:text-blue-600 transition">Hạ tầng</a>
+                <a href="#portfolio" class="hover:text-blue-600 transition">Danh mục</a>
+                <a href="#finance" class="hover:text-blue-600 transition">Tài chính</a>
+                <a href="#risk" class="hover:text-blue-600 transition">Rủi ro</a>
+            </nav>
+            <div class="flex items-center gap-3">
+                <span class="hidden sm:flex items-center gap-1.5 text-xs text-emerald-600 font-semibold">
+                    <span class="pulse-dot w-2 h-2 rounded-full bg-emerald-500 inline-block"></span>
+                    LIVE · 3/2026
+                </span>
+                <a href="#cta" class="bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-900/30">
+                    Nhận Báo cáo
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- ===================== HERO ===================== -->
+<header class="bg-hero py-28 px-4 text-center text-white relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent to-slate-950/60 pointer-events-none"></div>
+    <div class="max-w-5xl mx-auto relative z-10">
+        <span class="inline-flex items-center gap-2 bg-blue-600/20 text-blue-300 px-5 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase mb-8 border border-blue-500/30">
+            <i class="fas fa-star text-yellow-400"></i>
+            Dành cho Nhà đầu tư High-Net-Worth · Bình Chánh, TP.HCM
+        </span>
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
+            Chiến Lược Real Estate Mastery<br>
+            <span class="gradient-text">Bình Chánh 2026–2030</span>
+        </h1>
+        <p class="text-lg md:text-xl text-slate-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+            Chinh phục 30% CAGR thông qua thâu tóm quỹ đất "vùng trũng" giá trước thềm Bình Chánh lên Thành phố —
+            cơ hội tương tự <strong class="text-white">Thủ Đức 15 năm về trước</strong>.
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-10">
+            <div class="kpi-card p-5 rounded-2xl text-center">
+                <div class="text-3xl font-extrabold text-blue-400 mb-1">100 Tỷ</div>
+                <div class="text-xs text-slate-400 uppercase tracking-widest">Quy mô danh mục</div>
+            </div>
+            <div class="kpi-card p-5 rounded-2xl text-center">
+                <div class="text-3xl font-extrabold text-cyan-400 mb-1">30%</div>
+                <div class="text-xs text-slate-400 uppercase tracking-widest">CAGR kỳ vọng</div>
+            </div>
+            <div class="kpi-card p-5 rounded-2xl text-center">
+                <div class="text-3xl font-extrabold text-emerald-400 mb-1">Q2/2026</div>
+                <div class="text-xs text-slate-400 uppercase tracking-widest">Thời điểm Entry</div>
+            </div>
+            <div class="kpi-card p-5 rounded-2xl text-center">
+                <div class="text-3xl font-extrabold text-yellow-400 mb-1">250%</div>
+                <div class="text-xs text-slate-400 uppercase tracking-widest">ROI 5 năm (Bull)</div>
+            </div>
+        </div>
+        <a href="#thesis" class="inline-flex items-center gap-2 text-blue-300 text-sm font-semibold hover:text-white transition">
+            Xem Luận điểm <i class="fas fa-arrow-down animate-bounce"></i>
+        </a>
+    </div>
+</header>
+
+<!-- ===================== THESIS ===================== -->
+<section id="thesis" class="py-24 max-w-7xl mx-auto px-4">
+    <div class="text-center mb-16">
+        <span class="section-tag">Luận điểm Đầu tư</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-white">3 Lý do Bình Chánh là<br><span class="gradient-text">"Thủ Đức Tiếp Theo"</span></h2>
+    </div>
+
+    <!-- Quote -->
+    <blockquote class="border-l-4 border-blue-500 pl-6 py-4 mb-14 bg-blue-900/10 rounded-r-xl max-w-3xl mx-auto">
+        <p class="text-slate-300 text-lg italic leading-relaxed">
+            "Bình Chánh đang ở <strong class="text-white">điểm trũng giá trị cuối cùng</strong> trước khi hạ tầng khung khớp nối vào Q2/2026.
+            Với mức giá 27,8 tr/m² — thấp hơn đỉnh 2025 khoảng 12,9% — đây là thời điểm vàng để thâu tóm quỹ đất thổ cư sạch."
+        </p>
+    </blockquote>
+
+    <!-- 3 Catalysts -->
+    <div class="grid md:grid-cols-3 gap-6 mb-16">
+        <div class="card-hover bg-slate-900 border border-slate-800 rounded-2xl p-7">
+            <div class="w-12 h-12 rounded-xl bg-blue-600/20 flex items-center justify-center mb-5">
+                <i class="fas fa-city text-blue-400 text-xl"></i>
+            </div>
+            <h3 class="font-bold text-white text-lg mb-3">Thặng dư Đô thị hóa</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+                Lộ trình nâng cấp lên Thành phố trực thuộc TP.HCM giai đoạn 2027-2030,
+                xác suất thành công <strong class="text-white">&gt;70%</strong> theo đánh giá độc lập.
+            </p>
+            <div class="mt-4 pt-4 border-t border-slate-800 flex justify-between items-center">
+                <span class="text-xs text-slate-500">Tác động giá</span>
+                <span class="text-emerald-400 font-bold text-sm">+30–45%</span>
+            </div>
+        </div>
+        <div class="card-hover bg-slate-900 border border-slate-800 rounded-2xl p-7">
+            <div class="w-12 h-12 rounded-xl bg-cyan-600/20 flex items-center justify-center mb-5">
+                <i class="fas fa-road text-cyan-400 text-xl"></i>
+            </div>
+            <h3 class="font-bold text-white text-lg mb-3">Cú hích Hạ tầng</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+                Vành đai 3 (76km), QL50 mở rộng 34m, Cao tốc Bến Lức–Long Thành và Ga Metro Tân Kiên —
+                <strong class="text-white">4 dự án</strong> đồng loạt hoàn thành 2026-2027.
+            </p>
+            <div class="mt-4 pt-4 border-t border-slate-800 flex justify-between items-center">
+                <span class="text-xs text-slate-500">Tác động giá</span>
+                <span class="text-emerald-400 font-bold text-sm">+20–30%</span>
+            </div>
+        </div>
+        <div class="card-hover bg-slate-900 border border-slate-800 rounded-2xl p-7">
+            <div class="w-12 h-12 rounded-xl bg-amber-600/20 flex items-center justify-center mb-5">
+                <i class="fas fa-chart-line text-amber-400 text-xl"></i>
+            </div>
+            <h3 class="font-bold text-white text-lg mb-3">Áp lực Tài chính = Cơ hội</h3>
+            <p class="text-slate-400 text-sm leading-relaxed">
+                Lãi suất vay BĐS chạm <strong class="text-white">14%/năm</strong> (3/2026) đang ép nhà đầu tư
+                "ngộp" xả hàng dưới giá. Đây là cửa sổ mua vào hiếm có trong chu kỳ.
+            </p>
+            <div class="mt-4 pt-4 border-t border-slate-800 flex justify-between items-center">
+                <span class="text-xs text-slate-500">Chiết khấu so với đỉnh 2025</span>
+                <span class="text-amber-400 font-bold text-sm">-12,9%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Price comparison bars -->
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8">
+        <h3 class="text-sm font-bold text-slate-400 uppercase tracking-widest text-center mb-8">So sánh giá đất Q1/2026 — Bình Chánh vs Các thị trường tham chiếu</h3>
+        <div class="space-y-5 max-w-2xl mx-auto">
+            <div>
+                <div class="flex justify-between mb-2 text-sm">
+                    <span class="text-slate-400">Đông Anh (Hà Nội)</span>
+                    <span class="text-slate-300 font-bold">260 tr/m²</span>
+                </div>
+                <div class="w-full bg-slate-800 rounded-full h-3">
+                    <div class="bar-fill bg-slate-500 h-3 rounded-full" style="width:100%"></div>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between mb-2 text-sm">
+                    <span class="text-slate-400">Bình Hưng / Trung Sơn</span>
+                    <span class="text-slate-300 font-bold">130–140 tr/m²</span>
+                </div>
+                <div class="w-full bg-slate-800 rounded-full h-3">
+                    <div class="bar-fill bg-slate-400 h-3 rounded-full" style="width:54%"></div>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between mb-2 text-sm">
+                    <span class="text-white font-semibold">Phong Phú 🎯</span>
+                    <span class="text-blue-400 font-bold">40–55 tr/m²</span>
+                </div>
+                <div class="w-full bg-slate-800 rounded-full h-3">
+                    <div class="bar-fill bg-blue-500 h-3 rounded-full" style="width:21%"></div>
+                </div>
+            </div>
+            <div>
+                <div class="flex justify-between mb-2 text-sm">
+                    <span class="text-white font-bold">Tân Kiên — Entry Point ⭐</span>
+                    <span class="text-cyan-400 font-bold">23–35 tr/m²</span>
+                </div>
+                <div class="w-full bg-slate-800 rounded-full h-4">
+                    <div class="bar-fill bg-gradient-to-r from-cyan-500 to-blue-500 h-4 rounded-full" style="width:13%"></div>
+                </div>
+                <p class="text-xs text-cyan-400 mt-1">Điểm mua tối ưu · Dư địa tăng giá x2.5–x3</p>
+            </div>
+            <div>
+                <div class="flex justify-between mb-2 text-sm">
+                    <span class="text-slate-500">Vĩnh Lộc B (rủi ro cao)</span>
+                    <span class="text-slate-500 font-bold">9 tr/m²</span>
+                </div>
+                <div class="w-full bg-slate-800 rounded-full h-3">
+                    <div class="bar-fill bg-slate-700 h-3 rounded-full" style="width:3.5%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== MARKET PULSE ===================== -->
+<section id="market" class="py-24 bg-slate-900/50">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-14">
+            <span class="section-tag">Market Intelligence</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-white">Chỉ số Thị trường <span class="gradient-text">Q1/2026</span></h2>
+            <p class="text-slate-400 mt-3">Dữ liệu thực từ Batdongsan · Mogi · QĐ 79/2024/QĐ-UBND</p>
+        </div>
+
+        <!-- 4 KPI Cards -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-12">
+            <div class="card-hover bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
+                <div class="text-2xl font-extrabold text-blue-400 mb-1">27,8 tr</div>
+                <div class="text-xs text-slate-500 mb-2">Giá trung bình/m²</div>
+                <div class="inline-flex items-center gap-1 text-xs font-semibold text-red-400 bg-red-400/10 px-2 py-0.5 rounded-full">
+                    <i class="fas fa-arrow-down text-[10px]"></i> -12,9% vs đỉnh 2025
+                </div>
+            </div>
+            <div class="card-hover bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
+                <div class="text-2xl font-extrabold text-emerald-400 mb-1">~585</div>
+                <div class="text-xs text-slate-500 mb-2">Tin giao dịch/tháng</div>
+                <div class="inline-flex items-center gap-1 text-xs font-semibold text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded-full">
+                    <i class="fas fa-arrow-up text-[10px]"></i> +11,6%/năm
+                </div>
+            </div>
+            <div class="card-hover bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
+                <div class="text-2xl font-extrabold text-cyan-400 mb-1">1,3M</div>
+                <div class="text-xs text-slate-500 mb-2">Dân số dự kiến 2030</div>
+                <div class="inline-flex items-center gap-1 text-xs font-semibold text-cyan-400 bg-cyan-400/10 px-2 py-0.5 rounded-full">
+                    <i class="fas fa-arrow-up text-[10px]"></i> Cầu thực bền vững
+                </div>
+            </div>
+            <div class="card-hover bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
+                <div class="text-2xl font-extrabold text-yellow-400 mb-1">3,5–4,5%</div>
+                <div class="text-xs text-slate-500 mb-2">Yield cho thuê/năm</div>
+                <div class="inline-flex items-center gap-1 text-xs font-semibold text-yellow-400 bg-yellow-400/10 px-2 py-0.5 rounded-full">
+                    <i class="fas fa-arrow-up text-[10px]"></i> Cao hơn HN 50%
+                </div>
+            </div>
+        </div>
+
+        <!-- Price table by street -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden mb-10">
+            <div class="px-6 py-4 border-b border-slate-800">
+                <h3 class="font-bold text-white">Bảng giá đất theo trục đường chính · Bình Chánh 2026</h3>
+                <p class="text-xs text-slate-500 mt-1">Nguồn: QĐ 79/2024/QĐ-UBND · Thực tế thị trường 3/2026</p>
+            </div>
+            <div class="overflow-x-auto">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tên đường / Khu vực</th>
+                            <th>Vị trí 1 · Mặt tiền</th>
+                            <th>Vị trí 2 · Hẻm &gt;5m</th>
+                            <th>Vị trí 3 · Hẻm 3-5m</th>
+                            <th>Đánh giá</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-slate-300">
+                        <tr>
+                            <td class="font-semibold text-white">QL50 (giáp Quận 8)</td>
+                            <td class="text-blue-400 font-bold">69,4 tr/m²</td>
+                            <td>34,7 tr/m²</td>
+                            <td>27,8 tr/m²</td>
+                            <td><span class="text-xs px-2 py-0.5 rounded-full badge-mid">Lõi thương mại</span></td>
+                        </tr>
+                        <tr>
+                            <td class="font-semibold text-white">Nguyễn Văn Linh (Bình Chánh)</td>
+                            <td class="text-blue-400 font-bold">54,4 tr/m²</td>
+                            <td>27,2 tr/m²</td>
+                            <td>21,8 tr/m²</td>
+                            <td><span class="text-xs px-2 py-0.5 rounded-full badge-high">Tăng trưởng cao</span></td>
+                        </tr>
+                        <tr>
+                            <td class="font-semibold text-white">Trần Văn Giàu (Lê Minh Xuân)</td>
+                            <td class="text-blue-400 font-bold">42,0 tr/m²</td>
+                            <td>21,0 tr/m²</td>
+                            <td>16,8 tr/m²</td>
+                            <td><span class="text-xs px-2 py-0.5 rounded-full badge-high">Tăng trưởng cao</span></td>
+                        </tr>
+                        <tr>
+                            <td class="font-semibold text-white">Hoàng Phan Thái (Xã Bình Chánh)</td>
+                            <td class="text-blue-400 font-bold">37,0 tr/m²</td>
+                            <td>18,5 tr/m²</td>
+                            <td>14,8 tr/m²</td>
+                            <td><span class="text-xs px-2 py-0.5 rounded-full badge-mid">Tiềm năng</span></td>
+                        </tr>
+                        <tr class="bg-cyan-900/10">
+                            <td class="font-bold text-cyan-300">QL50 (Cầu Ông Thìn – Long An) ⭐</td>
+                            <td class="text-cyan-400 font-extrabold">12,2 tr/m²</td>
+                            <td class="text-slate-500">—</td>
+                            <td class="text-slate-500">—</td>
+                            <td><span class="text-xs px-2 py-0.5 rounded-full badge-high">🎯 Vùng trũng · x2-x3</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- HN vs HCM comparison -->
+        <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+                <h3 class="font-bold text-white mb-5">So sánh: Bình Chánh vs Đông Anh (Hà Nội)</h3>
+                <div class="space-y-3 text-sm">
+                    <div class="flex justify-between items-center py-2 border-b border-slate-800">
+                        <span class="text-slate-400">Giá phổ biến</span>
+                        <div class="flex gap-4 text-right">
+                            <span class="text-blue-400 font-bold">25–55 tr</span>
+                            <span class="text-slate-500">50–260 tr</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-slate-800">
+                        <span class="text-slate-400">Entry thấp hơn HN</span>
+                        <span class="text-emerald-400 font-bold">50–70%</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-slate-800">
+                        <span class="text-slate-400">Tăng trưởng 1 năm</span>
+                        <div class="flex gap-4">
+                            <span class="text-blue-400 font-bold">+11,6%</span>
+                            <span class="text-slate-500">+15-20%</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-slate-800">
+                        <span class="text-slate-400">Yield cho thuê</span>
+                        <div class="flex gap-4">
+                            <span class="text-blue-400 font-bold">3,5–4,5%</span>
+                            <span class="text-slate-500">2–3%</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center py-2">
+                        <span class="text-slate-400">Quỹ đất còn lại</span>
+                        <div class="flex gap-4">
+                            <span class="text-emerald-400 font-bold">Dồi dào</span>
+                            <span class="text-red-400">Cạn kiệt nhanh</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+                <h3 class="font-bold text-white mb-5">Lộ trình tăng giá theo giai đoạn</h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between mb-1 text-sm">
+                            <span class="text-slate-400">2025–2026 · Hoàn thiện hạ tầng</span>
+                            <span class="text-blue-400 font-bold">+10–15%</span>
+                        </div>
+                        <div class="w-full bg-slate-800 rounded-full h-2">
+                            <div class="bar-fill bg-blue-500 h-2 rounded-full" style="width:30%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1 text-sm">
+                            <span class="text-slate-400">2027–2028 · Công bố Thành phố BC</span>
+                            <span class="text-cyan-400 font-bold">+30–45%</span>
+                        </div>
+                        <div class="w-full bg-slate-800 rounded-full h-2">
+                            <div class="bar-fill bg-cyan-500 h-2 rounded-full" style="width:65%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1 text-sm">
+                            <span class="text-slate-400">2029–2030 · Hoàn thiện tiện ích</span>
+                            <span class="text-emerald-400 font-bold">+15–20%</span>
+                        </div>
+                        <div class="w-full bg-slate-800 rounded-full h-2">
+                            <div class="bar-fill bg-emerald-500 h-2 rounded-full" style="width:40%"></div>
+                        </div>
+                    </div>
+                    <div class="pt-3 border-t border-slate-800">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-white font-semibold">Tổng thặng dư 4 năm</span>
+                            <span class="text-yellow-400 font-extrabold text-base">&gt;120% (Base case)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== MICRO-MARKET ===================== -->
+<section id="micromarket" class="py-24 max-w-7xl mx-auto px-4">
+    <div class="text-center mb-14">
+        <span class="section-tag">Phân tích Khu vực</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-white">Bản đồ Cơ hội <span class="gradient-text">6 Micro-Market</span></h2>
+        <p class="text-slate-400 mt-3">Phân tích chi tiết từng xã — giá, chiến lược, rủi ro, IRR</p>
+    </div>
+
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
+
+        <!-- Phong Phu -->
+        <div class="card-hover bg-slate-900 border border-emerald-800/50 rounded-2xl p-6">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <div class="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-1">🟢 Ưu tiên CAO · 40% vốn</div>
+                    <h3 class="text-white font-extrabold text-xl">Xã Phong Phú</h3>
+                </div>
+                <span class="badge-high text-xs px-3 py-1 rounded-full font-bold">Growth Play</span>
+            </div>
+            <div class="text-3xl font-extrabold text-emerald-400 mb-4">40–55 <span class="text-base font-normal text-slate-400">tr/m²</span></div>
+            <div class="space-y-2 text-sm mb-5">
+                <div class="flex gap-2"><i class="fas fa-rocket text-emerald-400 w-4 mt-0.5"></i><span class="text-slate-300">Vành đai 3 · QL50 · Trục Bình Tiên–Nguyễn Văn Linh</span></div>
+                <div class="flex gap-2"><i class="fas fa-bullseye text-blue-400 w-4 mt-0.5"></i><span class="text-slate-300">Exit 2030: <strong class="text-white">110–120 tr/m²</strong></span></div>
+                <div class="flex gap-2"><i class="fas fa-exclamation-triangle text-yellow-400 w-4 mt-0.5"></i><span class="text-slate-400">Tránh khu quy hoạch hỗn hợp; ưu tiên thổ cư thuần</span></div>
+            </div>
+            <div class="flex justify-between items-center pt-4 border-t border-slate-800">
+                <span class="text-xs text-slate-500">IRR kỳ vọng</span>
+                <span class="text-emerald-400 font-extrabold text-xl">28,5–32%</span>
+            </div>
+        </div>
+
+        <!-- Tan Kien -->
+        <div class="card-hover bg-slate-900 border border-cyan-800/50 rounded-2xl p-6">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <div class="text-xs font-bold text-cyan-400 uppercase tracking-widest mb-1">🟢 Ưu tiên CAO · 40% vốn</div>
+                    <h3 class="text-white font-extrabold text-xl">Xã Tân Kiên</h3>
+                </div>
+                <span class="badge-high text-xs px-3 py-1 rounded-full font-bold">Growth Play</span>
+            </div>
+            <div class="text-3xl font-extrabold text-cyan-400 mb-4">23–35 <span class="text-base font-normal text-slate-400">tr/m²</span></div>
+            <div class="space-y-2 text-sm mb-5">
+                <div class="flex gap-2"><i class="fas fa-train text-cyan-400 w-4 mt-0.5"></i><span class="text-slate-300">Vành đai 3 · Ga Metro Tân Kiên · Metro số 1 nối dài</span></div>
+                <div class="flex gap-2"><i class="fas fa-bullseye text-blue-400 w-4 mt-0.5"></i><span class="text-slate-300">Exit 2030: <strong class="text-white">85–100 tr/m²</strong></span></div>
+                <div class="flex gap-2"><i class="fas fa-expand text-yellow-400 w-4 mt-0.5"></i><span class="text-slate-400">Ưu tiên lô &gt;500m² · tiềm năng phân lô cao</span></div>
+            </div>
+            <div class="flex justify-between items-center pt-4 border-t border-slate-800">
+                <span class="text-xs text-slate-500">IRR kỳ vọng</span>
+                <span class="text-cyan-400 font-extrabold text-xl">28%</span>
+            </div>
+        </div>
+
+        <!-- QL50 Cau Ong Thin -->
+        <div class="card-hover bg-slate-900 border border-blue-800/50 rounded-2xl p-6">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <div class="text-xs font-bold text-blue-400 uppercase tracking-widest mb-1">⭐ Tài sản Mỏ neo</div>
+                    <h3 class="text-white font-extrabold text-lg">QL50 · Cầu Ông Thìn–Long An</h3>
+                </div>
+                <span class="badge-mid text-xs px-3 py-1 rounded-full font-bold">Đón đầu Infra</span>
+            </div>
+            <div class="text-3xl font-extrabold text-blue-400 mb-4">12,2 <span class="text-base font-normal text-slate-400">tr/m²</span></div>
+            <div class="space-y-2 text-sm mb-5">
+                <div class="flex gap-2"><i class="fas fa-road text-blue-400 w-4 mt-0.5"></i><span class="text-slate-300">QL50 mở rộng 34m · Cao tốc Bến Lức–Long Thành</span></div>
+                <div class="flex gap-2"><i class="fas fa-bullseye text-emerald-400 w-4 mt-0.5"></i><span class="text-slate-300">Tiềm năng: <strong class="text-white">x2–x3 khi hạ tầng khớp nối</strong></span></div>
+                <div class="flex gap-2"><i class="fas fa-ruler text-yellow-400 w-4 mt-0.5"></i><span class="text-slate-400">Kiểm soát hành lang an toàn lộ giới 34m</span></div>
+            </div>
+            <div class="flex justify-between items-center pt-4 border-t border-slate-800">
+                <span class="text-xs text-slate-500">Tiềm năng x-return</span>
+                <span class="text-blue-400 font-extrabold text-xl">x2–x3</span>
+            </div>
+        </div>
+
+        <!-- Tan Tuc -->
+        <div class="card-hover bg-slate-900 border border-amber-800/50 rounded-2xl p-6">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <div class="text-xs font-bold text-amber-400 uppercase tracking-widest mb-1">🟡 Trung bình · 30% vốn</div>
+                    <h3 class="text-white font-extrabold text-xl">Thị trấn Tân Túc</h3>
+                </div>
+                <span class="badge-mid text-xs px-3 py-1 rounded-full font-bold">Value Play</span>
+            </div>
+            <div class="text-3xl font-extrabold text-amber-400 mb-4">25–30 <span class="text-base font-normal text-slate-400">tr/m²</span></div>
+            <div class="space-y-2 text-sm mb-5">
+                <div class="flex gap-2"><i class="fas fa-landmark text-amber-400 w-4 mt-0.5"></i><span class="text-slate-300">Lõi hành chính huyện · Cơ quan nhà nước · Bệnh viện</span></div>
+                <div class="flex gap-2"><i class="fas fa-bullseye text-blue-400 w-4 mt-0.5"></i><span class="text-slate-300">Tăng bền vững theo lộ trình lên Thành phố</span></div>
+                <div class="flex gap-2"><i class="fas fa-map text-yellow-400 w-4 mt-0.5"></i><span class="text-slate-400">Chú ý quy hoạch đất công cộng và hành chính</span></div>
+            </div>
+            <div class="flex justify-between items-center pt-4 border-t border-slate-800">
+                <span class="text-xs text-slate-500">IRR kỳ vọng</span>
+                <span class="text-amber-400 font-extrabold text-xl">20,2%</span>
+            </div>
+        </div>
+
+        <!-- Binh Hung -->
+        <div class="card-hover bg-slate-900 border border-slate-700 rounded-2xl p-6">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <div class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">🔵 Thấp · 10% vốn</div>
+                    <h3 class="text-white font-extrabold text-lg">Bình Hưng / Khu Trung Sơn</h3>
+                </div>
+                <span class="badge-low text-xs px-3 py-1 rounded-full font-bold">Hold</span>
+            </div>
+            <div class="text-3xl font-extrabold text-slate-300 mb-4">130–140 <span class="text-base font-normal text-slate-400">tr/m²</span></div>
+            <div class="space-y-2 text-sm mb-5">
+                <div class="flex gap-2"><i class="fas fa-building text-slate-400 w-4 mt-0.5"></i><span class="text-slate-300">Giáp Quận 7–Quận 8 · Hạ tầng bão hòa</span></div>
+                <div class="flex gap-2"><i class="fas fa-coins text-yellow-400 w-4 mt-0.5"></i><span class="text-slate-300">Yield cho thuê <strong class="text-white">3,5–4,5%/năm</strong></span></div>
+                <div class="flex gap-2"><i class="fas fa-info-circle text-slate-500 w-4 mt-0.5"></i><span class="text-slate-500">Không còn phù hợp mục tiêu tăng giá đột biến</span></div>
+            </div>
+            <div class="flex justify-between items-center pt-4 border-t border-slate-800">
+                <span class="text-xs text-slate-500">IRR (dòng tiền)</span>
+                <span class="text-slate-300 font-extrabold text-xl">18%</span>
+            </div>
+        </div>
+
+        <!-- Vinh Loc B -->
+        <div class="card-hover bg-slate-900 border border-purple-800/50 rounded-2xl p-6">
+            <div class="flex justify-between items-start mb-4">
+                <div>
+                    <div class="text-xs font-bold text-purple-400 uppercase tracking-widest mb-1">🔴 Thận trọng</div>
+                    <h3 class="text-white font-extrabold text-xl">Xã Vĩnh Lộc B</h3>
+                </div>
+                <span class="badge-watch text-xs px-3 py-1 rounded-full font-bold">Quan sát</span>
+            </div>
+            <div class="text-3xl font-extrabold text-purple-400 mb-4">9 <span class="text-base font-normal text-slate-400">tr/m²</span></div>
+            <div class="space-y-2 text-sm mb-5">
+                <div class="flex gap-2"><i class="fas fa-warehouse text-purple-400 w-4 mt-0.5"></i><span class="text-slate-300">Vành đai 3 · Nhu cầu kho bãi cao</span></div>
+                <div class="flex gap-2"><i class="fas fa-times-circle text-red-400 w-4 mt-0.5"></i><span class="text-slate-300">Tỷ lệ đất hỗn hợp cao · khó cấp phép xây dựng</span></div>
+                <div class="flex gap-2"><i class="fas fa-search text-yellow-400 w-4 mt-0.5"></i><span class="text-slate-400">Chỉ đầu tư khi nắm rõ quy hoạch 1/2000</span></div>
+            </div>
+            <div class="flex justify-between items-center pt-4 border-t border-slate-800">
+                <span class="text-xs text-slate-500">IRR kỳ vọng</span>
+                <span class="text-purple-400 font-extrabold text-xl">11,5%</span>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ===================== INFRA TIMELINE ===================== -->
+<section id="infra" class="py-24 bg-slate-900/50">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-14">
+            <span class="section-tag">Hạ tầng Khung</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-white">Roadmap Hạ tầng <span class="gradient-text">2026–2028</span></h2>
+            <p class="text-slate-400 mt-3">4 sự kiện định giá · Nguồn: Sở GTVT TP.HCM · 3/2026</p>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-5 mb-12">
+            <div class="card-hover bg-slate-900 border-t-4 border-blue-500 rounded-2xl p-6">
+                <div class="text-xs font-bold text-blue-400 uppercase tracking-widest mb-3">Tháng 06/2026</div>
+                <div class="w-10 h-10 rounded-xl bg-blue-600/20 flex items-center justify-center mb-4">
+                    <i class="fas fa-circle-nodes text-blue-400"></i>
+                </div>
+                <h4 class="font-bold text-white text-lg mb-2">Vành Đai 3 Thông Xe</h4>
+                <p class="text-slate-400 text-sm mb-4">Toàn tuyến 76km thông xe cơ bản. Kết nối Bình Chánh với Bình Dương, Đồng Nai, Quận 1.</p>
+                <div class="pt-3 border-t border-slate-800">
+                    <div class="text-xs text-slate-500 mb-1">Tác động giá khu vực &lt;2km</div>
+                    <div class="text-emerald-400 font-bold">+20–30%</div>
+                </div>
+                <div class="mt-3">
+                    <div class="flex justify-between text-xs mb-1"><span class="text-slate-500">Tiến độ</span><span class="text-blue-400">~85%</span></div>
+                    <div class="w-full bg-slate-800 rounded-full h-1.5">
+                        <div class="bg-blue-500 h-1.5 rounded-full" style="width:85%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-hover bg-slate-900 border-t-4 border-amber-500 rounded-2xl p-6">
+                <div class="text-xs font-bold text-amber-400 uppercase tracking-widest mb-3">Q3/2026</div>
+                <div class="w-10 h-10 rounded-xl bg-amber-600/20 flex items-center justify-center mb-4">
+                    <i class="fas fa-plane text-amber-400"></i>
+                </div>
+                <h4 class="font-bold text-white text-lg mb-2">Cao tốc Bến Lức–Long Thành</h4>
+                <p class="text-slate-400 text-sm mb-4">Kết nối trực tiếp Bình Chánh với sân bay Long Thành. Biến Bình Chánh thành hub logistics Tây Nam.</p>
+                <div class="pt-3 border-t border-slate-800">
+                    <div class="text-xs text-slate-500 mb-1">Loại tác động</div>
+                    <div class="text-amber-400 font-bold">Hub Logistics</div>
+                </div>
+                <div class="mt-3">
+                    <div class="flex justify-between text-xs mb-1"><span class="text-slate-500">Tiến độ</span><span class="text-amber-400">~75%</span></div>
+                    <div class="w-full bg-slate-800 rounded-full h-1.5">
+                        <div class="bg-amber-500 h-1.5 rounded-full" style="width:75%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-hover bg-slate-900 border-t-4 border-emerald-500 rounded-2xl p-6">
+                <div class="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-3">Q4/2026</div>
+                <div class="w-10 h-10 rounded-xl bg-emerald-600/20 flex items-center justify-center mb-4">
+                    <i class="fas fa-road text-emerald-400"></i>
+                </div>
+                <h4 class="font-bold text-white text-lg mb-2">QL50 & Trục Bình Tiên</h4>
+                <p class="text-slate-400 text-sm mb-4">Mở rộng QL50 lên 34m. Khởi công trục Bình Tiên–Nguyễn Văn Linh (6.200 tỷ đồng) mở cửa ngõ Miền Tây.</p>
+                <div class="pt-3 border-t border-slate-800">
+                    <div class="text-xs text-slate-500 mb-1">Tác động giá</div>
+                    <div class="text-emerald-400 font-bold">x2–x3 dọc QL50</div>
+                </div>
+                <div class="mt-3">
+                    <div class="flex justify-between text-xs mb-1"><span class="text-slate-500">Tiến độ</span><span class="text-emerald-400">~60%</span></div>
+                    <div class="w-full bg-slate-800 rounded-full h-1.5">
+                        <div class="bg-emerald-500 h-1.5 rounded-full" style="width:60%"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card-hover bg-slate-900 border-t-4 border-purple-500 rounded-2xl p-6">
+                <div class="text-xs font-bold text-purple-400 uppercase tracking-widest mb-3">2027–2028</div>
+                <div class="w-10 h-10 rounded-xl bg-purple-600/20 flex items-center justify-center mb-4">
+                    <i class="fas fa-star text-purple-400"></i>
+                </div>
+                <h4 class="font-bold text-white text-lg mb-2">Thành Phố Bình Chánh</h4>
+                <p class="text-slate-400 text-sm mb-4">Xác lập danh xưng hành chính mới. FDI, bệnh viện quốc tế, đại siêu thị đổ vào. Mặt bằng giá mới được xác lập.</p>
+                <div class="pt-3 border-t border-slate-800">
+                    <div class="text-xs text-slate-500 mb-1">Tác động giá (Đột phá)</div>
+                    <div class="text-purple-400 font-bold">+30–45%</div>
+                </div>
+                <div class="mt-3">
+                    <div class="flex justify-between text-xs mb-1"><span class="text-slate-500">Xác suất</span><span class="text-purple-400">&gt;70%</span></div>
+                    <div class="w-full bg-slate-800 rounded-full h-1.5">
+                        <div class="bg-purple-500 h-1.5 rounded-full" style="width:70%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== PORTFOLIO BLUEPRINT ===================== -->
+<section id="portfolio" class="py-24 max-w-7xl mx-auto px-4">
+    <div class="text-center mb-14">
+        <span class="section-tag">Cơ cấu Danh mục</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-white">Bản thiết kế <span class="gradient-text">100 Tỷ VNĐ</span></h2>
+        <p class="text-slate-400 mt-3">Phân bổ đa lớp · Tối ưu ROI · Quản trị rủi ro thanh khoản</p>
+    </div>
+
+    <!-- 5-column allocation table -->
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden mb-10">
+        <div class="px-6 py-4 border-b border-slate-800 flex justify-between items-center">
+            <h3 class="font-bold text-white">Cơ cấu phân bổ 5 phân khúc</h3>
+            <span class="text-xs text-slate-500">Tổng vốn: 100 tỷ VNĐ</span>
+        </div>
+        <div class="overflow-x-auto">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Phân khúc</th>
+                        <th>Tỷ trọng</th>
+                        <th>Địa điểm</th>
+                        <th>Giá mua</th>
+                        <th>Mục tiêu Exit 2030</th>
+                        <th>IRR</th>
+                    </tr>
+                </thead>
+                <tbody class="text-slate-300">
+                    <tr>
+                        <td class="font-semibold text-cyan-300">⭐ Thổ cư Cửa ngõ</td>
+                        <td><span class="font-bold text-cyan-400">40% · 40 tỷ</span></td>
+                        <td>Tân Kiên (Bình Chánh)</td>
+                        <td>23–35 tr/m²</td>
+                        <td class="text-emerald-400 font-bold">85–100 tr/m²</td>
+                        <td class="text-emerald-400 font-bold">28%</td>
+                    </tr>
+                    <tr>
+                        <td class="font-semibold text-blue-300">🔵 Đón đầu Infra</td>
+                        <td><span class="font-bold text-blue-400">20% · 20 tỷ</span></td>
+                        <td>Phong Phú (Bình Chánh)</td>
+                        <td>40 tr/m²</td>
+                        <td class="text-emerald-400 font-bold">110–120 tr/m²</td>
+                        <td class="text-emerald-400 font-bold">32%</td>
+                    </tr>
+                    <tr>
+                        <td class="font-semibold text-purple-300">🟣 Hotspot Đối trọng</td>
+                        <td><span class="font-bold text-purple-400">20% · 20 tỷ</span></td>
+                        <td>Thủ Đức (Linh Trung)</td>
+                        <td>60–95 tr/m²</td>
+                        <td class="text-emerald-400 font-bold">150–180 tr/m²</td>
+                        <td class="text-slate-300 font-bold">22%</td>
+                    </tr>
+                    <tr>
+                        <td class="font-semibold text-amber-300">🟡 BĐS Dòng tiền</td>
+                        <td><span class="font-bold text-amber-400">10% · 10 tỷ</span></td>
+                        <td>Bình Hưng (Bình Chánh)</td>
+                        <td>45–90 tr/m²</td>
+                        <td class="text-slate-400">Khai thác cho thuê</td>
+                        <td class="text-slate-300 font-bold">18%</td>
+                    </tr>
+                    <tr>
+                        <td class="font-semibold text-slate-300">⚫ Strategic Synergy</td>
+                        <td><span class="font-bold text-slate-400">10% · 10 tỷ</span></td>
+                        <td>Hiệp Phước (Nhà Bè)</td>
+                        <td>20 tr/m²</td>
+                        <td class="text-emerald-400 font-bold">50–60 tr/m²</td>
+                        <td class="text-slate-300 font-bold">25%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Gantt 3 phases -->
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8">
+        <h3 class="font-bold text-white mb-6">Lộ trình Thực thi 3 Giai đoạn (2026–2030)</h3>
+        <div class="space-y-4">
+            <div class="flex items-center gap-4">
+                <div class="w-32 shrink-0">
+                    <div class="text-xs font-bold text-blue-400 uppercase">GĐ 1 · 2026</div>
+                    <div class="text-xs text-slate-500">Entry</div>
+                </div>
+                <div class="flex-1 bg-blue-600/20 border border-blue-600/40 rounded-xl p-4">
+                    <div class="font-semibold text-blue-300 mb-1">Gia nhập & Thiết lập</div>
+                    <div class="text-xs text-slate-400">Thiết lập ecosystem đối tác · Thâu tóm 60 tỷ quỹ đất Bình Chánh · Giải ngân 50 tỷ trước Q3/2026</div>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="w-32 shrink-0">
+                    <div class="text-xs font-bold text-cyan-400 uppercase">GĐ 2 · 2027</div>
+                    <div class="text-xs text-slate-500">Scale</div>
+                </div>
+                <div class="flex-1 bg-cyan-600/20 border border-cyan-600/40 rounded-xl p-4">
+                    <div class="font-semibold text-cyan-300 mb-1">Mở rộng & Đòn bẩy</div>
+                    <div class="text-xs text-slate-400">Sử dụng leverage LTV 40% · Mở rộng Thủ Đức & Nhà Bè (30 tỷ) · Kích hoạt dòng tiền cho thuê</div>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="w-32 shrink-0">
+                    <div class="text-xs font-bold text-emerald-400 uppercase">GĐ 3 · 2028-30</div>
+                    <div class="text-xs text-slate-500">Harvest</div>
+                </div>
+                <div class="flex-1 bg-emerald-600/20 border border-emerald-600/40 rounded-xl p-4">
+                    <div class="font-semibold text-emerald-300 mb-1">Thu hoạch & Thoát hàng</div>
+                    <div class="text-xs text-slate-400">Hoàn thiện pháp lý & tách thửa · Exit 70% danh mục · Target x2.5 · Thanh khoản &lt;90 ngày</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== FINANCIAL MODEL ===================== -->
+<section id="finance" class="py-24 bg-slate-900/50">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-14">
+            <span class="section-tag">Mô hình Tài chính</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-white">Dự báo <span class="gradient-text">3 Kịch bản 2026–2030</span></h2>
+        </div>
+
+        <!-- Formula -->
+        <div class="bg-slate-900 border border-blue-800/40 rounded-2xl p-8 mb-10 text-center">
+            <h3 class="text-sm font-bold text-blue-400 uppercase tracking-widest mb-5">Phương trình Định giá Thặng dư Đô thị hóa</h3>
+            <div class="text-xl md:text-2xl font-mono font-bold text-white mb-6">
+                V<sub class="text-slate-400 text-sm">2030</sub> = V<sub class="text-slate-400 text-sm">2026</sub>
+                × (1 + r)<sup class="text-slate-400 text-sm">4</sup>
+                × (1 + I<sub class="text-slate-400 text-sm">p</sub>)
+                × (1 + U<sub class="text-slate-400 text-sm">p</sub>)
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm text-left max-w-2xl mx-auto">
+                <div class="bg-slate-800 rounded-xl p-4">
+                    <div class="text-blue-400 font-bold mb-1">r = 10%/năm</div>
+                    <div class="text-slate-400">Tăng trưởng tự nhiên (lạm phát + GDP)</div>
+                </div>
+                <div class="bg-slate-800 rounded-xl p-4">
+                    <div class="text-cyan-400 font-bold mb-1">Ip = 20%</div>
+                    <div class="text-slate-400">Infrastructure Premium (VĐ3 + QL50)</div>
+                </div>
+                <div class="bg-slate-800 rounded-xl p-4">
+                    <div class="text-emerald-400 font-bold mb-1">Up = 15%</div>
+                    <div class="text-slate-400">Urbanization Premium (Thành phố BC)</div>
+                </div>
+            </div>
+            <div class="mt-5 text-slate-400 text-sm">
+                Kết quả: <strong class="text-white">Thặng dư thô &gt;120%</strong> sau 4–5 năm (Base case)
+            </div>
+        </div>
+
+        <!-- 3 Scenarios -->
+        <div class="grid md:grid-cols-3 gap-5 mb-10">
+            <div class="card-hover bg-slate-900 scenario-bull rounded-2xl p-7">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <div class="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-1">Kịch bản Tốt nhất</div>
+                        <h3 class="text-white font-bold text-xl">Bull Case 🟢</h3>
+                    </div>
+                    <span class="text-2xl font-extrabold text-emerald-400">25%</span>
+                </div>
+                <div class="text-slate-400 text-sm mb-5">Thành phố Bình Chánh thành lập 2027 + Metro khởi công sớm</div>
+                <div class="bg-emerald-900/20 rounded-xl p-4 mb-4">
+                    <div class="text-xs text-slate-500 mb-1">Giá Phong Phú 2030</div>
+                    <div class="text-emerald-400 font-extrabold text-xl">110–130 tr/m²</div>
+                </div>
+                <div class="flex justify-between text-sm pt-4 border-t border-slate-800">
+                    <span class="text-slate-400">IRR kỳ vọng</span>
+                    <span class="text-emerald-400 font-bold text-xl">28,5%</span>
+                </div>
+            </div>
+
+            <div class="card-hover bg-slate-900 scenario-base rounded-2xl p-7 ring-1 ring-amber-500/30">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <div class="text-xs font-bold text-amber-400 uppercase tracking-widest mb-1">Kịch bản Cơ sở</div>
+                        <h3 class="text-white font-bold text-xl">Base Case 🟡</h3>
+                    </div>
+                    <span class="text-2xl font-extrabold text-amber-400">18%</span>
+                </div>
+                <div class="text-slate-400 text-sm mb-5">VĐ3 thông xe đúng hạn + Quốc lộ 50 mở rộng hoàn tất</div>
+                <div class="bg-amber-900/20 rounded-xl p-4 mb-4">
+                    <div class="text-xs text-slate-500 mb-1">Giá Phong Phú 2030</div>
+                    <div class="text-amber-400 font-extrabold text-xl">85–100 tr/m²</div>
+                </div>
+                <div class="flex justify-between text-sm pt-4 border-t border-slate-800">
+                    <span class="text-slate-400">IRR kỳ vọng</span>
+                    <span class="text-amber-400 font-bold text-xl">20,2%</span>
+                </div>
+                <div class="mt-3 text-xs text-amber-400 font-semibold text-center">★ Kịch bản tính toán chính</div>
+            </div>
+
+            <div class="card-hover bg-slate-900 scenario-bear rounded-2xl p-7">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
+                        <div class="text-xs font-bold text-red-400 uppercase tracking-widest mb-1">Kịch bản Xấu nhất</div>
+                        <h3 class="text-white font-bold text-xl">Bear Case 🔴</h3>
+                    </div>
+                    <span class="text-2xl font-extrabold text-red-400">10%</span>
+                </div>
+                <div class="text-slate-400 text-sm mb-5">Hạ tầng chậm tiến độ + Ngập lụt nghiêm trọng + Pháp lý siết</div>
+                <div class="bg-red-900/20 rounded-xl p-4 mb-4">
+                    <div class="text-xs text-slate-500 mb-1">Giá Phong Phú 2030</div>
+                    <div class="text-red-400 font-extrabold text-xl">60–75 tr/m²</div>
+                </div>
+                <div class="flex justify-between text-sm pt-4 border-t border-slate-800">
+                    <span class="text-slate-400">IRR kỳ vọng</span>
+                    <span class="text-red-400 font-bold text-xl">11,5%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- KPI execution -->
+        <div class="grid md:grid-cols-2 gap-5">
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+                <h3 class="font-bold text-white mb-5">KPI Thực thi</h3>
+                <div class="space-y-3 text-sm">
+                    <div class="flex justify-between items-center py-2 border-b border-slate-800">
+                        <span class="text-slate-400"><i class="fas fa-bolt text-yellow-400 mr-2"></i>Tốc độ giải ngân</span>
+                        <span class="text-white font-bold">50 tỷ trước Q3/2026</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-slate-800">
+                        <span class="text-slate-400"><i class="fas fa-shield-alt text-blue-400 mr-2"></i>Hiệu quả DD</span>
+                        <span class="text-emerald-400 font-bold">100% sạch quy hoạch</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2 border-b border-slate-800">
+                        <span class="text-slate-400"><i class="fas fa-clock text-cyan-400 mr-2"></i>Thanh khoản Exit</span>
+                        <span class="text-white font-bold">&lt;90 ngày (2030)</span>
+                    </div>
+                    <div class="flex justify-between items-center py-2">
+                        <span class="text-slate-400"><i class="fas fa-percentage text-red-400 mr-2"></i>LTV tối đa 2026</span>
+                        <span class="text-white font-bold">&lt;30%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6">
+                <h3 class="font-bold text-white mb-5">Entry / Exit Signal</h3>
+                <div class="space-y-4 text-sm">
+                    <div class="bg-emerald-900/20 border border-emerald-800/40 rounded-xl p-4">
+                        <div class="text-xs font-bold text-emerald-400 uppercase tracking-widest mb-2">🟢 Thời điểm Gia nhập</div>
+                        <div class="text-white font-semibold mb-1">Q2 – Q4 năm 2026</div>
+                        <div class="text-slate-400">Trước khi hiệu ứng Vành đai 3 ngấm vào giá. Ưu tiên lô &lt;35 tr/m² tại xã đang phát triển.</div>
+                    </div>
+                    <div class="bg-red-900/20 border border-red-800/40 rounded-xl p-4">
+                        <div class="text-xs font-bold text-red-400 uppercase tracking-widest mb-2">🔴 Thời điểm Thoát hàng</div>
+                        <div class="text-white font-semibold mb-1">Cuối 2028 – Giữa 2029</div>
+                        <div class="text-slate-400">Khi công bố Thành phố BC đã phản ánh đầy đủ vào giá. Mục tiêu &gt;80 tr/m² khu trung tâm.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== RISK SHIELD ===================== -->
+<section id="risk" class="py-24 max-w-7xl mx-auto px-4">
+    <div class="text-center mb-14">
+        <span class="section-tag">Quản trị Rủi ro</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-white">Bộ lọc Rủi ro <span class="gradient-text">3 Lớp Phòng vệ</span></h2>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5 mb-10">
+        <div class="card-hover bg-slate-900 border border-red-800/50 rounded-2xl p-7">
+            <div class="w-12 h-12 rounded-xl bg-red-600/20 flex items-center justify-center mb-4">
+                <i class="fas fa-exclamation-triangle text-red-400 text-xl"></i>
+            </div>
+            <div class="text-xs font-bold text-red-400 uppercase tracking-widest mb-2">Rủi ro CAO</div>
+            <h3 class="font-bold text-white text-lg mb-3">Đất hỗn hợp (Mixed-use)</h3>
+            <div class="space-y-2 text-sm mb-5">
+                <div class="flex gap-2 text-slate-400"><i class="fas fa-times text-red-400 w-3 mt-0.5 shrink-0"></i>20% hỗn hợp: Không được xây dựng tự do</div>
+                <div class="flex gap-2 text-slate-400"><i class="fas fa-times text-red-400 w-3 mt-0.5 shrink-0"></i>30% hỗn hợp: Chỉ được phép xây tạm thời</div>
+            </div>
+            <div class="bg-slate-800 rounded-xl p-4 text-sm">
+                <div class="text-emerald-400 font-semibold mb-1">✅ Giải pháp</div>
+                <div class="text-slate-400">100% mua thổ cư thuần. Kiểm tra QĐ 100/2024/QĐ-UBND.</div>
+                <div class="mt-2 text-xs text-slate-500">Ngân sách dự phòng: 5% (phí luật sư)</div>
+            </div>
+        </div>
+
+        <div class="card-hover bg-slate-900 border border-amber-800/50 rounded-2xl p-7">
+            <div class="w-12 h-12 rounded-xl bg-amber-600/20 flex items-center justify-center mb-4">
+                <i class="fas fa-water text-amber-400 text-xl"></i>
+            </div>
+            <div class="text-xs font-bold text-amber-400 uppercase tracking-widest mb-2">Rủi ro TRUNG BÌNH</div>
+            <h3 class="font-bold text-white text-lg mb-3">Ngập lụt & Triều cường</h3>
+            <div class="space-y-2 text-sm mb-5">
+                <div class="flex gap-2 text-slate-400"><i class="fas fa-times text-amber-400 w-3 mt-0.5 shrink-0"></i>Địa hình Bình Chánh thấp, kênh rạch chằng chịt</div>
+                <div class="flex gap-2 text-slate-400"><i class="fas fa-times text-amber-400 w-3 mt-0.5 shrink-0"></i>Thi công VĐ3 có thể thay đổi dòng chảy</div>
+            </div>
+            <div class="bg-slate-800 rounded-xl p-4 text-sm">
+                <div class="text-emerald-400 font-semibold mb-1">✅ Giải pháp</div>
+                <div class="text-slate-400">Cao độ nền &gt;2m. Khảo sát thực địa tháng 10-12 âm lịch (đỉnh triều cường).</div>
+            </div>
+        </div>
+
+        <div class="card-hover bg-slate-900 border border-yellow-800/50 rounded-2xl p-7">
+            <div class="w-12 h-12 rounded-xl bg-yellow-600/20 flex items-center justify-center mb-4">
+                <i class="fas fa-percentage text-yellow-400 text-xl"></i>
+            </div>
+            <div class="text-xs font-bold text-yellow-400 uppercase tracking-widest mb-2">Rủi ro TRUNG BÌNH</div>
+            <h3 class="font-bold text-white text-lg mb-3">Lãi suất cao (14%/năm)</h3>
+            <div class="space-y-2 text-sm mb-5">
+                <div class="flex gap-2 text-slate-400"><i class="fas fa-times text-yellow-400 w-3 mt-0.5 shrink-0"></i>Áp lực thanh khoản nếu dùng đòn bẩy quá mức</div>
+                <div class="flex gap-2 text-slate-400"><i class="fas fa-times text-yellow-400 w-3 mt-0.5 shrink-0"></i>Bán tháo cục bộ có thể xảy ra 2026-2027</div>
+            </div>
+            <div class="bg-slate-800 rounded-xl p-4 text-sm">
+                <div class="text-emerald-400 font-semibold mb-1">✅ Giải pháp</div>
+                <div class="text-slate-400">LTV &lt;30% năm 2026. Lãi cố định 24 tháng (13,9%) nếu cần vốn gấp.</div>
+                <div class="mt-2 text-xs text-slate-500">Cash buffer dự phòng: 10%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Due Diligence Checklist -->
+    <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8">
+        <h3 class="font-bold text-white text-xl mb-2">Due Diligence Checklist</h3>
+        <p class="text-slate-400 text-sm mb-6">4 câu hỏi bắt buộc hoàn thành <strong class="text-white">trước khi đặt cọc</strong></p>
+        <div class="space-y-3">
+            <div class="checklist-item">
+                <div class="w-8 h-8 rounded-lg bg-blue-600/20 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fas fa-file-contract text-blue-400 text-sm"></i>
+                </div>
+                <div>
+                    <div class="font-semibold text-white mb-0.5">Pháp lý</div>
+                    <div class="text-slate-400 text-sm">Đất có nằm trong danh mục "Đất hỗn hợp" không? Kiểm tra <strong class="text-blue-300">Quyết định 100/2024/QĐ-UBND</strong> và cổng quy hoạch TP.HCM.</div>
+                </div>
+            </div>
+            <div class="checklist-item">
+                <div class="w-8 h-8 rounded-lg bg-cyan-600/20 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fas fa-hard-hat text-cyan-400 text-sm"></i>
+                </div>
+                <div>
+                    <div class="font-semibold text-white mb-0.5">Xây dựng</div>
+                    <div class="text-slate-400 text-sm">Mật độ xây dựng thuần tại khu vực này là bao nhiêu? Theo <strong class="text-cyan-300">Thông tư 01/2021/TT-BXD</strong>.</div>
+                </div>
+            </div>
+            <div class="checklist-item">
+                <div class="w-8 h-8 rounded-lg bg-amber-600/20 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fas fa-water text-amber-400 text-sm"></i>
+                </div>
+                <div>
+                    <div class="font-semibold text-white mb-0.5">Hiện trạng</div>
+                    <div class="text-slate-400 text-sm">Mảnh đất có nằm trong khu vực thường xuyên ngập khi triều cường đạt mức <strong class="text-amber-300">+1.60m</strong> trở lên không?</div>
+                </div>
+            </div>
+            <div class="checklist-item">
+                <div class="w-8 h-8 rounded-lg bg-emerald-600/20 flex items-center justify-center shrink-0 mt-0.5">
+                    <i class="fas fa-balance-scale text-emerald-400 text-sm"></i>
+                </div>
+                <div>
+                    <div class="font-semibold text-white mb-0.5">Giá so sánh</div>
+                    <div class="text-slate-400 text-sm">Mức giá đề xuất có cao hơn <strong class="text-emerald-300">15%</strong> so với giá giao dịch thực tế của các lô đất tương đồng trong bán kính 500m không?</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== PARTNER + ACTION PLAN ===================== -->
+<section id="partners" class="py-24 bg-slate-900/50">
+    <div class="max-w-7xl mx-auto px-4">
+        <div class="text-center mb-14">
+            <span class="section-tag">Hệ sinh thái</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-white">Partner Ecosystem <span class="gradient-text">Hands-off Management</span></h2>
+            <p class="text-slate-400 mt-3">Mô hình vận hành từ xa cho nhà đầu tư Hà Nội</p>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-5 mb-12">
+            <div class="card-hover bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
+                <div class="w-12 h-12 rounded-xl bg-blue-600/20 flex items-center justify-center mb-4 mx-auto">
+                    <i class="fas fa-balance-scale text-blue-400 text-xl"></i>
+                </div>
+                <h4 class="font-bold text-white mb-2">Pháp lý / DD</h4>
+                <div class="text-blue-400 text-sm font-semibold mb-3">VILAF · NVCS · Luật ACC</div>
+                <p class="text-slate-400 text-xs">Kiểm tra quy hoạch đất hỗn hợp, tách thửa theo QĐ 100/2024</p>
+            </div>
+            <div class="card-hover bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
+                <div class="w-12 h-12 rounded-xl bg-amber-600/20 flex items-center justify-center mb-4 mx-auto">
+                    <i class="fas fa-handshake text-amber-400 text-xl"></i>
+                </div>
+                <h4 class="font-bold text-white mb-2">Sourcing</h4>
+                <div class="text-amber-400 text-sm font-semibold mb-3">Cenland · Batdongsan VIP</div>
+                <p class="text-slate-400 text-xs">Tìm hàng kín, đàm phán ép giá chủ đất đang áp lực lãi suất</p>
+            </div>
+            <div class="card-hover bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
+                <div class="w-12 h-12 rounded-xl bg-emerald-600/20 flex items-center justify-center mb-4 mx-auto">
+                    <i class="fas fa-building text-emerald-400 text-xl"></i>
+                </div>
+                <h4 class="font-bold text-white mb-2">Quản lý BĐS</h4>
+                <div class="text-emerald-400 text-sm font-semibold mb-3">Savills Vietnam</div>
+                <p class="text-slate-400 text-xs">Cho thuê kho bãi / nhà xưởng Tân Kiên. Yield 4–5%/năm</p>
+            </div>
+            <div class="card-hover bg-slate-900 border border-slate-800 rounded-2xl p-6 text-center">
+                <div class="w-12 h-12 rounded-xl bg-purple-600/20 flex items-center justify-center mb-4 mx-auto">
+                    <i class="fas fa-university text-purple-400 text-xl"></i>
+                </div>
+                <h4 class="font-bold text-white mb-2">Tài chính</h4>
+                <div class="text-purple-400 text-sm font-semibold mb-3">Vietcombank · BIDV Priority</div>
+                <p class="text-slate-400 text-xs">Đòn bẩy khi lãi suất hạ nhiệt (kỳ vọng 2027). Hiện giữ cash tối ưu</p>
+            </div>
+        </div>
+
+        <!-- Q2/2026 Action Plan -->
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8">
+            <h3 class="font-bold text-white text-xl mb-6">Kế hoạch Hành động Q2/2026</h3>
+            <div class="space-y-4">
+                <div class="flex gap-4 items-start">
+                    <div class="shrink-0 w-28 text-xs font-bold text-blue-400 uppercase pt-0.5">Tháng 4/2026</div>
+                    <div class="flex-1 border-l border-slate-700 pl-5 pb-5">
+                        <div class="font-semibold text-white mb-1">Thiết lập Pháp lý</div>
+                        <div class="text-slate-400 text-sm">Ký hợp đồng tư vấn pháp lý trọn gói với VILAF / ACC. Quét quy hoạch 1/2000 toàn huyện Bình Chánh.</div>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <div class="shrink-0 w-28 text-xs font-bold text-cyan-400 uppercase pt-0.5">Tháng 5/2026</div>
+                    <div class="flex-1 border-l border-slate-700 pl-5 pb-5">
+                        <div class="font-semibold text-white mb-1">Khảo sát Thực địa</div>
+                        <div class="text-slate-400 text-sm">Khảo sát 10 vị trí trọng điểm tại Tân Kiên và Phong Phú. Ưu tiên lô thổ cư &gt;500m² giá &lt;30 tr/m².</div>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <div class="shrink-0 w-28 text-xs font-bold text-emerald-400 uppercase pt-0.5">Tháng 6/2026</div>
+                    <div class="flex-1 border-l border-slate-700 pl-5 pb-5">
+                        <div class="font-semibold text-white mb-1">Chốt Anchor Assets</div>
+                        <div class="text-slate-400 text-sm">Chốt 2 lô "mỏ neo" tại mặt tiền QL50 (đoạn Ranh Quận 8). Giá mục tiêu 69 tr/m². Đây là thời điểm VĐ3 thông xe.</div>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <div class="shrink-0 w-28 text-xs font-bold text-purple-400 uppercase pt-0.5">Tháng 7/2026</div>
+                    <div class="flex-1 pl-5">
+                        <div class="font-semibold text-white mb-1">Thiết lập AI Dashboard</div>
+                        <div class="text-slate-400 text-sm">Theo dõi biến động giá hàng tháng từ Mogi / Batdongsan. Điều chỉnh danh mục theo tín hiệu thị trường.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ===================== CTA FOOTER ===================== -->
+<section id="cta" class="py-24 bg-slate-950">
+    <div class="max-w-3xl mx-auto px-4 text-center">
+        <span class="section-tag">Kích hoạt Kế hoạch</span>
+        <blockquote class="text-2xl md:text-3xl font-bold text-white italic leading-snug mb-6">
+            "Đừng chờ để mua Bất động sản.<br>
+            <span class="gradient-text">Hãy mua Bất động sản và chờ đợi."</span>
+        </blockquote>
+        <p class="text-slate-400 text-lg mb-10">
+            Hệ sinh thái đối tác VILAF · Savills · ACC sẵn sàng đồng hành thực thi Master Plan này.
+        </p>
+
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-8 mb-8">
+            <h3 class="font-bold text-white text-lg mb-2">Nhận Checklist Due Diligence + Báo cáo Đầy đủ</h3>
+            <p class="text-slate-400 text-sm mb-6">Bao gồm: Monte Carlo Simulation · Bản đồ Quy hoạch · Danh bạ Đối tác VIP TP.HCM</p>
+            <div class="flex flex-col sm:flex-row gap-3">
+                <input type="email" placeholder="Nhập email của bạn..."
+                    class="flex-1 px-5 py-3 rounded-xl bg-slate-800 border border-slate-700 text-white placeholder:text-slate-500 focus:outline-none focus:border-blue-500 transition">
+                <button class="bg-blue-600 text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-700 transition shadow-lg shadow-blue-900/40 whitespace-nowrap">
+                    Kích Hoạt Ngay →
+                </button>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-3 gap-4 mb-12">
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 text-center">
+                <div class="text-blue-400 font-bold text-lg">100%</div>
+                <div class="text-slate-500 text-xs">Dữ liệu thực tế</div>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 text-center">
+                <div class="text-emerald-400 font-bold text-lg">16+</div>
+                <div class="text-slate-500 text-xs">Nguồn tham khảo</div>
+            </div>
+            <div class="bg-slate-900 border border-slate-800 rounded-xl p-4 text-center">
+                <div class="text-cyan-400 font-bold text-lg">3/2026</div>
+                <div class="text-slate-500 text-xs">Cập nhật mới nhất</div>
+            </div>
+        </div>
+
+        <div class="border-t border-slate-800 pt-8 text-xs text-slate-600">
+            © 2026 Phạm Mỹ Minh Thảo · Real Estate Mastery · Bình Chánh 2026-2030<br>
+            Mọi dữ liệu trích dẫn từ Báo cáo Nghiên cứu Chuyên sâu Bình Chánh 2026-2030 · QĐ 79/2024/QĐ-UBND · Batdongsan · Mogi
+        </div>
+    </div>
+</section>
+
+<script>
+    // Animate bars on scroll
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.querySelectorAll('.bar-fill').forEach(bar => {
+                    bar.style.width = bar.style.width;
+                });
+            }
+        });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('section').forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
