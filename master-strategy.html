@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🦞 Master Strategy A-Z | Molty Flywheel</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --lobster: #FF5733;
+    --indigo: #6366F1;
+    --gold: #D97706;
+    --emerald: #10B981;
+    --dark: #0F172A;
+    --mid: #1E293B;
+    --muted: #64748B;
+  }
+  * { box-sizing: border-box; }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; background: #F1F5F9; color: var(--dark); margin: 0; }
+  .mono { font-family: 'JetBrains Mono', monospace; }
+  /* Sidebar */
+  #sidebar { position: fixed; left: 0; top: 0; bottom: 0; width: 260px; background: var(--dark); z-index: 100; overflow-y: auto; display: flex; flex-direction: column; }
+  #sidebar::-webkit-scrollbar { width: 4px; } #sidebar::-webkit-scrollbar-thumb { background: #334155; }
+  #main { margin-left: 260px; min-height: 100vh; }
+  .nav-item { display: flex; align-items: center; gap: 10px; padding: 10px 20px; cursor: pointer; border-left: 3px solid transparent; color: #94A3B8; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; transition: all 0.2s; text-decoration: none; }
+  .nav-item:hover, .nav-item.active { background: rgba(255,87,51,0.1); border-left-color: var(--lobster); color: white; }
+  .nav-section-title { padding: 16px 20px 6px; font-size: 9px; font-weight: 900; letter-spacing: 0.15em; color: #475569; text-transform: uppercase; }
+  /* Sections */
+  .section { padding: 48px 48px; border-bottom: 1px solid #E2E8F0; scroll-margin-top: 0; }
+  .section-hero { background: var(--dark); color: white; padding: 60px 48px; }
+  /* Cards */
+  .card { background: white; border-radius: 20px; border: 1px solid #E2E8F0; padding: 28px; }
+  .card-dark { background: var(--mid); border-radius: 20px; padding: 28px; color: white; }
+  /* KPI bar at top */
+  #kpi-bar { position: sticky; top: 0; z-index: 90; background: white; border-bottom: 1px solid #E2E8F0; display: flex; align-items: center; gap: 0; overflow-x: auto; }
+  .kpi-item { padding: 12px 24px; border-right: 1px solid #E2E8F0; min-width: 160px; flex-shrink: 0; }
+  .kpi-label { font-size: 9px; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
+  .kpi-value { font-size: 20px; font-weight: 900; margin-top: 2px; }
+  /* Badges */
+  .badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; }
+  /* Skill pills */
+  .skill-pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; border-radius: 999px; font-size: 11px; font-weight: 700; background: #F1F5F9; border: 1px solid #E2E8F0; }
+  /* Timeline */
+  .timeline-item { position: relative; padding-left: 40px; padding-bottom: 32px; }
+  .timeline-item::before { content: ''; position: absolute; left: 9px; top: 24px; bottom: 0; width: 2px; background: #E2E8F0; }
+  .timeline-item:last-child::before { display: none; }
+  .timeline-dot { position: absolute; left: 0; top: 4px; width: 20px; height: 20px; border-radius: 50%; background: var(--lobster); border: 3px solid white; box-shadow: 0 0 0 2px var(--lobster); display: flex; align-items: center; justify-content: center; }
+  /* Progress bar */
+  .progress-bar { height: 8px; border-radius: 999px; background: #E2E8F0; overflow: hidden; }
+  .progress-fill { height: 100%; border-radius: 999px; transition: width 1s ease; }
+  /* Checklist */
+  .check-item { display: flex; align-items: flex-start; gap: 12px; padding: 14px; background: white; border: 1px solid #E2E8F0; border-radius: 12px; margin-bottom: 8px; }
+  .check-item input[type=checkbox] { width: 18px; height: 18px; margin-top: 1px; accent-color: var(--lobster); flex-shrink: 0; }
+  .check-item input:checked + div { opacity: 0.5; text-decoration: line-through; }
+  /* Chart containers */
+  .chart-wrap { position: relative; width: 100%; height: 280px; }
+  /* Grid helpers */
+  .g2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .g3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+  .g4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 16px; }
+  @media (max-width: 900px) { #sidebar { display: none; } #main { margin-left: 0; } .g2,.g3,.g4 { grid-template-columns: 1fr; } .section { padding: 32px 20px; } }
+  /* Week table */
+  .week-row { display: grid; grid-template-columns: 80px 1fr 1fr 1fr; gap: 0; border-bottom: 1px solid #E2E8F0; }
+  .week-row > div { padding: 12px 16px; font-size: 12px; }
+  .week-row:nth-child(even) { background: #F8FAFC; }
+  /* Lobster accent line */
+  .accent-line { width: 48px; height: 4px; background: var(--lobster); border-radius: 2px; margin-bottom: 16px; }
+  /* Terminal block */
+  .terminal { background: #0D1117; border-radius: 14px; padding: 20px 24px; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #C9D1D9; line-height: 1.7; overflow-x: auto; }
+  .terminal .cmd { color: #79C0FF; }
+  .terminal .cmt { color: #8B949E; }
+  .terminal .ok { color: #56D364; }
+  .terminal .warn { color: #E3B341; }
+  /* Stat block */
+  .stat-block { text-align: center; padding: 20px; background: white; border-radius: 16px; border: 1px solid #E2E8F0; }
+  .stat-num { font-size: 32px; font-weight: 900; line-height: 1; }
+  .stat-sub { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; margin-top: 6px; }
+  /* Flow arrows */
+  .flow-arrow { text-align: center; font-size: 20px; color: var(--muted); padding: 4px 0; }
+  /* Sticky section nav */
+  .section-title { font-size: 28px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; }
+  .section-subtitle { color: var(--muted); font-size: 14px; margin-top: 6px; max-width: 640px; }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<nav id="sidebar">
+  <div style="padding: 24px 20px 16px; border-bottom: 1px solid #1E293B;">
+    <div style="font-size: 28px; margin-bottom: 6px;">🦞</div>
+    <div style="font-size: 14px; font-weight: 900; color: white; text-transform: uppercase; letter-spacing: 0.05em;">Molty <span style="color: var(--lobster);">Master</span></div>
+    <div style="font-size: 10px; color: #475569; font-weight: 700; margin-top: 2px;">Chiến Lược A-Z Tổng Thể</div>
+  </div>
+  <div style="padding: 12px 0; flex: 1;">
+    <div class="nav-section-title">Tổng Quan</div>
+    <a href="#overview" class="nav-item active">🎯 <span>Tổng Quan Hệ Thống</span></a>
+    <a href="#kpi" class="nav-item">📊 <span>KPI Dashboard</span></a>
+    <div class="nav-section-title">Hạ Tầng</div>
+    <a href="#infra" class="nav-item">⚙️ <span>Hạ Tầng Kỹ Thuật</span></a>
+    <a href="#domain" class="nav-item">🌐 <span>Domain & Brand</span></a>
+    <div class="nav-section-title">Vận Hành</div>
+    <a href="#affiliate" class="nav-item">💰 <span>Affiliate & Skills</span></a>
+    <a href="#evolution" class="nav-item">🔄 <span>Self-Evolution Loop</span></a>
+    <div class="nav-section-title">Tăng Trưởng</div>
+    <a href="#content" class="nav-item">✍️ <span>Content 90 Ngày</span></a>
+    <a href="#weekly" class="nav-item">📅 <span>Action Plan Tuần</span></a>
+    <div class="nav-section-title">Kiểm Soát</div>
+    <a href="#checklist" class="nav-item">✅ <span>Master Checklist</span></a>
+    <a href="#risks" class="nav-item">⚠️ <span>Rủi Ro & Xử Lý</span></a>
+  </div>
+  <div style="padding: 16px 20px; border-top: 1px solid #1E293B;">
+    <div style="font-size: 9px; color: #334155; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;">© 2026 Molty Core 🦞</div>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<div id="main">
+
+<!-- KPI BAR -->
+<div id="kpi-bar">
+  <div class="kpi-item" style="padding-left: 32px;">
+    <div class="kpi-label">Mục Tiêu Net ROI</div>
+    <div class="kpi-value" style="color: var(--emerald);">$3,810<span style="font-size: 12px; color: var(--muted);">/tháng</span></div>
+  </div>
+  <div class="kpi-item">
+    <div class="kpi-label">Ngân Sách API</div>
+    <div class="kpi-value" style="color: var(--indigo);">$50<span style="font-size: 12px; color: var(--muted);">/tháng</span></div>
+  </div>
+  <div class="kpi-item">
+    <div class="kpi-label">Traffic Mục Tiêu</div>
+    <div class="kpi-value" style="color: var(--gold);">10K<span style="font-size: 12px; color: var(--muted);"> clicks</span></div>
+  </div>
+  <div class="kpi-item">
+    <div class="kpi-label">Affiliate Skills</div>
+    <div class="kpi-value" style="color: var(--lobster);">45<span style="font-size: 12px; color: var(--muted);"> skills</span></div>
+  </div>
+  <div class="kpi-item">
+    <div class="kpi-label">Hạ Tầng</div>
+    <div class="kpi-value" style="font-size: 14px; color: #10B981;">Mac Mini M2</div>
+  </div>
+  <div class="kpi-item">
+    <div class="kpi-label">Chi Phí Biên</div>
+    <div class="kpi-value" style="color: var(--emerald);">$0<span style="font-size: 12px; color: var(--muted);"> target</span></div>
+  </div>
+  <div class="kpi-item">
+    <div class="kpi-label">Trạng Thái</div>
+    <div style="margin-top: 4px; display: flex; align-items: center; gap: 6px;">
+      <span style="width: 8px; height: 8px; border-radius: 50%; background: #10B981; display: inline-block; animation: pulse 2s infinite;"></span>
+      <span style="font-size: 12px; font-weight: 800; color: #10B981;">SYSTEM ONLINE</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════
+     SECTION 1: OVERVIEW
+═══════════════════════════════════════ -->
+<section id="overview" class="section-hero">
+  <div style="max-width: 960px; margin: 0 auto;">
+    <div class="badge" style="background: rgba(255,87,51,0.15); color: var(--lobster); margin-bottom: 20px;">Chiến Lược Tổng Thể — A-Z Master v1.0</div>
+    <h1 style="font-size: 52px; font-weight: 900; line-height: 1.05; margin: 0 0 16px; text-transform: uppercase;">
+      Nền Kinh Tế<br><span style="color: var(--lobster);">AI Agent</span> Tự Vận Hành
+    </h1>
+    <p style="color: #94A3B8; font-size: 16px; max-width: 600px; line-height: 1.7; margin-bottom: 40px;">
+      Hệ thống <strong style="color: white;">Bánh Đà Tiếp Thị Tự Sinh v1.0</strong> — khai thác đòn bẩy Mac Mini M2 + OpenClaw + Affitor để đạt trạng thái chi phí biên bằng 0 và lợi nhuận tăng trưởng theo cấp số nhân.
+    </p>
+    <div class="g4" style="max-width: 800px;">
+      <div class="stat-block" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+        <div class="stat-num" style="color: #10B981;">$3,810</div>
+        <div class="stat-sub" style="color: #64748B;">Net ROI / Tháng</div>
+      </div>
+      <div class="stat-block" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+        <div class="stat-num" style="color: var(--lobster);">45</div>
+        <div class="stat-sub" style="color: #64748B;">Affiliate Skills</div>
+      </div>
+      <div class="stat-block" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+        <div class="stat-num" style="color: var(--gold);">30</div>
+        <div class="stat-sub" style="color: #64748B;">Bài/ngày (Free Ride)</div>
+      </div>
+      <div class="stat-block" style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1);">
+        <div class="stat-num" style="color: var(--indigo);">8</div>
+        <div class="stat-sub" style="color: #64748B;">Kỹ năng cốt lõi (S1–S8)</div>
+      </div>
+    </div>
+
+    <!-- Flywheel flow -->
+    <div style="margin-top: 48px;">
+      <div style="font-size: 11px; font-weight: 900; color: #475569; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 20px;">Vòng Xoay Bánh Đà</div>
+      <div style="display: flex; align-items: center; gap: 0; flex-wrap: wrap; gap: 8px;">
+        <div style="background: rgba(99,102,241,0.15); border: 1px solid rgba(99,102,241,0.3); border-radius: 12px; padding: 12px 16px; text-align: center; min-width: 110px;">
+          <div style="font-size: 18px;">🔍</div>
+          <div style="font-size: 10px; font-weight: 800; color: #94A3B8; margin-top: 4px; text-transform: uppercase;">S1 Research</div>
+        </div>
+        <div style="color: var(--lobster); font-size: 20px; font-weight: 900;">→</div>
+        <div style="background: rgba(255,87,51,0.15); border: 1px solid rgba(255,87,51,0.3); border-radius: 12px; padding: 12px 16px; text-align: center; min-width: 110px;">
+          <div style="font-size: 18px;">✍️</div>
+          <div style="font-size: 10px; font-weight: 800; color: #94A3B8; margin-top: 4px; text-transform: uppercase;">S2–S3 Content</div>
+        </div>
+        <div style="color: var(--lobster); font-size: 20px; font-weight: 900;">→</div>
+        <div style="background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.3); border-radius: 12px; padding: 12px 16px; text-align: center; min-width: 110px;">
+          <div style="font-size: 18px;">🚀</div>
+          <div style="font-size: 10px; font-weight: 800; color: #94A3B8; margin-top: 4px; text-transform: uppercase;">S4 Landing Page</div>
+        </div>
+        <div style="color: var(--lobster); font-size: 20px; font-weight: 900;">→</div>
+        <div style="background: rgba(217,119,6,0.15); border: 1px solid rgba(217,119,6,0.3); border-radius: 12px; padding: 12px 16px; text-align: center; min-width: 110px;">
+          <div style="font-size: 18px;">📧</div>
+          <div style="font-size: 10px; font-weight: 800; color: #94A3B8; margin-top: 4px; text-transform: uppercase;">S5 Email Drip</div>
+        </div>
+        <div style="color: var(--lobster); font-size: 20px; font-weight: 900;">→</div>
+        <div style="background: rgba(99,102,241,0.15); border: 1px solid rgba(99,102,241,0.3); border-radius: 12px; padding: 12px 16px; text-align: center; min-width: 110px;">
+          <div style="font-size: 18px;">📈</div>
+          <div style="font-size: 10px; font-weight: 800; color: #94A3B8; margin-top: 4px; text-transform: uppercase;">S6 Track & Convert</div>
+        </div>
+        <div style="color: var(--lobster); font-size: 20px; font-weight: 900;">→</div>
+        <div style="background: rgba(255,87,51,0.15); border: 1px solid rgba(255,87,51,0.3); border-radius: 12px; padding: 12px 16px; text-align: center; min-width: 110px;">
+          <div style="font-size: 18px;">🔄</div>
+          <div style="font-size: 10px; font-weight: 800; color: #94A3B8; margin-top: 4px; text-transform: uppercase;">S7–S8 Evolve</div>
+        </div>
+        <div style="color: var(--lobster); font-size: 20px; font-weight: 900;">↩</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SECTION 2: KPI DASHBOARD
+═══════════════════════════════════════ -->
+<section id="kpi" class="section" style="background: #F8FAFC;">
+  <div style="max-width: 960px; margin: 0 auto;">
+    <div class="accent-line"></div>
+    <h2 class="section-title">KPI Dashboard</h2>
+    <p class="section-subtitle">Theo dõi tiến độ theo thời gian thực — cập nhật mỗi tuần</p>
+
+    <div class="g4" style="margin-top: 32px;">
+      <div class="stat-block">
+        <div class="kpi-label">Tuần Hiện Tại</div>
+        <div class="stat-num" style="color: var(--dark);" id="kpi-week">1</div>
+        <div class="stat-sub">/ 12 tuần</div>
+        <div class="progress-bar" style="margin-top: 12px;"><div class="progress-fill" id="pb-week" style="width:8%; background: var(--lobster);"></div></div>
+      </div>
+      <div class="stat-block">
+        <div class="kpi-label">Traffic Đạt Được</div>
+        <div class="stat-num" style="color: var(--indigo);" id="kpi-traffic">0</div>
+        <div class="stat-sub">/ 10,000 clicks</div>
+        <div class="progress-bar" style="margin-top: 12px;"><div class="progress-fill" id="pb-traffic" style="width:0%; background: var(--indigo);"></div></div>
+      </div>
+      <div class="stat-block">
+        <div class="kpi-label">Paid Users</div>
+        <div class="stat-num" style="color: var(--gold);" id="kpi-users">0</div>
+        <div class="stat-sub">/ 200 users</div>
+        <div class="progress-bar" style="margin-top: 12px;"><div class="progress-fill" id="pb-users" style="width:0%; background: var(--gold);"></div></div>
+      </div>
+      <div class="stat-block">
+        <div class="kpi-label">Net ROI Đạt</div>
+        <div class="stat-num" style="color: var(--emerald);" id="kpi-roi">$0</div>
+        <div class="stat-sub">/ $3,810</div>
+        <div class="progress-bar" style="margin-top: 12px;"><div class="progress-fill" id="pb-roi" style="width:0%; background: var(--emerald);"></div></div>
+      </div>
+    </div>
+
+    <!-- KPI Slider Simulator -->
+    <div class="card" style="margin-top: 28px;">
+      <div style="font-weight: 800; font-size: 14px; margin-bottom: 16px;">Mô phỏng tiến độ — Kéo để cập nhật tuần</div>
+      <input type="range" id="weekSlider" min="1" max="12" value="1" style="width: 100%; accent-color: var(--lobster);">
+      <div style="display: flex; justify-content: space-between; font-size: 10px; font-weight: 700; color: var(--muted); margin-top: 6px;">
+        <span>Tuần 1</span><span>Tuần 4 (Tháng 1)</span><span>Tuần 8 (Tháng 2)</span><span>Tuần 12 (Tháng 3)</span>
+      </div>
+    </div>
+
+    <!-- Financial projection -->
+    <div class="g2" style="margin-top: 28px;">
+      <div class="card">
+        <div style="font-weight: 800; font-size: 13px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.05em;">Dự Báo Dòng Tiền 3 Tháng</div>
+        <div class="chart-wrap"><canvas id="projectionChart"></canvas></div>
+      </div>
+      <div class="card">
+        <div style="font-weight: 800; font-size: 13px; margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.05em;">Phân Bổ Chi Phí & Lợi Nhuận</div>
+        <div class="chart-wrap"><canvas id="roiChart"></canvas></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SECTION 3: HẠ TẦNG KỸ THUẬT
+═══════════════════════════════════════ -->
+<section id="infra" class="section">
+  <div style="max-width: 960px; margin: 0 auto;">
+    <div class="accent-line"></div>
+    <h2 class="section-title">Hạ Tầng Kỹ Thuật</h2>
+    <p class="section-subtitle">Mac Mini M2 + OpenClaw + Free Ride Engine + PM2 — "Chi phí biên bằng 0"</p>
+
+    <!-- Hardware specs -->
+    <div class="g3" style="margin-top: 32px;">
+      <div class="card-dark" style="border: 1px solid #334155;">
+        <div style="font-size: 10px; font-weight: 900; color: #475569; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;">Máy Chủ</div>
+        <div style="space-y: 10px;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;"><span style="color: #94A3B8; font-size: 13px;">Vi xử lý</span><span style="font-weight: 800; font-size: 13px;">Apple M2 (arm64)</span></div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;"><span style="color: #94A3B8; font-size: 13px;">RAM</span><span style="font-weight: 800; font-size: 13px; color: var(--indigo);">8GB Unified</span></div>
+          <div style="display: flex; justify-content: space-between; margin-bottom: 10px;"><span style="color: #94A3B8; font-size: 13px;">SSD</span><span style="font-weight: 800; font-size: 13px;">256GB NVMe</span></div>
+          <div style="display: flex; justify-content: space-between;"><span style="color: #94A3B8; font-size: 13px;">Uptime</span><span style="font-weight: 800; font-size: 13px; color: #10B981;">24/7 Online</span></div>
+        </div>
+      </div>
+      <div class="card-dark" style="border: 1px solid #334155;">
+        <div style="font-size: 10px; font-weight: 900; color: #475569; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;">RAM Strategy</div>
+        <div style="font-size: 12px; color: #94A3B8; line-height: 1.6; margin-bottom: 12px;">❌ <strong style="color: white;">KHÔNG</strong> chạy Local LLM (4.5GB → Swap SSD)</div>
+        <div style="font-size: 12px; color: #94A3B8; line-height: 1.6;">✅ <strong style="color: #10B981;">API-First</strong> via OpenRouter: OS 3GB + OpenClaw 1GB = 4GB còn dư</div>
+        <div style="margin-top: 16px; background: #0F172A; border-radius: 10px; padding: 12px;">
+          <div style="display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 4px;"><span style="color: #64748B;">macOS</span><span style="color: #94A3B8;">3 GB</span></div>
+          <div class="progress-bar" style="margin-bottom: 8px;"><div class="progress-fill" style="width:37.5%; background: #64748B;"></div></div>
+          <div style="display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 4px;"><span style="color: var(--indigo);">OpenClaw</span><span style="color: #94A3B8;">1 GB</span></div>
+          <div class="progress-bar" style="margin-bottom: 8px;"><div class="progress-fill" style="width:12.5%; background: var(--indigo);"></div></div>
+          <div style="display: flex; justify-content: space-between; font-size: 11px; margin-bottom: 4px;"><span style="color: #10B981;">Free Buffer</span><span style="color: #10B981;">4 GB ✓</span></div>
+          <div class="progress-bar"><div class="progress-fill" style="width:50%; background: #10B981;"></div></div>
+        </div>
+      </div>
+      <div class="card-dark" style="border: 1px solid #334155;">
+        <div style="font-size: 10px; font-weight: 900; color: #475569; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 16px;">Architecture</div>
+        <div style="text-align: center;">
+          <div style="background: rgba(99,102,241,0.15); border: 1px solid rgba(99,102,241,0.3); border-radius: 10px; padding: 10px; margin-bottom: 8px; font-size: 12px;">📱 Telegram / WhatsApp (Remote)</div>
+          <div style="color: var(--muted); font-size: 18px; margin: 4px 0;">↓</div>
+          <div style="background: rgba(255,87,51,0.2); border: 1px solid rgba(255,87,51,0.4); border-radius: 10px; padding: 10px; margin-bottom: 8px; font-size: 13px; font-weight: 800;">🦞 OpenClaw Gateway</div>
+          <div style="color: var(--muted); font-size: 18px; margin: 4px 0;">↓</div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px;">
+            <div style="background: rgba(16,185,129,0.1); border: 1px solid rgba(16,185,129,0.2); border-radius: 8px; padding: 8px; font-size: 10px; text-align: center;">💾 Persistent Memory SSD</div>
+            <div style="background: rgba(217,119,6,0.1); border: 1px solid rgba(217,119,6,0.2); border-radius: 8px; padding: 8px; font-size: 10px; text-align: center;">🤖 Free Ride (OpenRouter)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Setup terminal -->
+    <div style="margin-top: 28px;">
+      <div style="font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px;">Lệnh Triển Khai (5 Bước)</div>
+      <div class="terminal">
+        <div class="cmt"># ─── BƯỚC 1: Môi Trường Node.js (arm64) ───</div>
+        <div><span class="cmd">curl</span> -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash</div>
+        <div><span class="cmd">nvm</span> install 24 &amp;&amp; nvm use 24 &amp;&amp; nvm alias default 24</div>
+        <div><span class="cmd">npm</span> install -g pnpm pm2</div>
+        <br>
+        <div class="cmt"># ─── BƯỚC 2: Cài OpenClaw ───</div>
+        <div><span class="cmd">curl</span> -fsSL https://openclaw.ai/install.sh | bash</div>
+        <div><span class="cmd">openclaw</span> onboard  <span class="cmt"># Wizard cấu hình Telegram + allowFrom whitelist</span></div>
+        <br>
+        <div class="cmt"># ─── BƯỚC 3: Free Ride Engine ───</div>
+        <div><span class="cmd">npx</span> clawhub@latest install free-ride</div>
+        <div><span class="cmd">echo</span> 'export OPENROUTER_API_KEY="sk-or-v1-YOUR_KEY"' >> ~/.zshrc &amp;&amp; source ~/.zshrc</div>
+        <br>
+        <div class="cmt"># ─── BƯỚC 4: Affiliate Skills ───</div>
+        <div><span class="cmd">git</span> clone https://github.com/Affitor/affiliate-skills.git ~/.openclaw/skills/affiliate-skills</div>
+        <div><span class="cmd">npx</span> clawhub@latest install mcporter</div>
+        <br>
+        <div class="cmt"># ─── BƯỚC 5: PM2 24/7 ───</div>
+        <div><span class="cmd">pm2</span> start openclaw --name "OpenClaw-Gateway" -- start</div>
+        <div><span class="cmd">pm2</span> startup &amp;&amp; pm2 save</div>
+        <div class="ok"># ✓ Gateway đang chạy nền 24/7 — không bao giờ tắt</div>
+      </div>
+    </div>
+
+    <!-- Accounts needed -->
+    <div style="margin-top: 28px;">
+      <div style="font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px;">Tài Khoản Cần Chuẩn Bị</div>
+      <div class="g3">
+        <div class="card" style="border-left: 4px solid var(--indigo);">
+          <div style="font-size: 20px; margin-bottom: 8px;">🤖</div>
+          <div style="font-weight: 800; font-size: 13px;">OpenRouter API Key</div>
+          <div style="font-size: 12px; color: var(--muted); margin-top: 6px; line-height: 1.5;">Nạp tối thiểu $5 để test. $50/tháng cho Turbo mode. Dùng cho S4 (Landing) + S8 (Compliance).</div>
+        </div>
+        <div class="card" style="border-left: 4px solid var(--gold);">
+          <div style="font-size: 20px; margin-bottom: 8px;">💬</div>
+          <div style="font-weight: 800; font-size: 13px;">Telegram Bot Token</div>
+          <div style="font-size: 12px; color: var(--muted); margin-top: 6px; line-height: 1.5;">Tạo via @BotFather. Cấu hình <code>allowFrom</code> whitelist username để bảo mật gateway.</div>
+        </div>
+        <div class="card" style="border-left: 4px solid var(--emerald);">
+          <div style="font-size: 20px; margin-bottom: 8px;">🤝</div>
+          <div style="font-weight: 800; font-size: 13px;">Affitor Network</div>
+          <div style="font-size: 12px; color: var(--muted); margin-top: 6px; line-height: 1.5;">Đăng ký tại list.affitor.com. Lấy Referral code + kết nối Stripe để nhận hoa hồng USD.</div>
+        </div>
+        <div class="card" style="border-left: 4px solid var(--lobster);">
+          <div style="font-size: 20px; margin-bottom: 8px;">📱</div>
+          <div style="font-weight: 800; font-size: 13px;">Social Accounts</div>
+          <div style="font-size: 12px; color: var(--muted); margin-top: 6px; line-height: 1.5;">X, LinkedIn, Reddit (aged accounts ưu tiên). Agent tự đăng bài đồng loạt 24/7.</div>
+        </div>
+        <div class="card" style="border-left: 4px solid #8B5CF6;">
+          <div style="font-size: 20px; margin-bottom: 8px;">🏦</div>
+          <div style="font-weight: 800; font-size: 13px;">Stripe Connect</div>
+          <div style="font-size: 12px; color: var(--muted); margin-top: 6px; line-height: 1.5;">Tài khoản Stripe đã xác minh. Hoa hồng tự động chuyển USD → VND qua ngân hàng.</div>
+        </div>
+        <div class="card" style="border-left: 4px solid #0EA5E9;">
+          <div style="font-size: 20px; margin-bottom: 8px;">💻</div>
+          <div style="font-weight: 800; font-size: 13px;">GitHub Account</div>
+          <div style="font-size: 12px; color: var(--muted); margin-top: 6px; line-height: 1.5;">Lưu trữ code + dùng GitHub Pages làm hosting miễn phí cho Bio-link và Landing Page.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SECTION 4: DOMAIN & BRAND
+═══════════════════════════════════════ -->
+<section id="domain" class="section" style="background: #F8FAFC;">
+  <div style="max-width: 960px; margin: 0 auto;">
+    <div class="accent-line"></div>
+    <h2 class="section-title">Domain & Brand Strategy</h2>
+    <p class="section-subtitle">Domain chính thức đã xác nhận: <strong style="color: var(--lobster);">MoltyFlywheel.com</strong> — Pháo đài Persistent Memory cho Molty 🦞</p>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px;">
+      <div class="card" style="border: 2px solid var(--lobster); background: linear-gradient(135deg, #fff5f3 0%, #fff 60%);">
+        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
+          <span style="font-size: 24px;">🚀</span>
+          <span class="badge" style="background: var(--lobster); color: white;">✓ ĐÃ XÁC NHẬN</span>
+        </div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 700; color: var(--lobster); margin-bottom: 8px;">MoltyFlywheel.com</div>
+        <div style="font-size: 12px; color: var(--muted); line-height: 1.6; margin-bottom: 12px;">Tên miền chính thức đã xác nhận. Brand + Flywheel strategy. Trung tâm của toàn bộ hệ sinh thái: Blog SEO, Landing Page, Email, Bio-link.</div>
+        <div style="background: rgba(255,87,51,0.08); border: 1px solid rgba(255,87,51,0.2); border-radius: 8px; padding: 8px 12px; font-size: 11px; color: var(--lobster); font-weight: 800;">
+          🔗 admin@moltyflywheel.com &nbsp;·&nbsp; github.com/moltyflywheel
+        </div>
+      </div>
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
+          <span style="font-size: 24px;">💰</span>
+          <span class="badge" style="background: #DCFCE7; color: #166534;">Dòng Tiền</span>
+        </div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 700; color: var(--lobster); margin-bottom: 8px;">AgenticProfit.io</div>
+        <div style="font-size: 12px; color: var(--muted); line-height: 1.6;">Trực diện kết quả kinh tế. Income + Automation. Phù hợp chiến dịch $50 Turbo nhắm lợi nhuận $3,810/tháng.</div>
+      </div>
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
+          <span style="font-size: 24px;">🏰</span>
+          <span class="badge" style="background: #EFF6FF; color: #1D4ED8;">Peter Thiel Moat</span>
+        </div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 700; color: var(--lobster); margin-bottom: 8px;">TheOnlyVoice.net</div>
+        <div style="font-size: 12px; color: var(--muted); line-height: 1.6;">Triết lý "Tiếng nói duy nhất". Authority + Niche monopoly. Phù hợp Blog SEO & Newsletter.</div>
+      </div>
+      <div class="card">
+        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 12px;">
+          <span style="font-size: 24px;">⚙️</span>
+          <span class="badge" style="background: #F1F5F9; color: #475569;">Hạ Tầng Local</span>
+        </div>
+        <div style="font-family: 'JetBrains Mono', monospace; font-size: 18px; font-weight: 700; color: var(--lobster); margin-bottom: 8px;">OpenClawNodes.com</div>
+        <div style="font-size: 12px; color: var(--muted); line-height: 1.6;">Community + Nodes. Nhắm cộng đồng Mac Mini M2 tự vận hành Agent phân tán. Phù hợp dịch vụ setup.</div>
+      </div>
+    </div>
+    <div class="card" style="margin-top: 16px; border: 2px solid #8B5CF6;">
+      <div style="display: flex; gap: 24px; align-items: start;">
+        <div style="flex: 1;">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 12px;">
+            <span style="font-size: 28px;">🦞</span>
+            <span class="badge" style="background: #EDE9FE; color: #6D28D9;">Space Meme Viral</span>
+          </div>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 20px; font-weight: 700; color: var(--lobster); margin-bottom: 8px;">SpaceLobster.agency</div>
+          <div style="font-size: 12px; color: var(--muted); line-height: 1.6;">Tận dụng triệt để linh vật Molty. "Agency 1 người với sức mạnh 100 Agent." Meme potential cao, dễ viral trên X và TikTok.</div>
+        </div>
+        <div style="background: #F8FAFC; border-radius: 12px; padding: 16px; min-width: 180px; border: 1px dashed #E2E8F0;">
+          <div style="font-size: 10px; font-weight: 900; color: var(--muted); text-transform: uppercase; margin-bottom: 10px;">Điểm Mạnh</div>
+          <div style="font-size: 12px; color: #1E293B; line-height: 2;">✓ Dễ nhớ, giải trí cao<br>✓ Meme potential<br>✓ Mascot có linh hồn</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Domain checklist -->
+    <div style="margin-top: 32px;">
+      <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+        <div style="font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em;">Checklist Triển Khai MoltyFlywheel.com</div>
+        <span class="badge" style="background: var(--lobster); color: white;">Domain Đã Xác Nhận</span>
+      </div>
+      <div class="g2">
+        <label class="check-item"><input type="checkbox"><div><strong style="font-size: 13px;">Đăng ký MoltyFlywheel.com</strong><br><span style="font-size: 12px; color: var(--muted);">Mua tại Namecheap/Cloudflare Registrar. Ưu tiên .com vì uy tín SEO cao nhất.</span></div></label>
+        <label class="check-item"><input type="checkbox"><div><strong style="font-size: 13px;">SSL & DNS (Cloudflare Proxy)</strong><br><span style="font-size: 12px; color: var(--muted);">Trỏ Cloudflare → Mac Mini M2. Ẩn IP thật, bảo vệ Gateway 24/7.</span></div></label>
+        <label class="check-item"><input type="checkbox"><div><strong style="font-size: 13px;">Business Email: admin@moltyflywheel.com</strong><br><span style="font-size: 12px; color: var(--muted);">Tạo qua Cloudflare Email Routing (miễn phí) hoặc Google Workspace. Tăng tỷ lệ inbox S5.</span></div></label>
+        <label class="check-item"><input type="checkbox"><div><strong style="font-size: 13px;">GitHub: github.com/moltyflywheel</strong><br><span style="font-size: 12px; color: var(--muted);">Tạo Org/Repo trùng tên. GitHub Pages → Landing Page miễn phí tại moltyflywheel.com.</span></div></label>
+        <label class="check-item"><input type="checkbox"><div><strong style="font-size: 13px;">Social Handle: @MoltyFlywheel</strong><br><span style="font-size: 12px; color: var(--muted);">Đặt đồng bộ trên X, LinkedIn, Reddit để Agent cross-post tự động.</span></div></label>
+        <label class="check-item"><input type="checkbox"><div><strong style="font-size: 13px;">Blog SEO tại blog.moltyflywheel.com</strong><br><span style="font-size: 12px; color: var(--muted);">Subdomain cho 10 bài SEO ngách hẹp (Tuần 5-6). S4 builder tự động xuất bản.</span></div></label>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SECTION 5: AFFILIATE & SKILLS
+═══════════════════════════════════════ -->
+<section id="affiliate" class="section">
+  <div style="max-width: 960px; margin: 0 auto;">
+    <div class="accent-line"></div>
+    <h2 class="section-title">Affiliate & Monetization</h2>
+    <p class="section-subtitle">45 Skills × Affitor Network × $50 Turbo = $3,810 Net ROI / tháng</p>
+
+    <!-- 8 Core Skills -->
+    <div style="margin-top: 32px; margin-bottom: 12px; font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em;">8 Kỹ Năng Cốt Lõi (S1 → S8)</div>
+    <div class="g4">
+      <div class="card" style="border-top: 3px solid var(--indigo); text-align: center;">
+        <div style="font-size: 22px; margin-bottom: 8px;">🔍</div>
+        <div style="font-size: 11px; font-weight: 900; color: var(--indigo); text-transform: uppercase; margin-bottom: 4px;">S1</div>
+        <div style="font-weight: 800; font-size: 12px;">Niche Research</div>
+        <div style="font-size: 11px; color: var(--muted); margin-top: 4px;">affiliate-program-search</div>
+      </div>
+      <div class="card" style="border-top: 3px solid var(--lobster); text-align: center;">
+        <div style="font-size: 22px; margin-bottom: 8px;">✍️</div>
+        <div style="font-size: 11px; font-weight: 900; color: var(--lobster); text-transform: uppercase; margin-bottom: 4px;">S2</div>
+        <div style="font-weight: 800; font-size: 12px;">Content Atomizer</div>
+        <div style="font-size: 11px; color: var(--muted); margin-top: 4px;">content-pillar-atomizer</div>
+      </div>
+      <div class="card" style="border-top: 3px solid var(--lobster); text-align: center;">
+        <div style="font-size: 22px; margin-bottom: 8px;">🔗</div>
+        <div style="font-size: 11px; font-weight: 900; color: var(--lobster); text-transform: uppercase; margin-bottom: 4px;">S3</div>
+        <div style="font-weight: 800; font-size: 12px;">Multi-Channel Publish</div>
+        <div style="font-size: 11px; color: var(--muted); margin-top: 4px;">twitter-thread-writer</div>
+      </div>
+      <div class="card" style="border-top: 3px solid var(--gold); text-align: center;">
+        <div style="font-size: 22px; margin-bottom: 8px;">🚀</div>
+        <div style="font-size: 11px; font-weight: 900; color: var(--gold); text-transform: uppercase; margin-bottom: 4px;">S4</div>
+        <div style="font-weight: 800; font-size: 12px;">Landing Page Builder</div>
+        <div style="font-size: 11px; color: var(--muted); margin-top: 4px;">affiliate-blog-builder</div>
+      </div>
+      <div class="card" style="border-top: 3px solid #8B5CF6; text-align: center;">
+        <div style="font-size: 22px; margin-bottom: 8px;">📧</div>
+        <div style="font-size: 11px; font-weight: 900; color: #8B5CF6; text-transform: uppercase; margin-bottom: 4px;">S5</div>
+        <div style="font-weight: 800; font-size: 12px;">Email Drip Sequence</div>
+        <div style="font-size: 11px; color: var(--muted); margin-top: 4px;">email-drip-sequence</div>
+      </div>
+      <div class="card" style="border-top: 3px solid var(--emerald); text-align: center;">
+        <div style="font-size: 22px; margin-bottom: 8px;">📊</div>
+        <div style="font-size: 11px; font-weight: 900; color: var(--emerald); text-transform: uppercase; margin-bottom: 4px;">S6</div>
+        <div style="font-weight: 800; font-size: 12px;">Conversion Tracker</div>
+        <div style="font-size: 11px; color: var(--muted); margin-top: 4px;">conversion-tracker</div>
+      </div>
+      <div class="card" style="border-top: 3px solid #0EA5E9; text-align: center;">
+        <div style="font-size: 22px; margin-bottom: 8px;">♻️</div>
+        <div style="font-size: 11px; font-weight: 900; color: #0EA5E9; text-transform: uppercase; margin-bottom: 4px;">S7</div>
+        <div style="font-weight: 800; font-size: 12px;">Content Repurposer</div>
+        <div style="font-size: 11px; color: var(--muted); margin-top: 4px;">content-repurposer</div>
+      </div>
+      <div class="card" style="border-top: 3px solid var(--lobster); text-align: center;">
+        <div style="font-size: 22px; margin-bottom: 8px;">🧬</div>
+        <div style="font-size: 11px; font-weight: 900; color: var(--lobster); text-transform: uppercase; margin-bottom: 4px;">S8</div>
+        <div style="font-weight: 800; font-size: 12px;">Self-Improver</div>
+        <div style="font-size: 11px; color: var(--muted); margin-top: 4px;">self-improver (AI Audit)</div>
+      </div>
+    </div>
+
+    <!-- $50 Turbo Model -->
+    <div class="card-dark" style="margin-top: 28px; border: 1px solid #334155;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;">
+        <div>
+          <div style="font-size: 11px; font-weight: 900; color: #475569; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">Mô Hình $50 Turbo</div>
+          <h3 style="font-size: 28px; font-weight: 900; margin: 0 0 12px; color: var(--gold);">x10 Quy Mô</h3>
+          <p style="font-size: 13px; color: #94A3B8; line-height: 1.7; margin-bottom: 20px;">$50 KHÔNG dùng viết nội dung thô (Free Ride đã gánh). $50 tập trung 100% vào <strong style="color: white;">High-Value Inference</strong>: S4 Landing + S8 Compliance.</p>
+          <div style="space-y: 10px;">
+            <div style="display: flex; justify-content: space-between; padding: 10px; background: rgba(255,255,255,0.05); border-radius: 8px; margin-bottom: 8px; font-size: 13px;"><span style="color: #94A3B8;">Traffic (Clicks)</span><span style="font-weight: 800; color: white;">10,000+</span></div>
+            <div style="display: flex; justify-content: space-between; padding: 10px; background: rgba(255,255,255,0.05); border-radius: 8px; margin-bottom: 8px; font-size: 13px;"><span style="color: #94A3B8;">Paid Users (CVR 2%)</span><span style="font-weight: 800; color: white;">200</span></div>
+            <div style="display: flex; justify-content: space-between; padding: 10px; background: rgba(255,255,255,0.05); border-radius: 8px; margin-bottom: 8px; font-size: 13px;"><span style="color: #94A3B8;">Hoa hồng gộp</span><span style="font-weight: 800; color: #10B981;">$4,000</span></div>
+            <div style="display: flex; justify-content: space-between; padding: 10px; background: rgba(255,255,255,0.05); border-radius: 8px; margin-bottom: 8px; font-size: 13px;"><span style="color: #94A3B8;">Phí Affitor (3.5%)</span><span style="font-weight: 800; color: #F43F5E;">-$140</span></div>
+            <div style="display: flex; justify-content: space-between; padding: 10px; background: rgba(255,255,255,0.05); border-radius: 8px; margin-bottom: 8px; font-size: 13px;"><span style="color: #94A3B8;">Ngân sách API</span><span style="font-weight: 800; color: #F43F5E;">-$50</span></div>
+            <div style="display: flex; justify-content: space-between; padding: 12px; background: rgba(16,185,129,0.15); border: 1px solid rgba(16,185,129,0.3); border-radius: 8px; font-size: 15px;"><span style="color: #10B981; font-weight: 800;">Net ROI</span><span style="font-weight: 900; color: #10B981; font-size: 20px;">$3,810</span></div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size: 11px; font-weight: 900; color: #475569; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">Free Ride Engine</div>
+          <div style="background: #0D1117; border-radius: 12px; padding: 16px; font-family: monospace; font-size: 11px; color: #56D364; line-height: 2;">
+            S2/S3 Tasks → Llama-3/DeepSeek (FREE)<br>
+            S4/S8 Tasks → Claude 3.5 / Gemini Pro ($$$)<br>
+            Rate-limit hit → Auto-Fallback Model<br>
+            Result: 30 bài/ngày — Chi phí $0
+          </div>
+          <div style="margin-top: 16px; background: rgba(255,87,51,0.1); border: 1px solid rgba(255,87,51,0.2); border-radius: 12px; padding: 16px;">
+            <div style="font-size: 10px; font-weight: 900; color: var(--lobster); text-transform: uppercase; margin-bottom: 8px;">Lưu Ý Kiến Trúc Sư</div>
+            <div style="font-size: 12px; color: #CBD5E1; line-height: 1.6;">Chi phí biên gần như bằng 0. Khi chạy Agent thứ 100, chỉ cần nạp thêm $50 API trong khi lợi nhuận tăng theo cấp số nhân.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SECTION 6: SELF-EVOLUTION LOOP
+═══════════════════════════════════════ -->
+<section id="evolution" class="section" style="background: #F8FAFC;">
+  <div style="max-width: 960px; margin: 0 auto;">
+    <div class="accent-line"></div>
+    <h2 class="section-title">Self-Evolution Loop</h2>
+    <p class="section-subtitle">Agent không chỉ viết bài — nó tự "Hack" mã nguồn và Prompt của chính mình để tối ưu dòng tiền</p>
+
+    <div class="g4" style="margin-top: 32px;">
+      <div class="card" style="border-top: 4px solid var(--emerald); text-align: center; padding: 24px 20px;">
+        <div style="width: 48px; height: 48px; border-radius: 50%; background: rgba(16,185,129,0.1); border: 2px solid var(--emerald); display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-size: 20px;">1</div>
+        <div style="font-size: 10px; font-weight: 900; color: var(--emerald); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">Tracking</div>
+        <div style="font-weight: 800; font-size: 14px; margin-bottom: 8px;">Thu Thập S6</div>
+        <div style="font-size: 12px; color: var(--muted); line-height: 1.6;"><code style="background: #F1F5F9; padding: 2px 6px; border-radius: 4px; font-size: 11px;">conversion-tracker</code> theo dõi UTM, CTR, CVR thời gian thực từ Affitor.</div>
+      </div>
+      <div class="card" style="border-top: 4px solid var(--gold); text-align: center; padding: 24px 20px;">
+        <div style="width: 48px; height: 48px; border-radius: 50%; background: rgba(217,119,6,0.1); border: 2px solid var(--gold); display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-size: 20px;">2</div>
+        <div style="font-size: 10px; font-weight: 900; color: var(--gold); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">Audit</div>
+        <div style="font-weight: 800; font-size: 14px; margin-bottom: 8px;">Tự Đánh Giá S8</div>
+        <div style="font-size: 12px; color: var(--muted); line-height: 1.6;"><code style="background: #F1F5F9; padding: 2px 6px; border-radius: 4px; font-size: 11px;">self-improver</code> phân tích: "Tại sao Hook Storytelling thắng Hook Shocking?"</div>
+      </div>
+      <div class="card" style="border-top: 4px solid var(--lobster); text-align: center; padding: 24px 20px;">
+        <div style="width: 48px; height: 48px; border-radius: 50%; background: rgba(255,87,51,0.1); border: 2px solid var(--lobster); display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-size: 20px;">3</div>
+        <div style="font-size: 10px; font-weight: 900; color: var(--lobster); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">Self-Hack ⚡</div>
+        <div style="font-weight: 800; font-size: 14px; margin-bottom: 8px;">Cập Nhật Prompt</div>
+        <div style="font-size: 12px; color: var(--muted); line-height: 1.6;">Molty tự sửa file <code style="background: #F1F5F9; padding: 2px 6px; border-radius: 4px; font-size: 11px;">system_prompt.md</code> trên SSD để ưu tiên cấu trúc Win cho chu kỳ sau.</div>
+      </div>
+      <div class="card" style="border-top: 4px solid var(--indigo); text-align: center; padding: 24px 20px;">
+        <div style="width: 48px; height: 48px; border-radius: 50%; background: rgba(99,102,241,0.1); border: 2px solid var(--indigo); display: flex; align-items: center; justify-content: center; margin: 0 auto 12px; font-size: 20px;">4</div>
+        <div style="font-size: 10px; font-weight: 900; color: var(--indigo); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px;">Scale</div>
+        <div style="font-weight: 800; font-size: 14px; margin-bottom: 8px;">Tái Chế & Mở Rộng</div>
+        <div style="font-size: 12px; color: var(--muted); line-height: 1.6;"><code style="background: #F1F5F9; padding: 2px 6px; border-radius: 4px; font-size: 11px;">content-repurposer</code> nhân bản template Win sang 10 kênh đồng loạt.</div>
+      </div>
+    </div>
+
+    <div class="card-dark" style="margin-top: 28px; border: 1px solid #334155;">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px; align-items: center;">
+        <div>
+          <div style="font-weight: 800; font-size: 18px; margin-bottom: 12px;">Điểm Đòn Bẩy: S6 <span style="color: var(--gold);">→</span> S1</div>
+          <p style="font-size: 13px; color: #94A3B8; line-height: 1.7;">Phản hồi dữ liệu liên tục ngược về giai đoạn Nghiên cứu (S1) biến Agent từ công cụ viết bài đơn thuần thành <strong style="color: white;">cỗ máy tự tối ưu hóa</strong>. Nó tự nuôi dưỡng chiến lược theo dữ liệu thực tế.</p>
+          <div style="margin-top: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <div style="padding: 12px; background: rgba(255,255,255,0.05); border-radius: 10px; text-align: center;">
+              <div style="font-size: 11px; color: #64748B; text-transform: uppercase; font-weight: 700;">Gen 1 EPC</div>
+              <div style="font-size: 24px; font-weight: 900; color: var(--muted);">$0.50</div>
+            </div>
+            <div style="padding: 12px; background: rgba(255,87,51,0.1); border: 1px solid rgba(255,87,51,0.2); border-radius: 10px; text-align: center;">
+              <div style="font-size: 11px; color: #64748B; text-transform: uppercase; font-weight: 700;">Gen 5 EPC</div>
+              <div style="font-size: 24px; font-weight: 900; color: var(--lobster);">$5.50</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size: 11px; font-weight: 900; color: #475569; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">EPC Tăng Trưởng Qua 5 Thế Hệ</div>
+          <div class="chart-wrap" style="height: 220px;"><canvas id="evolutionChart"></canvas></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SECTION 7: CONTENT 90 NGÀY
+═══════════════════════════════════════ -->
+<section id="content" class="section">
+  <div style="max-width: 960px; margin: 0 auto;">
+    <div class="accent-line"></div>
+    <h2 class="section-title">Content Marketing 90 Ngày</h2>
+    <p class="section-subtitle">Chuyển đổi từ "tạo nội dung" sang "vận hành cỗ máy nội dung tự sinh" — Content Moat strategy</p>
+
+    <!-- Content ratio + channels -->
+    <div class="g2" style="margin-top: 32px;">
+      <div class="card">
+        <div style="font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 16px;">Phân Bổ Tỉ Trọng Nội Dung</div>
+        <div style="margin-bottom: 16px;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+            <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--indigo); flex-shrink: 0;"></div>
+            <span style="font-size: 13px; font-weight: 700;">Educational (Giáo dục thị trường) — 40%</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+            <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--gold); flex-shrink: 0;"></div>
+            <span style="font-size: 13px; font-weight: 700;">Tech/Agent Setup (Phô diễn hạ tầng) — 30%</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <div style="width: 12px; height: 12px; border-radius: 50%; background: var(--emerald); flex-shrink: 0;"></div>
+            <span style="font-size: 13px; font-weight: 700;">Conversion/ROI (Chốt đơn) — 30%</span>
+          </div>
+        </div>
+        <div class="chart-wrap" style="height: 200px;"><canvas id="contentChart"></canvas></div>
+      </div>
+      <div>
+        <div style="margin-bottom: 16px; font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em;">Ma Trận Kênh Phân Phối</div>
+        <div style="display: flex; flex-direction: column; gap: 12px;">
+          <div class="card" style="border-left: 4px solid #1DA1F2;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <div style="font-weight: 800; font-size: 13px;">🐦 X (Twitter) — <code style="font-size: 11px; color: var(--lobster);">@MoltyFlywheel</code></div>
+                <div style="font-size: 12px; color: var(--muted); margin-top: 4px;"><code style="font-size: 11px;">twitter-thread-writer</code> · 3 bài/ngày · Shocking stats + Tech · Link về moltyflywheel.com</div>
+              </div>
+              <span class="badge" style="background: #EFF6FF; color: #1D4ED8;">S2 Atomizer</span>
+            </div>
+          </div>
+          <div class="card" style="border-left: 4px solid #0A66C2;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <div style="font-weight: 800; font-size: 13px;">💼 LinkedIn — <code style="font-size: 11px; color: var(--lobster);">MoltyFlywheel</code></div>
+                <div style="font-size: 12px; color: var(--muted); margin-top: 4px;"><code style="font-size: 11px;">viral-post-writer</code> · 1 bài/ngày · Business Leader + Case Studies · CTA → moltyflywheel.com</div>
+              </div>
+              <span class="badge" style="background: #DCFCE7; color: #166534;">Authority</span>
+            </div>
+          </div>
+          <div class="card" style="border-left: 4px solid #FF4500;">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <div style="font-weight: 800; font-size: 13px;">👽 Reddit — <code style="font-size: 11px; color: var(--lobster);">u/MoltyFlywheel</code></div>
+                <div style="font-size: 12px; color: var(--muted); margin-top: 4px;"><code style="font-size: 11px;">reddit-post-writer</code> · Đóng vai người dùng ngách · Subreddit infiltration · Drop link blog.moltyflywheel.com</div>
+              </div>
+              <span class="badge" style="background: #FEF3C7; color: #92400E;">Community</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3-month timeline -->
+    <div style="margin-top: 32px;">
+      <div style="font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 16px;">Lộ Trình 3 Tháng</div>
+      <div class="g3">
+        <div class="card" style="border-top: 4px solid var(--lobster);">
+          <div style="font-size: 10px; font-weight: 900; color: var(--lobster); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">Tháng 1: Awareness & Setup</div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background: var(--lobster);"></div>
+            <div style="font-weight: 800; font-size: 13px;">Tuần 1-2: Vision</div>
+            <div style="font-size: 12px; color: var(--muted); margin-top: 4px; line-height: 1.5;">5 bài Deep Dive về Mac M2 + OpenClaw. Thiết lập vị thế "Architect".</div>
+          </div>
+          <div class="timeline-item" style="padding-bottom: 0;">
+            <div class="timeline-dot" style="background: var(--lobster);"></div>
+            <div style="font-weight: 800; font-size: 13px;">Tuần 3-4: Infra Flex</div>
+            <div style="font-size: 12px; color: var(--muted); margin-top: 4px; line-height: 1.5;">Show-case hạ tầng $0. Video POV Terminal. Tạo Meme potential Molty 🦞.</div>
+          </div>
+        </div>
+        <div class="card" style="border-top: 4px solid var(--gold);">
+          <div style="font-size: 10px; font-weight: 900; color: var(--gold); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">Tháng 2: Authority & Convert</div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background: var(--gold);"></div>
+            <div style="font-weight: 800; font-size: 13px;">Tuần 5-6: Monopoly Moat</div>
+            <div style="font-size: 12px; color: var(--muted); margin-top: 4px; line-height: 1.5;">10 bài SEO ngách hẹp tại <strong>blog.moltyflywheel.com</strong>. Thống lĩnh từ khóa ngách theo chiến lược Peter Thiel.</div>
+          </div>
+          <div class="timeline-item" style="padding-bottom: 0;">
+            <div class="timeline-dot" style="background: var(--gold);"></div>
+            <div style="font-weight: 800; font-size: 13px;">Tuần 7-8: Value Offer</div>
+            <div style="font-size: 12px; color: var(--muted); margin-top: 4px; line-height: 1.5;">Grand Slam Offer cho sản phẩm Affitor. Email Drip 7 ngày. Chuyển đổi Paid Users.</div>
+          </div>
+        </div>
+        <div class="card" style="border-top: 4px solid var(--emerald);">
+          <div style="font-size: 10px; font-weight: 900; color: var(--emerald); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 12px;">Tháng 3: Scale & Evolve</div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background: var(--emerald);"></div>
+            <div style="font-weight: 800; font-size: 13px;">Tuần 9-10: Proof of Evolution</div>
+            <div style="font-size: 12px; color: var(--muted); margin-top: 4px; line-height: 1.5;">Công khai nhật ký Self-Hack. Show ROI thực tế. Xây dựng niềm tin.</div>
+          </div>
+          <div class="timeline-item" style="padding-bottom: 0;">
+            <div class="timeline-dot" style="background: var(--emerald);"></div>
+            <div style="font-weight: 800; font-size: 13px;">Tuần 11-12: Flywheel Scale</div>
+            <div style="font-size: 12px; color: var(--muted); margin-top: 4px; line-height: 1.5;">Nhân bản sang ngách phụ cận. Repurpose Win content → YouTube Scripts. Đạt $3,810.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SECTION 8: WEEKLY ACTION PLAN
+═══════════════════════════════════════ -->
+<section id="weekly" class="section" style="background: #F8FAFC;">
+  <div style="max-width: 960px; margin: 0 auto;">
+    <div class="accent-line"></div>
+    <h2 class="section-title">Action Plan — Từng Tuần</h2>
+    <p class="section-subtitle">Kế hoạch hành động chi tiết 12 tuần × 3 mảng: Kỹ thuật · Content · Affiliate</p>
+
+    <div style="margin-top: 32px; background: white; border-radius: 20px; border: 1px solid #E2E8F0; overflow: hidden;">
+      <div class="week-row" style="background: var(--dark); color: white; font-weight: 900; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;">
+        <div>Tuần</div><div>⚙️ Kỹ Thuật & Hạ Tầng</div><div>✍️ Content & Marketing</div><div>💰 Affiliate & KPI</div>
+      </div>
+      <div class="week-row">
+        <div style="font-weight: 900; color: var(--lobster);">W1</div>
+        <div>Cài NVM, Node 24, pnpm, PM2. Chạy <code>openclaw onboard</code>.</div>
+        <div>Lên kế hoạch 12 chủ đề Content Pillar cho 3 tháng.</div>
+        <div>Đăng ký Affitor. Lấy Referral code. Kết nối Stripe.</div>
+      </div>
+      <div class="week-row">
+        <div style="font-weight: 900; color: var(--lobster);">W2</div>
+        <div>Cài Free Ride + OpenRouter key. Test 30 bài/ngày.</div>
+        <div>5 bài Deep Dive: Mac M2 + OpenClaw lên X + LinkedIn.</div>
+        <div>Kích hoạt S1 Research. Chọn ngách Affitor đầu tiên.</div>
+      </div>
+      <div class="week-row">
+        <div style="font-weight: 900; color: var(--lobster);">W3</div>
+        <div>Clone 45 Skills. Cài Mcporter. Test <code>openclaw skills list</code>.</div>
+        <div>3 video POV Terminal (TikTok/Shorts). Meme Molty 🦞.</div>
+        <div>Chạy S2 Atomizer đầu tiên. KPI: 300 clicks tuần 3.</div>
+      </div>
+      <div class="week-row">
+        <div style="font-weight: 900; color: var(--gold);">W4</div>
+        <div>Đăng ký <strong>MoltyFlywheel.com</strong>. Cấu hình Cloudflare DNS + SSL. Tạo admin@moltyflywheel.com.</div>
+        <div>10 X Threads. 4 LinkedIn posts. Reddit infiltration 2 Subreddit.</div>
+        <div>KPI T1: 1,000 clicks. Target 20 Paid Users. Net: $381.</div>
+      </div>
+      <div class="week-row">
+        <div style="font-weight: 900; color: var(--gold);">W5</div>
+        <div>Deploy Landing Page S4 tại <strong>moltyflywheel.com</strong>. GitHub Pages + Custom domain.</div>
+        <div>10 bài SEO ngách hẹp tại <strong>blog.moltyflywheel.com</strong>. Agent tự xuất bản.</div>
+        <div>Cấp ngân sách $50 OpenRouter. Bật High-Value inference.</div>
+      </div>
+      <div class="week-row">
+        <div style="font-weight: 900; color: var(--gold);">W6</div>
+        <div>Cài Email Drip S5. Cấu hình chuỗi 7 email tự động.</div>
+        <div>Grand Slam Offer post. 3 Case Study thực tế đầu tiên.</div>
+        <div>KPI: 3,000 clicks. 60 Paid Users. Net: ~$1,100.</div>
+      </div>
+      <div class="week-row">
+        <div style="font-weight: 900; color: var(--gold);">W7</div>
+        <div>Bật S6 Conversion Tracker. Gắn UTM toàn bộ kênh.</div>
+        <div>Phân tích Hook: Storytelling vs Shocking. Chọn Winner.</div>
+        <div>Bật Self-Improver S8. First Self-Hack cycle.</div>
+      </div>
+      <div class="week-row">
+        <div style="font-weight: 900; color: var(--gold);">W8</div>
+        <div>Review PM2 logs. <code>pm2 flush</code> dọn dẹp. SSD health check.</div>
+        <div>Tổng kết Tháng 2. Công khai kết quả trên X.</div>
+        <div>KPI T2: 6,000 clicks. 120 Paid Users. Net: ~$2,300.</div>
+      </div>
+      <div class="week-row">
+        <div style="font-weight: 900; color: var(--emerald);">W9</div>
+        <div>Scale lên 2 ngách Affitor song song. Nhân đôi Skills.</div>
+        <div>Công bố nhật ký Self-Hack. Show thay đổi system_prompt.md.</div>
+        <div>S7 Repurpose: Reddit → YouTube Scripts. Bắt đầu kênh YouTube.</div>
+      </div>
+      <div class="week-row">
+        <div style="font-weight: 900; color: var(--emerald);">W10</div>
+        <div>Tối ưu OpenRouter routing: A/B test Claude vs Gemini cho S4.</div>
+        <div>10 bài Win nhất → Repurpose sang Email Newsletter.</div>
+        <div>KPI: 8,500 clicks. 170 Paid Users. Net: ~$3,200.</div>
+      </div>
+      <div class="week-row">
+        <div style="font-weight: 900; color: var(--emerald);">W11</div>
+        <div>Mở rộng sang ngách phụ cận. Clone toàn bộ hệ thống sang Agent 2.</div>
+        <div>Series "Proof of AI Economy" — 7 ngày consecutive posts.</div>
+        <div>Self-Hack Gen 3 → EPC dự kiến $2.5+. Push for $3,500.</div>
+      </div>
+      <div class="week-row" style="border-bottom: none;">
+        <div style="font-weight: 900; color: var(--emerald);">W12</div>
+        <div>Đánh giá toàn hệ thống. Lên kế hoạch Cycle 2 (Scale x10).</div>
+        <div>Flywheel Scale post: "Cách tôi kiếm $3,810 với 1 máy tính."</div>
+        <div>🎯 KPI T3: 10,000 clicks. 200 Users. <strong>Net: $3,810.</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SECTION 9: MASTER CHECKLIST
+═══════════════════════════════════════ -->
+<section id="checklist" class="section">
+  <div style="max-width: 960px; margin: 0 auto;">
+    <div class="accent-line"></div>
+    <h2 class="section-title">Master Checklist</h2>
+    <p class="section-subtitle">Danh sách kiểm tra tổng thể — đánh dấu hoàn thành từng bước</p>
+    <div class="g2" style="margin-top: 32px;">
+      <div>
+        <div style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-bottom: 12px;">⚙️ Hạ Tầng Kỹ Thuật</div>
+        <label class="check-item"><input type="checkbox"><div><strong>Cài Node.js 24 + pnpm + PM2</strong><br><span style="font-size: 11px; color: var(--muted);">arm64 native trên Mac Mini M2</span></div></label>
+        <label class="check-item"><input type="checkbox"><div><strong>Cài OpenClaw + Onboard Wizard</strong><br><span style="font-size: 11px; color: var(--muted);">Cấu hình Telegram bot token + allowFrom whitelist</span></div></label>
+        <label class="check-item"><input type="checkbox"><div><strong>Kích hoạt Free Ride Engine</strong><br><span style="font-size: 11px; color: var(--muted);">OpenRouter API key + Llama/DeepSeek free tier</span></div></label>
+        <label class="check-item"><input type="checkbox"><div><strong>Clone 45 Affiliate Skills</strong><br><span style="font-size: 11px; color: var(--muted);">github.com/Affitor/affiliate-skills vào ~/.openclaw/skills</span></div></label>
+        <label class="check-item"><input type="checkbox"><div><strong>PM2 Startup + Save (24/7)</strong><br><span style="font-size: 11px; color: var(--muted);">Gateway tự bật khi Mac Mini khởi động lại</span></div></label>
+        <div style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 20px 0 12px;">🌐 Domain & Brand</div>
+        <label class="check-item"><input type="checkbox"><div><strong>Đăng ký MoltyFlywheel.com ✓</strong><br><span style="font-size: 11px; color: var(--lobster); font-weight: 700;">Domain đã xác nhận — ưu tiên mua ngay</span></div></label>
+        <label class="check-item"><input type="checkbox"><div><strong>Cấu hình Cloudflare DNS + SSL</strong><br><span style="font-size: 11px; color: var(--muted);">Trỏ MoltyFlywheel.com → Mac Mini M2, ẩn IP thật</span></div></label>
+        <label class="check-item"><input type="checkbox"><div><strong>Tạo admin@moltyflywheel.com</strong><br><span style="font-size: 11px; color: var(--muted);">Cloudflare Email Routing (miễn phí) cho Email Drip S5</span></div></label>
+        <label class="check-item"><input type="checkbox"><div><strong>GitHub: github.com/moltyflywheel</strong><br><span style="font-size: 11px; color: var(--muted);">GitHub Pages → moltyflywheel.com, hosting miễn phí cho Landing Page</span></div></label>
+      </div>
+      <div>
+        <div style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin-bottom: 12px;">💰 Affiliate & Monetization</div>
+        <label class="check-item"><input type="checkbox"><div><strong>Đăng ký Affitor Network</strong><br><span style="font-size: 11px; color: var(--muted);">Lấy Referral code tại list.affitor.com</span></div></label>
+        <label class="check-item"><input type="checkbox"><div><strong>Kết nối Stripe (nhận USD)</strong><br><span style="font-size: 11px; color: var(--muted);">Tài khoản đã xác minh, tự động chuyển VND</span></div></label>
+        <label class="check-item"><input type="checkbox"><div><strong>Chạy S1 Research đầu tiên</strong><br><span style="font-size: 11px; color: var(--muted);">Chọn ngách giao thoa AI x [Pháp lý/Health/Finance]</span></div></label>
+        <label class="check-item"><input type="checkbox"><div><strong>Deploy Landing Page S4</strong><br><span style="font-size: 11px; color: var(--muted);">Claude 3.5 Sonnet viết code, chuẩn SEO + CTA</span></div></label>
+        <label class="check-item"><input type="checkbox"><div><strong>Cài Email Drip S5 (7 ngày)</strong><br><span style="font-size: 11px; color: var(--muted);">Chuỗi nuôi dưỡng → chốt đơn tự động</span></div></label>
+        <div style="font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); margin: 20px 0 12px;">✍️ Content & Self-Evolution</div>
+        <label class="check-item"><input type="checkbox"><div><strong>Gắn UTM toàn bộ kênh (S6)</strong><br><span style="font-size: 11px; color: var(--muted);">Theo dõi chính xác CTR/CVR theo từng kênh</span></div></label>
+        <label class="check-item"><input type="checkbox"><div><strong>Bật Self-Improver S8</strong><br><span style="font-size: 11px; color: var(--muted);">Đặt lịch chạy tự động mỗi tuần, audit logs S6</span></div></label>
+        <label class="check-item"><input type="checkbox"><div><strong>First Self-Hack Cycle</strong><br><span style="font-size: 11px; color: var(--muted);">Molty tự cập nhật system_prompt.md dựa trên Win data</span></div></label>
+        <label class="check-item"><input type="checkbox"><div><strong>S7 Repurpose: Reddit → YouTube</strong><br><span style="font-size: 11px; color: var(--muted);">Nhân bản nội dung Win sang kênh phụ cận</span></div></label>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════
+     SECTION 10: RỦI RO & XỬ LÝ
+═══════════════════════════════════════ -->
+<section id="risks" class="section" style="background: #F8FAFC; padding-bottom: 80px;">
+  <div style="max-width: 960px; margin: 0 auto;">
+    <div class="accent-line"></div>
+    <h2 class="section-title">Rủi Ro & Phương Án Xử Lý</h2>
+    <p class="section-subtitle">Ma trận rủi ro — nhận diện sớm, xử lý nhanh, không gián đoạn dòng tiền</p>
+    <div style="margin-top: 32px; background: white; border-radius: 20px; border: 1px solid #E2E8F0; overflow: hidden;">
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 3fr; background: var(--dark); color: white; padding: 12px 20px; font-size: 11px; font-weight: 900; text-transform: uppercase; letter-spacing: 0.05em; gap: 16px;">
+        <div>Rủi Ro</div><div>Xác Suất</div><div>Mức Độ</div><div>Phương Án Xử Lý</div>
+      </div>
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 3fr; padding: 14px 20px; font-size: 12px; gap: 16px; border-bottom: 1px solid #E2E8F0; align-items: center;">
+        <div style="font-weight: 700;">OpenRouter Rate Limit vượt ngưỡng</div>
+        <div><span class="badge" style="background: #FEF3C7; color: #92400E;">Cao</span></div>
+        <div><span class="badge" style="background: #FEE2E2; color: #991B1B;">Cao</span></div>
+        <div style="color: var(--muted);">Free Ride tự động fallback sang model dự phòng (Llama/Mixtral). Không gián đoạn.</div>
+      </div>
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 3fr; padding: 14px 20px; font-size: 12px; gap: 16px; border-bottom: 1px solid #E2E8F0; align-items: center; background: #F8FAFC;">
+        <div style="font-weight: 700;">SSD 256GB gần đầy</div>
+        <div><span class="badge" style="background: #FEF3C7; color: #92400E;">Trung bình</span></div>
+        <div><span class="badge" style="background: #FEF3C7; color: #92400E;">Trung bình</span></div>
+        <div style="color: var(--muted);"><code>pm2 flush</code> định kỳ. Cron job dọn logs hàng tuần. Monitor bằng <code>du -sh ~/.openclaw</code>.</div>
+      </div>
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 3fr; padding: 14px 20px; font-size: 12px; gap: 16px; border-bottom: 1px solid #E2E8F0; align-items: center;">
+        <div style="font-weight: 700;">Social Account bị ban/giới hạn</div>
+        <div><span class="badge" style="background: #FEF3C7; color: #92400E;">Trung bình</span></div>
+        <div><span class="badge" style="background: #FEE2E2; color: #991B1B;">Cao</span></div>
+        <div style="color: var(--muted);">Dùng aged accounts. Tốc độ đăng bài dưới ngưỡng. Warm-up 2 tuần trước khi tăng tốc.</div>
+      </div>
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 3fr; padding: 14px 20px; font-size: 12px; gap: 16px; border-bottom: 1px solid #E2E8F0; align-items: center; background: #F8FAFC;">
+        <div style="font-weight: 700;">Affitor thay đổi hoa hồng/điều khoản</div>
+        <div><span class="badge" style="background: #DCFCE7; color: #166534;">Thấp</span></div>
+        <div><span class="badge" style="background: #FEF3C7; color: #92400E;">Cao</span></div>
+        <div style="color: var(--muted);">Đa dạng hóa: chạy song song 2-3 Affiliate Network. S1 Research tự động tìm ngách mới.</div>
+      </div>
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 3fr; padding: 14px 20px; font-size: 12px; gap: 16px; border-bottom: 1px solid #E2E8F0; align-items: center;">
+        <div style="font-weight: 700;">Mac Mini M2 mất điện/khởi động lại</div>
+        <div><span class="badge" style="background: #DCFCE7; color: #166534;">Thấp</span></div>
+        <div><span class="badge" style="background: #FEF3C7; color: #92400E;">Trung bình</span></div>
+        <div style="color: var(--muted);">PM2 startup đảm bảo Gateway tự bật sau reboot. Persistent Memory trên SSD không mất data.</div>
+      </div>
+      <div style="display: grid; grid-template-columns: 2fr 1fr 1fr 3fr; padding: 14px 20px; font-size: 12px; gap: 16px; align-items: center; background: #F8FAFC;">
+        <div style="font-weight: 700;">CVR thấp hơn dự kiến (dưới 2%)</div>
+        <div><span class="badge" style="background: #DCFCE7; color: #166534;">Thấp</span></div>
+        <div><span class="badge" style="background: #FEE2E2; color: #991B1B;">Cao</span></div>
+        <div style="color: var(--muted);">Kích hoạt Self-Evolution sớm hơn. A/B test Landing Page bằng S4. Tăng ngân sách inference S8.</div>
+      </div>
+    </div>
+
+    <!-- Footer signature -->
+    <div style="margin-top: 48px; background: var(--dark); border-radius: 24px; padding: 40px; text-align: center; color: white;">
+      <div style="font-size: 40px; margin-bottom: 12px;">🦞</div>
+      <div style="font-size: 22px; font-weight: 900; text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 8px;">Molty <span style="color: var(--lobster);">Master Strategy</span> v1.0</div>
+      <div style="font-size: 13px; color: #64748B; margin-bottom: 8px;">Tổng hợp từ 6 tài liệu chiến lược — Triển khai A-Z</div>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: var(--lobster); font-weight: 700; margin-bottom: 20px;">🌐 moltyflywheel.com · admin@moltyflywheel.com · @MoltyFlywheel</div>
+      <div style="font-family: 'JetBrains Mono', monospace; background: #0D1117; border-radius: 12px; padding: 14px 24px; display: inline-block; font-size: 13px; color: #56D364;">
+        curl -fsSL https://openclaw.ai/install.sh | bash
+      </div>
+      <div style="margin-top: 24px; font-size: 10px; font-weight: 700; color: #334155; text-transform: uppercase; letter-spacing: 0.15em;">Lobster-light. Agent-right. © 2026 Molty Core 🦞</div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /main -->
+
+<script>
+// ─── Sidebar active state ───
+const navItems = document.querySelectorAll('.nav-item');
+const sections = document.querySelectorAll('section[id]');
+function updateActive() {
+  let current = '';
+  sections.forEach(s => { if (window.scrollY + 100 >= s.offsetTop) current = s.id; });
+  navItems.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+}
+window.addEventListener('scroll', updateActive);
+navItems.forEach(a => a.addEventListener('click', e => {
+  e.preventDefault();
+  const target = document.querySelector(a.getAttribute('href'));
+  if (target) target.scrollIntoView({ behavior: 'smooth' });
+}));
+
+// ─── KPI Slider ───
+const slider = document.getElementById('weekSlider');
+function updateKPI(week) {
+  const w = parseInt(week);
+  const t = Math.round(w / 12 * 10000);
+  const u = Math.round(t * 0.02);
+  const roi = Math.round(u * 20 * 0.953 - 50);
+  const netRoi = Math.max(0, roi);
+  document.getElementById('kpi-week').textContent = w;
+  document.getElementById('kpi-traffic').textContent = t.toLocaleString();
+  document.getElementById('kpi-users').textContent = u;
+  document.getElementById('kpi-roi').textContent = '$' + netRoi.toLocaleString();
+  document.getElementById('pb-week').style.width = (w/12*100) + '%';
+  document.getElementById('pb-traffic').style.width = (t/10000*100) + '%';
+  document.getElementById('pb-users').style.width = (u/200*100) + '%';
+  document.getElementById('pb-roi').style.width = Math.min(100, netRoi/3810*100) + '%';
+}
+slider.addEventListener('input', e => updateKPI(e.target.value));
+
+// ─── Charts ───
+window.addEventListener('load', () => {
+  updateKPI(1);
+
+  // Projection Chart
+  new Chart(document.getElementById('projectionChart'), {
+    type: 'bar',
+    data: {
+      labels: ['T1 (W1-4)', 'T2 (W5-8)', 'T3 (W9-12)'],
+      datasets: [
+        { label: 'Clicks', data: [1000, 6000, 10000], backgroundColor: 'rgba(99,102,241,0.7)', yAxisID: 'y' },
+        { label: 'Net ROI ($)', data: [381, 2286, 3810], backgroundColor: 'rgba(16,185,129,0.7)', yAxisID: 'y1' }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { position: 'bottom', labels: { font: { weight: 'bold', size: 11 } } } },
+      scales: {
+        y: { position: 'left', title: { display: true, text: 'Clicks', font: { size: 10 } } },
+        y1: { position: 'right', title: { display: true, text: 'USD ($)', font: { size: 10 } }, grid: { drawOnChartArea: false } }
+      }
+    }
+  });
+
+  // ROI Chart
+  new Chart(document.getElementById('roiChart'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Net ROI ($3,810)', 'Phí Affitor ($140)', 'API Budget ($50)'],
+      datasets: [{ data: [3810, 140, 50], backgroundColor: ['#10B981','#F43F5E','#6366F1'], borderWidth: 0, hoverOffset: 10 }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false, cutout: '70%',
+      plugins: { legend: { position: 'bottom', labels: { font: { weight: 'bold', size: 11 } } } }
+    }
+  });
+
+  // Evolution Chart
+  new Chart(document.getElementById('evolutionChart'), {
+    type: 'line',
+    data: {
+      labels: ['Gen 1', 'Gen 2', 'Gen 3', 'Gen 4', 'Gen 5'],
+      datasets: [
+        { label: 'Manual Affiliate', data: [0.5, 0.45, 0.4, 0.35, 0.32], borderColor: '#64748B', borderDash: [5,5], backgroundColor: 'transparent', tension: 0.2 },
+        { label: 'Molty Evolution', data: [0.5, 0.9, 1.8, 3.2, 5.5], borderColor: '#FF5733', backgroundColor: 'rgba(255,87,51,0.15)', fill: true, tension: 0.4, borderWidth: 3, pointBackgroundColor: '#FF5733', pointRadius: 5 }
+      ]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false } },
+      scales: {
+        y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#64748B', font: { size: 10 } }, title: { display: true, text: 'EPC ($)', color: '#64748B', font: { size: 10, weight: 'bold' } } },
+        x: { grid: { display: false }, ticks: { color: '#64748B', font: { size: 10, weight: 'bold' } } }
+      }
+    }
+  });
+
+  // Content Ratio Chart
+  new Chart(document.getElementById('contentChart'), {
+    type: 'doughnut',
+    data: {
+      labels: ['Educational (40%)', 'Tech Setup (30%)', 'Conversion (30%)'],
+      datasets: [{ data: [40,30,30], backgroundColor: ['#6366F1','#D97706','#10B981'], borderWidth: 0, hoverOffset: 10 }]
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false, cutout: '65%',
+      plugins: { legend: { position: 'bottom', labels: { font: { weight: 'bold', size: 11 }, boxWidth: 12 } } }
+    }
+  });
+});
+</script>
+</body>
+</html>
