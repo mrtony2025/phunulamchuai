@@ -1,4 +1,7 @@
-/.DS_Store
+# OS
+.DS_Store
+
+# Original client docs (now organized in docs/)
 /Ritchi_Beta_Onboarding_Flow.md
 /Ritchi_Community_Strategy.md
 /Ritchi_Content_Calendar_30_Days.md
@@ -8,3 +11,17 @@
 /Ritchi_Phase_Details.md
 /Ritchi_Team_Strategy.html
 /Women_Community_Strategy_Analysis.md
+
+# Archives
+*.zip
+
+# IDE
+.vscode/
+.idea/
+
+# Environment Variables
+.env
+.env.*
+
+# Working / Source files not meant for deployment
+source_files_not_for_git/

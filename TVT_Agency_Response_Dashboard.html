@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TVT Agency Response Dashboard - Ritchi Foundation</title>
+    <meta name="description" content="Strategic Response Dashboard for Ritchi Foundation - Provided by TVT Agency.">
+    <!-- Canonical URL & Favicon -->
+    <link rel="canonical" href="https://phunulamchuai.vercel.app/TVT_Agency_Response_Dashboard.html">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Be Vietnam Pro"', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            navy: '#0a1628',
+                            gold: '#f0a500',
+                            green: '#00b96b',
+                            red: '#f5222d',
+                            light: '#f8fafc',
+                            dark: '#1e293b'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Tăng kích thước font chữ gốc để tối ưu hiển thị khi trình chiếu/màn hình lớn */
+        html { font-size: 19px; }
+        
+        body { font-family: 'Be Vietnam Pro', sans-serif; background-color: #f1f5f9; color: #334155; }
+        .glass-panel { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); }
+        .gradient-text { background-clip: text; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .nav-link { transition: all 0.3s ease; }
+        .nav-link:hover, .nav-link.active { color: #f0a500; border-left: 4px solid #f0a500; background-color: rgba(240, 165, 0, 0.1); }
+    </style>
+</head>
+<body class="antialiased flex h-screen overflow-hidden">
+
+    <!-- Sidebar Navigation -->
+    <aside class="w-64 bg-brand-navy text-white flex flex-col shadow-2xl z-20">
+        <div class="p-6 border-b border-gray-700">
+            <h1 class="text-2xl font-bold text-brand-gold tracking-tight">TVT <span class="text-white">AGENCY</span></h1>
+            <p class="text-xs text-gray-400 mt-1 uppercase tracking-wider font-semibold">Strategic Response Dashboard</p>
+        </div>
+        
+        <div class="p-4">
+            <div class="mb-2 text-xs uppercase text-gray-500 font-bold tracking-wider">Dự án</div>
+            <div class="text-lg font-semibold text-white mb-6">Ritchi Foundation</div>
+            
+            <nav class="space-y-1">
+                <a href="#overview" class="nav-link block px-4 py-3 rounded-r-lg text-sm font-medium"><i class="fas fa-chart-pie w-6"></i> Tổng Quan Phân Tích</a>
+                <a href="#proposals" class="nav-link block px-4 py-3 rounded-r-lg text-sm font-medium"><i class="fas fa-lightbulb w-6"></i> Đề Xuất Chiến Lược</a>
+                <a href="#execution" class="nav-link block px-4 py-3 rounded-r-lg text-sm font-medium"><i class="fas fa-rocket w-6"></i> Kế Hoạch 6 Tháng</a>
+                <a href="#sow" class="nav-link block px-4 py-3 rounded-r-lg text-sm font-medium"><i class="fas fa-tasks w-6"></i> Hạng Mục Thực Thi</a>
+                <a href="#women" class="nav-link block px-4 py-3 rounded-r-lg text-sm font-medium"><i class="fas fa-female w-6"></i> "Chị Em Tự Chủ"</a>
+                <a href="#casestudy" class="nav-link block px-4 py-3 rounded-r-lg text-sm font-medium"><i class="fas fa-search-dollar w-6"></i> Phân Tích Mô Hình</a>
+                <a href="#packages" class="nav-link block px-4 py-3 rounded-r-lg text-sm font-medium"><i class="fas fa-box w-6"></i> Phương Án Hợp Tác</a>
+                <a href="#confirmation" class="nav-link block px-4 py-3 rounded-r-lg text-sm font-medium"><i class="fas fa-clipboard-check w-6"></i> Xác Nhận Yêu Cầu</a>
+            </nav>
+        </div>
+        
+        <div class="mt-auto p-4 border-t border-gray-700 text-xs text-gray-400 text-center">
+            &copy; 2026 TVT Agency<br>Confidential Document
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="flex-1 overflow-y-auto bg-gray-50 scroll-smooth pb-20">
+        
+        <!-- Header -->
+        <header class="bg-white shadow-sm sticky top-0 z-10 px-8 py-6 flex justify-between items-center">
+            <div>
+                <h2 class="text-2xl font-bold text-gray-800">Ritchi 1M SMC Scalper - Marketing Execution Plan</h2>
+                <p class="text-sm text-gray-500 mt-1">Trình bày bởi TVT Agency | 12/05/2026</p>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+                    <i class="fas fa-circle text-xs mr-2 animate-pulse"></i> Trạng thái: Chờ duyệt
+                </span>
+                <button class="bg-brand-navy hover:bg-blue-900 text-white px-4 py-2 rounded-lg text-sm font-medium transition shadow-md">
+                    <i class="fas fa-file-pdf mr-2"></i> Xuất PDF
+                </button>
+            </div>
+        </header>
+
+        <div class="p-8 max-w-7xl mx-auto space-y-12">
+
+            <!-- 1. OVERVIEW SECTION -->
+            <section id="overview" class="scroll-mt-24">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center mr-4">
+                        <i class="fas fa-chart-pie text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800">Đánh Giá Tổng Quan Từ Brief</h3>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <div class="glass-panel p-6 rounded-xl border-t-4 border-blue-500">
+                        <div class="text-sm text-gray-500 uppercase tracking-wide font-bold mb-1">Điểm Đánh Giá</div>
+                        <div class="text-4xl font-black text-brand-navy mb-2">7.5<span class="text-lg text-gray-400 font-normal">/10</span></div>
+                        <p class="text-sm text-gray-600">Plan có nền tảng chiến lược vững chắc, định vị tốt. Phù hợp giai đoạn Bootstrap.</p>
+                    </div>
+                    <div class="glass-panel p-6 rounded-xl border-t-4 border-brand-green">
+                        <div class="text-sm text-gray-500 uppercase tracking-wide font-bold mb-1">Điểm Sáng (Strengths)</div>
+                        <ul class="text-sm text-gray-700 space-y-2 mt-2">
+                            <li><i class="fas fa-check text-brand-green mr-2"></i> Định vị "SMC đầu tiên VN" sắc nét</li>
+                            <li><i class="fas fa-check text-brand-green mr-2"></i> Lợi thế Automation Alert (Phao cứu sinh)</li>
+                            <li><i class="fas fa-check text-brand-green mr-2"></i> Onboarding 7 ngày chuyên nghiệp</li>
+                        </ul>
+                    </div>
+                    <div class="glass-panel p-6 rounded-xl border-t-4 border-brand-red">
+                        <div class="text-sm text-gray-500 uppercase tracking-wide font-bold mb-1">Rủi Ro Chú Ý (Risks)</div>
+                        <ul class="text-sm text-gray-700 space-y-2 mt-2">
+                            <li><i class="fas fa-exclamation-triangle text-brand-red mr-2"></i> Rủi ro phụ thuộc tool Screenshot Alert</li>
+                            <li><i class="fas fa-exclamation-triangle text-brand-red mr-2"></i> Thiếu Legal Disclaimer (Rủi ro pháp lý)</li>
+                            <li><i class="fas fa-exclamation-triangle text-brand-red mr-2"></i> Marketing Lead bị Overload (~65h/tuần)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. PROPOSALS SECTION -->
+            <section id="proposals" class="scroll-mt-24 pt-8 border-t border-gray-200">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-600 flex items-center justify-center mr-4">
+                        <i class="fas fa-lightbulb text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800">5 Đề Xuất Điều Chỉnh Chiến Lược</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Proposal 1 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-navy text-white flex items-center justify-center font-bold text-sm mr-4">1</div>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-800 mb-2">Ủy Thác Thực Thi (Giữ Đúng Tiến Độ 6 Tháng)</h4>
+                                <p class="text-sm text-gray-600 mb-3">Để đảm bảo KPI 500 Beta Users đúng 6 tháng mà team không bị burnout, TVT Agency đề xuất bơm nguồn lực chuyên môn từ bên ngoài. Ritchi chỉ cần tập trung Dev & Strategy, mọi khâu thực thi Marketing sẽ được ủy thác.</p>
+                                <span class="inline-block px-2 py-1 bg-brand-green text-white text-xs rounded font-medium">Độ ưu tiên: Cực Kỳ Quan Trọng</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Proposal 2 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-navy text-white flex items-center justify-center font-bold text-sm mr-4">2</div>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-800 mb-2">Bổ sung Nhân lực Content</h4>
+                                <p class="text-sm text-gray-600 mb-3">Linh Vũ đang gánh khối lượng ~65h/tuần. Đề xuất: Tuyển Part-time Content Creator, hoặc dùng AI Automation, hoặc TVT Agency hỗ trợ khâu Video Editing.</p>
+                                <span class="inline-block px-2 py-1 bg-red-100 text-red-700 text-xs rounded font-medium">Độ ưu tiên: Rất Cao</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Proposal 3 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-navy text-white flex items-center justify-center font-bold text-sm mr-4">3</div>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-800 mb-2">Thêm Weekly KPI Review</h4>
+                                <p class="text-sm text-gray-600 mb-3">Chuyển từ review theo Phase sang họp Weekly Standup (30p mỗi thứ 6). Setup Dashboard tracking số liệu hàng tuần để phát hiện Red Flags ngay lập tức.</p>
+                                <span class="inline-block px-2 py-1 bg-amber-100 text-amber-700 text-xs rounded font-medium">Độ ưu tiên: Cao</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Proposal 4 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-navy text-white flex items-center justify-center font-bold text-sm mr-4">4</div>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-800 mb-2">Bổ sung Khung Pháp Lý (Disclaimer)</h4>
+                                <p class="text-sm text-gray-600 mb-3">Ngành tài chính rất rủi ro. Bắt buộc phải có câu "Đây không phải tư vấn đầu tư" trên mọi Video, post Telegram trước khi Invite.</p>
+                                <span class="inline-block px-2 py-1 bg-amber-100 text-amber-700 text-xs rounded font-medium">Độ ưu tiên: Cao</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Proposal 5 -->
+                    <div class="bg-white p-6 rounded-xl shadow-sm border border-brand-gold hover:shadow-md transition md:col-span-2">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-8 h-8 rounded-full bg-brand-gold text-brand-navy flex items-center justify-center font-bold text-sm mr-4"><i class="fas fa-bolt"></i></div>
+                            <div>
+                                <h4 class="text-lg font-bold text-gray-800 mb-2">Tự Động Hóa Signal (TradingView → Telegram)</h4>
+                                <p class="text-sm text-gray-600 mb-3">Xây dựng hệ thống Alert làm lợi thế cạnh tranh cốt lõi. Sử dụng <strong>Chrome Extension hoặc Pipedream</strong> để tự động gửi tín hiệu từ TradingView sang Telegram kèm Screenshot Chart, hiển thị % lãi và note multi-timeframe (1M-5M). Điều này biến Indicator thành "Phao Cứu Sinh" thực thụ, giúp User không cần xem chart liên tục và giảm 80% sức lực cho Team Marketing.</p>
+                                <span class="inline-block px-2 py-1 bg-brand-navy text-white text-xs rounded font-medium">Độ ưu tiên: Rất Cao (Cốt lõi cạnh tranh)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 3. EXECUTION PLAN SECTION -->
+            <section id="execution" class="scroll-mt-24 pt-8 border-t border-gray-200">
+                <div class="flex items-center mb-8">
+                    <div class="w-10 h-10 rounded-full bg-green-100 text-green-600 flex items-center justify-center mr-4">
+                        <i class="fas fa-rocket text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800">Lộ Trình Thực Thi (6 Tháng)</h3>
+                        <p class="text-gray-500 text-sm">Roadmap bám sát đúng tiến độ chiến lược ban đầu của Ritchi với sự hỗ trợ từ TVT.</p>
+                    </div>
+                </div>
+
+                <div class="relative pl-8 md:pl-0">
+                    <!-- Timeline Line -->
+                    <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gray-200 rounded"></div>
+
+                    <!-- Phase 1 -->
+                    <div class="relative mb-12 md:flex md:justify-between md:items-center w-full">
+                        <div class="md:w-5/12 order-2 pl-8">
+                            <h4 class="text-xl font-bold text-brand-navy mb-1">Phase 1: Foundation</h4>
+                            <div class="text-sm text-gray-500 font-semibold mb-3"><i class="far fa-calendar-alt mr-1"></i> Tháng 1 - 2 (2 Tháng)</div>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>Thiết lập Infrastructure (Telegram Bot, Disclaimer)</li>
+                                <li>Launch Waitlist cùng hệ thống "Phao Cứu Sinh" Alert</li>
+                                <li>Áp dụng Onboarding Flow 7 ngày</li>
+                                <li>Hoàn thiện "Bias Tuần" & Weekly Q&A</li>
+                            </ul>
+                            <div class="mt-3 inline-block px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-xs font-bold border border-blue-100">
+                                <i class="fas fa-bullseye mr-1"></i> KPI: 100 Beta Users
+                            </div>
+                        </div>
+                        <div class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-blue-500 border-4 border-white shadow flex items-center justify-center z-10 -ml-4 md:ml-0 mt-1 md:mt-0">
+                            <i class="fas fa-seedling text-white text-xs"></i>
+                        </div>
+                        <div class="md:w-5/12 order-1 pr-8 hidden md:block text-right">
+                            <div class="bg-blue-50 p-4 rounded-lg border border-blue-100 text-sm inline-block">
+                                Lấy chất lượng bù số lượng. Đảm bảo Active Rate > 60% trước khi scale kênh mới.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 2 -->
+                    <div class="relative mb-12 md:flex md:justify-between md:items-center w-full">
+                        <div class="md:w-5/12 order-1 md:text-right pr-8">
+                            <h4 class="text-xl font-bold text-brand-navy mb-1">Phase 2: Growth</h4>
+                            <div class="text-sm text-gray-500 font-semibold mb-3"><i class="far fa-calendar-alt mr-1"></i> Tháng 3 - 4 (2 Tháng)</div>
+                            <ul class="text-sm text-gray-600 space-y-1 inline-block text-left md:text-right">
+                                <li>Mở rộng kênh: TikTok Shorts + FB Groups</li>
+                                <li>Scale Alert System ra Public Group/Channel</li>
+                                <li>Khởi chạy Public Leaderboard & Referral</li>
+                                <li>Bắt đầu Collab với KOCs/YouTubers</li>
+                            </ul>
+                            <div class="mt-3 inline-block px-3 py-1 bg-green-50 text-green-700 rounded-full text-xs font-bold border border-green-100">
+                                <i class="fas fa-bullseye mr-1"></i> KPI: 300 Beta Users
+                            </div>
+                        </div>
+                        <div class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-brand-green border-4 border-white shadow flex items-center justify-center z-10 -ml-4 md:ml-0 mt-1 md:mt-0">
+                            <i class="fas fa-chart-line text-white text-xs"></i>
+                        </div>
+                        <div class="md:w-5/12 order-2 pl-8 hidden md:block">
+                            <div class="bg-green-50 p-4 rounded-lg border border-green-100 text-sm inline-block">
+                                Kích hoạt Viral Loop. Đưa sản phẩm tiếp cận mass-market trong ngách Crypto VN.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Phase 3 -->
+                    <div class="relative md:flex md:justify-between md:items-center w-full">
+                        <div class="md:w-5/12 order-2 pl-8">
+                            <h4 class="text-xl font-bold text-brand-navy mb-1">Phase 3: Retention & Monetize</h4>
+                            <div class="text-sm text-gray-500 font-semibold mb-3"><i class="far fa-calendar-alt mr-1"></i> Tháng 5 - 6 (2 Tháng)</div>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li>Lọc Ghost Users, chia Tier (Free/Pro)</li>
+                                <li>Thực hiện khảo sát NPS & Willingness to Pay</li>
+                                <li>Chốt Pricing Model</li>
+                                <li>Pre-launch Campaign cho bản thương mại</li>
+                            </ul>
+                            <div class="mt-3 inline-block px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-xs font-bold border border-purple-100">
+                                <i class="fas fa-bullseye mr-1"></i> KPI: 500 Beta Users
+                            </div>
+                        </div>
+                        <div class="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-8 h-8 rounded-full bg-purple-500 border-4 border-white shadow flex items-center justify-center z-10 -ml-4 md:ml-0 mt-1 md:mt-0">
+                            <i class="fas fa-crown text-white text-xs"></i>
+                        </div>
+                        <div class="md:w-5/12 order-1 pr-8 hidden md:block text-right">
+                            <div class="bg-purple-50 p-4 rounded-lg border border-purple-100 text-sm inline-block">
+                                Chuyển đổi từ Free Beta sang Mô hình kinh doanh bền vững. Lọc tạp âm cộng đồng.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. SCOPE OF WORK SECTION -->
+            <section id="sow" class="scroll-mt-24 pt-8 border-t border-gray-200">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 rounded-full bg-cyan-100 text-cyan-600 flex items-center justify-center mr-4">
+                        <i class="fas fa-tasks text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800">Khối Lượng Thực Thi Hàng Tháng (In-House Marketing)</h3>
+                        <p class="text-gray-500 text-sm">TVT Agency bàn giao toàn bộ các hạng mục chiến lược theo đúng chuẩn Ritchi Strategy v1.0</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
+                    <!-- SOW Tier 1 -->
+                    <div class="glass-panel rounded-2xl border border-gray-200 overflow-hidden shadow-sm flex flex-col">
+                        <div class="p-5 border-b border-gray-100 bg-gradient-to-r from-blue-50 to-white">
+                            <span class="inline-block px-2 py-1 bg-brand-gold text-brand-navy text-[10px] font-black uppercase rounded mb-2">Ưu tiên tối đa</span>
+                            <h4 class="font-bold text-gray-800 text-lg flex items-center"><i class="fas fa-bullseye text-blue-500 mr-2"></i>Tier 1: Kênh Trọng Điểm</h4>
+                        </div>
+                        <div class="p-5 flex-1 bg-white">
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded bg-red-50 flex items-center justify-center text-red-500 mr-3 mt-1"><i class="fab fa-youtube"></i></div>
+                                    <div>
+                                        <p class="font-bold text-gray-800 text-sm">YouTube Tutorials (4 Vid/Tháng)</p>
+                                        <p class="text-xs text-gray-600 mt-1">Series "Hiểu Thị Trường Cùng Ritchi" (10-15p). Viết script chuẩn SEO. Edit video, thiết kế Thumbnail.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded bg-blue-50 flex items-center justify-center text-blue-500 mr-3 mt-1"><i class="fab fa-telegram-plane"></i></div>
+                                    <div>
+                                        <p class="font-bold text-gray-800 text-sm">Quản Trị Telegram (Daily)</p>
+                                        <p class="text-xs text-gray-600 mt-1">Vận hành "Phao Cứu Sinh" Alert. Viết 4 bài Bias Tuần, 4 bài Case Study. Hỗ trợ Q&A & Daily Demo tín hiệu.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="p-4 bg-gray-50 border-t border-gray-100 text-center mt-auto">
+                            <p class="text-xs font-semibold text-gray-500">Mục tiêu: Đạt 500 Beta Users Tích cực</p>
+                        </div>
+                    </div>
+
+                    <!-- SOW Tier 2 -->
+                    <div class="glass-panel rounded-2xl border border-gray-200 overflow-hidden shadow-sm flex flex-col">
+                        <div class="p-5 border-b border-gray-100 bg-gradient-to-r from-green-50 to-white">
+                            <span class="inline-block px-2 py-1 bg-gray-200 text-gray-600 text-[10px] font-black uppercase rounded mb-2">Phễu lan truyền</span>
+                            <h4 class="font-bold text-gray-800 text-lg flex items-center"><i class="fas fa-share-alt text-green-500 mr-2"></i>Tier 2: Kênh Viral</h4>
+                        </div>
+                        <div class="p-5 flex-1 bg-white">
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded bg-black flex items-center justify-center text-white mr-3 mt-1"><i class="fab fa-tiktok"></i></div>
+                                    <div>
+                                        <p class="font-bold text-gray-800 text-sm">TikTok / Reels (12 Vid/Tháng)</p>
+                                        <p class="text-xs text-gray-600 mt-1">3 video/tuần (30-60s) dạng Chart Reveal. Đánh mạnh vào nỗi đau "Fakeout", hook 3s đầu chạm insight.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded bg-blue-100 flex items-center justify-center text-blue-600 mr-3 mt-1"><i class="fab fa-facebook-f"></i></div>
+                                    <div>
+                                        <p class="font-bold text-gray-800 text-sm">Facebook Groups (8 Post/Tháng)</p>
+                                        <p class="text-xs text-gray-600 mt-1">Seeding bài phân tích thị trường 2 lần/tuần vào các Group "Crypto VN". Value trước, mention sau.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="p-4 bg-gray-50 border-t border-gray-100 text-center mt-auto">
+                            <p class="text-xs font-semibold text-gray-500">Mục tiêu: Kích hoạt Viral Loop ($0 Ads)</p>
+                        </div>
+                    </div>
+
+                    <!-- SOW Infrastructure -->
+                    <div class="glass-panel rounded-2xl border border-gray-200 overflow-hidden shadow-sm flex flex-col">
+                        <div class="p-5 border-b border-gray-100 bg-gradient-to-r from-purple-50 to-white">
+                            <span class="inline-block px-2 py-1 bg-gray-200 text-gray-600 text-[10px] font-black uppercase rounded mb-2">Support Assets</span>
+                            <h4 class="font-bold text-gray-800 text-lg flex items-center"><i class="fas fa-layer-group text-purple-500 mr-2"></i>Hạ Tầng & Tài Nguyên</h4>
+                        </div>
+                        <div class="p-5 flex-1 bg-white">
+                            <ul class="space-y-4">
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded bg-purple-50 flex items-center justify-center text-purple-500 mr-3 mt-1"><i class="fas fa-paint-brush"></i></div>
+                                    <div>
+                                        <p class="font-bold text-gray-800 text-sm">Thiết Kế Visual Templates</p>
+                                        <p class="text-xs text-gray-600 mt-1">Thiết kế đồng bộ bộ nhận diện thương hiệu trên Canva (Thumbnail, Banner bài viết, Khung Chart TradingView).</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start">
+                                    <div class="flex-shrink-0 w-8 h-8 rounded bg-indigo-50 flex items-center justify-center text-indigo-500 mr-3 mt-1"><i class="fas fa-laptop-code"></i></div>
+                                    <div>
+                                        <p class="font-bold text-gray-800 text-sm">Hệ Thống Landing Page</p>
+                                        <p class="text-xs text-gray-600 mt-1">Setup và duy trì Web/Notion Page chứa Waitlist System (Tích hợp Refer-to-skip). Cài đặt Disclaimer pháp lý.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="p-4 bg-gray-50 border-t border-gray-100 text-center mt-auto">
+                            <p class="text-xs font-semibold text-gray-500">Mục tiêu: Đảm bảo Brand Consistency</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. WOMEN COMMUNITY SECTION -->
+            <section id="women" class="scroll-mt-24 pt-8 border-t border-gray-200">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 rounded-full bg-pink-100 text-pink-500 flex items-center justify-center mr-4">
+                        <i class="fas fa-female text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800">Chiến Lược Đặc Biệt: Cộng Đồng "Chị Em Tự Chủ"</h3>
+                        <p class="text-gray-500 text-sm">Góc tiếp cận "Quyền lực mềm" cho tệp khách hàng Phụ Nữ/Nội Trợ.</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="bg-gradient-to-br from-pink-50 to-white p-6 rounded-2xl border border-pink-100 shadow-sm">
+                        <h4 class="font-bold text-lg text-pink-700 mb-4 border-b border-pink-200 pb-2"><i class="fas fa-brain mr-2"></i>Insight Khách Hàng</h4>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <i class="fas fa-times text-red-400 mt-1 mr-3"></i>
+                                <span class="text-sm text-gray-700"><strong>KHÔNG CẦN:</strong> Thuật ngữ kỹ thuật phức tạp, giấc mộng làm giàu nhanh, trở thành Pro Trader với 4 màn hình.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-heart text-pink-500 mt-1 mr-3"></i>
+                                <span class="text-sm text-gray-700"><strong>KHAO KHÁT:</strong> Một "Nghề tay trái" an toàn. Có quỹ tự do chi tiêu (mua bỉm sữa, làm đẹp). Tự tôn tài chính nhưng vẫn có thời gian chăm lo tổ ấm.</span>
+                            </li>
+                        </ul>
+                        
+                        <h4 class="font-bold text-lg text-pink-700 mb-4 mt-6 border-b border-pink-200 pb-2"><i class="fas fa-bullhorn mr-2"></i>Định Hướng Content (Demystify Finance)</h4>
+                        <div class="space-y-4">
+                            <div class="bg-white p-3 rounded-lg border border-pink-100 shadow-sm">
+                                <div class="text-xs font-bold text-gray-500 uppercase">Thay vì nói:</div>
+                                <div class="text-sm text-gray-400 line-through">"Setup SMC với Risk 1% / RR 1:2"</div>
+                                <div class="text-xs font-bold text-pink-600 uppercase mt-2">Hãy nói:</div>
+                                <div class="text-sm font-semibold text-gray-800">"Đi chợ tài chính: Cầm 100k, cho phép rơi 1k nhưng mua được đồ 2k"</div>
+                            </div>
+                            <div class="bg-white p-3 rounded-lg border border-pink-100 shadow-sm">
+                                <div class="text-xs font-bold text-gray-500 uppercase">Góc làm việc chuẩn:</div>
+                                <div class="text-sm text-gray-800">Một chiếc Laptop/iPad cạnh ly cafe trên bàn ăn, hoặc tranh thủ xem điện thoại lúc con ngủ. Chân thực & Gần gũi.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="glass-panel p-6 rounded-xl border-l-4 border-pink-500 hover:shadow-md transition">
+                            <h4 class="font-bold text-gray-800 mb-2"><i class="fas fa-robot text-brand-navy mr-2"></i>Định Vị "Trợ Lý Nấu Cơm" (Auto Alert)</h4>
+                            <p class="text-sm text-gray-600">Phụ nữ sợ nhìn Chart. Định vị hệ thống Alert tự động như một "Trợ lý ảo": Khi có tín hiệu, Bot sẽ gửi tin nhắn Telegram/Zalo kèm hình ảnh trực quan. Giống như nồi chiên không dầu: Bấm nút, đi làm việc nhà, nghe 'Ting' là có kết quả an toàn.</p>
+                        </div>
+                        
+                        <div class="glass-panel p-6 rounded-xl border-l-4 border-blue-500 hover:shadow-md transition">
+                            <h4 class="font-bold text-gray-800 mb-2"><i class="fab fa-viber text-blue-600 mr-2"></i>Tại sao chọn ZALO thay vì Telegram?</h4>
+                            <p class="text-sm text-gray-600">Chính xác! Phụ nữ VN dùng Zalo hàng ngày. Nó mang lại cảm giác <strong>An toàn, Đời thường và Thật (Real)</strong>. Telegram thường bị gán mác "Crypto ẩn danh, lừa đảo". Zalo group giúp tăng trust cực mạnh cho tệp này.</p>
+                        </div>
+
+                        <div class="bg-brand-navy text-white p-6 rounded-xl shadow-lg relative overflow-hidden">
+                            <div class="absolute -right-4 -top-4 opacity-10"><i class="fas fa-book-open text-6xl"></i></div>
+                            <h4 class="font-bold text-brand-gold mb-2"><i class="fas fa-bolt mr-2"></i>Playbook Thực Thi 30 Ngày</h4>
+                            <p class="text-sm text-gray-300 mb-4">TVT Agency (Tùng) đã xây dựng sẵn 3 Case Study giao tiếp mẫu và lộ trình 30 ngày chuyển đổi Zalo → Telegram.</p>
+                            <button onclick="document.getElementById('playbookModal').classList.remove('hidden')" class="inline-block px-4 py-2 bg-pink-500 hover:bg-pink-600 text-white text-sm font-bold rounded shadow transition">
+                                Xem Playbook Chi Tiết <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 6. CASE STUDY SECTION -->
+            <section id="casestudy" class="scroll-mt-24 pt-8 border-t border-gray-200">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center mr-4">
+                        <i class="fas fa-search-dollar text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800">Case Study: Tối Ưu Mô Hình Telegram</h3>
+                        <p class="text-gray-500 text-sm">Phân tích GG-Shot vs Nivex &amp; Đề xuất mô hình "Ritchi Pro" minh bạch, bền vững</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <!-- Red Flag Nivex -->
+                    <div class="glass-panel p-6 rounded-xl border-t-4 border-red-500">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center"><i class="fas fa-times-circle text-red-500 mr-2"></i>Pig Butchering</h4>
+                        <p class="text-sm text-gray-600 mb-3">Ví dụ: Nivex AI Pro. Hứa hẹn tỷ lệ thắng ảo, chặn rút tiền, đòi phí ẩn. <strong>Bài học:</strong> Bị review scam và sụp đổ nhanh chóng do mất niềm tin.</p>
+                        <span class="inline-block px-2 py-1 bg-red-100 text-red-700 text-xs rounded font-medium">Báo động đỏ (Tuyệt đối tránh)</span>
+                    </div>
+
+                    <!-- GG-Shot Case -->
+                    <div class="glass-panel p-6 rounded-xl border-t-4 border-amber-500">
+                        <h4 class="font-bold text-gray-800 mb-2 flex items-center"><i class="fas fa-exclamation-triangle text-amber-500 mr-2"></i>GG-Shot (90k Subs)</h4>
+                        <p class="text-sm text-gray-600 mb-3">Tăng trưởng nhanh nhờ Freemium &amp; Referral. <strong>Rủi ro:</strong> Claim winrate ảo (82-96%), giá premium quá đắt ($1.1k/năm), rủi ro pháp lý.</p>
+                        <span class="inline-block px-2 py-1 bg-amber-100 text-amber-700 text-xs rounded font-medium">Lợi nhuận nhanh / Kém bền vững</span>
+                    </div>
+
+                    <!-- Ritchi Pro -->
+                    <div class="bg-brand-navy p-6 rounded-xl border-t-4 border-emerald-500 shadow-md">
+                        <h4 class="font-bold text-white mb-2 flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-2"></i>Đề xuất: Ritchi Pro</h4>
+                        <p class="text-sm text-gray-300 mb-3">Kết hợp Education + Signal. <strong>Minh bạch 100%</strong> qua Verified Track Record (Google Sheets). Cảnh báo pháp lý đầy đủ. Giá hợp lý.</p>
+                        <span class="inline-block px-2 py-1 bg-emerald-900 text-emerald-300 text-xs rounded font-medium border border-emerald-700">Tối ưu &amp; Bền vững</span>
+                    </div>
+                </div>
+
+                <div class="bg-indigo-50 border border-indigo-100 rounded-xl p-6 relative overflow-hidden mb-8">
+                    <div class="absolute -right-10 -bottom-10 opacity-5"><i class="fas fa-chart-line text-9xl"></i></div>
+                    <h4 class="font-bold text-indigo-900 mb-4 text-lg">Lộ trình Tích hợp Telegram (Mục tiêu: 500 Beta Users, $0 Ads)</h4>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-10">
+                        <div>
+                            <ul class="space-y-3 text-sm text-gray-700">
+                                <li class="flex items-start"><i class="fas fa-cog text-indigo-500 mt-1 mr-2"></i> <strong>Phase 0-1 (Setup):</strong> Setup Hệ thống Auto Alert (TV → Tele) + Disclaimer minh bạch.</li>
+                                <li class="flex items-start"><i class="fas fa-bullhorn text-indigo-500 mt-1 mr-2"></i> <strong>Phase 2 (Growth Hack):</strong> Kích hoạt Viral Loop (Waitlist refer-to-skip, Weekly Chart Challenge) hoàn toàn Organic.</li>
+                                <li class="flex items-start"><i class="fas fa-rocket text-indigo-500 mt-1 mr-2"></i> <strong>Phase 3 (Retention):</strong> Public Leaderboard tạo FOMO. Đạt 500 Beta Users tích cực, chuẩn bị Monetization.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-white p-5 rounded-lg border border-indigo-100 shadow-sm">
+                            <h5 class="font-bold text-gray-800 text-sm mb-3 border-b pb-2">TVT Agency sẽ bàn giao trọn gói:</h5>
+                            <ul class="space-y-2 text-sm text-gray-600">
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Kịch bản Viral Loop ($0 Ads Budget)</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Template Google Sheets Public Verified</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Hệ thống Alert Bot Telegram tự động hóa</li>
+                                <li><i class="fas fa-check text-green-500 mr-2"></i> Bộ Legal Disclaimer chuẩn mực</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. SERVICES SECTION -->
+            <section id="packages" class="scroll-mt-24 pt-8 border-t border-gray-200">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 rounded-full bg-brand-navy text-white flex items-center justify-center mr-4">
+                        <i class="fas fa-box-open text-xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800">Các Phương Án Hợp Tác Đề Xuất (TVT Agency)</h3>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Package A -->
+                    <div class="bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden flex flex-col hover:shadow-xl transition-shadow duration-300">
+                        <div class="p-6 bg-gray-50 border-b border-gray-200 text-center">
+                            <h4 class="text-lg font-bold text-gray-800">Phương án A: Tư Vấn & Giám Sát</h4>
+                            <p class="text-xs text-gray-500 mt-1 uppercase tracking-wide">Advisory Mode</p>
+                        </div>
+                        <div class="p-6 flex-1 bg-white">
+                            <ul class="space-y-3 text-sm text-gray-600">
+                                <li class="flex items-start"><i class="fas fa-check text-brand-green mt-1 mr-2"></i> Họp Weekly Review (30p/tuần)</li>
+                                <li class="flex items-start"><i class="fas fa-check text-brand-green mt-1 mr-2"></i> Review Content trước khi Publish</li>
+                                <li class="flex items-start"><i class="fas fa-check text-brand-green mt-1 mr-2"></i> Báo cáo & Phân tích KPI hàng tháng</li>
+                                <li class="flex items-start"><i class="fas fa-check text-brand-green mt-1 mr-2"></i> Điều chỉnh chiến lược (Monthly)</li>
+                            </ul>
+                        </div>
+                        <div class="p-6 bg-gray-50 border-t border-gray-100 text-center mt-auto">
+                            <p class="text-xs font-semibold text-gray-500 mb-3">Phù hợp: Team Ritchi tự thực thi, TVT đóng vai trò Cố vấn.</p>
+                            <button class="w-full py-2 bg-white border border-gray-300 text-gray-700 rounded-lg text-sm font-bold hover:bg-gray-50 transition">Thảo luận thêm</button>
+                        </div>
+                    </div>
+
+                    <!-- Package B -->
+                    <div class="bg-brand-navy rounded-2xl shadow-xl border border-blue-900 overflow-hidden flex flex-col transform md:-translate-y-2 relative">
+                        <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-brand-gold to-yellow-300"></div>
+                        <div class="absolute top-4 right-4 bg-brand-gold text-brand-navy text-[10px] font-black uppercase px-2 py-1 rounded">Recommend</div>
+                        
+                        <div class="p-6 bg-brand-navy border-b border-gray-700 text-center">
+                            <h4 class="text-lg font-bold text-white">Phương án B: Content Support</h4>
+                            <p class="text-xs text-gray-400 mt-1 uppercase tracking-wide">Production Relief</p>
+                        </div>
+                        <div class="p-6 flex-1 bg-brand-navy">
+                            <ul class="space-y-3 text-sm text-gray-300">
+                                <li class="flex items-start"><i class="fas fa-check text-brand-gold mt-1 mr-2"></i> <span class="text-white">Bao gồm toàn bộ Phương án A</span></li>
+                                <li class="flex items-start"><i class="fas fa-check text-brand-gold mt-1 mr-2"></i> Vận hành nội dung hệ thống Auto Alert Telegram</li>
+                                <li class="flex items-start"><i class="fas fa-check text-brand-gold mt-1 mr-2"></i> Sản xuất Video TikTok/YouTube (16 vid/tháng)</li>
+                                <li class="flex items-start"><i class="fas fa-check text-brand-gold mt-1 mr-2"></i> Thiết kế Thumbnail & Graphic Banner</li>
+                                <li class="flex items-start"><i class="fas fa-check text-brand-gold mt-1 mr-2"></i> Xây dựng Content Calendar hàng tháng</li>
+                            </ul>
+                        </div>
+                        <div class="p-6 bg-gray-900 border-t border-gray-800 text-center mt-auto">
+                            <p class="text-xs font-semibold text-gray-400 mb-3">Phù hợp: Giải quyết bài toán Overload cho Marketing Lead.</p>
+                            <button class="w-full py-2 bg-brand-gold text-brand-navy rounded-lg text-sm font-bold hover:bg-yellow-400 transition shadow-lg">Chọn Phương án Này</button>
+                        </div>
+                    </div>
+
+                    <!-- Package C -->
+                    <div class="bg-gradient-to-b from-brand-navy to-gray-900 rounded-2xl shadow-xl border border-gray-700 overflow-hidden flex flex-col transform md:-translate-y-2 relative">
+                        <div class="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-green-400 to-emerald-500"></div>
+                        <div class="absolute top-4 right-4 bg-emerald-500 text-white text-[10px] font-black uppercase px-2 py-1 rounded shadow-sm">Full Partner</div>
+                        
+                        <div class="p-6 border-b border-gray-700 text-center">
+                            <h4 class="text-lg font-bold text-white">Phương án C: TVT Agency (Tùng) Hỗ Trợ Full</h4>
+                            <p class="text-xs text-gray-400 mt-1 uppercase tracking-wide">All-in-one Strategic Partner</p>
+                        </div>
+                        <div class="p-6 flex-1">
+                            <ul class="space-y-3 text-sm text-gray-300">
+                                <li class="flex items-start"><i class="fas fa-check text-emerald-400 mt-1 mr-2"></i> <span class="text-white font-medium">Bao gồm Phương án A + B</span></li>
+                                <li class="flex items-start"><i class="fas fa-check text-emerald-400 mt-1 mr-2"></i> Phối hợp & Thực thi Plan Marketing (Ngắn - Trung - Dài hạn)</li>
+                                <li class="flex items-start"><i class="fas fa-check text-emerald-400 mt-1 mr-2"></i> Setup & Tối ưu Hệ thống Auto Alert (TV → Tele) qua Extension/Pipedream</li>
+                                <li class="flex items-start"><i class="fas fa-check text-emerald-400 mt-1 mr-2"></i> Xây dựng Cộng đồng Zalo/Telegram & Hạ tầng Online System</li>
+                                <li class="flex items-start"><i class="fas fa-check text-emerald-400 mt-1 mr-2"></i> Sản xuất Content, Hình ảnh, Video chuyên nghiệp</li>
+                                <li class="flex items-start"><i class="fas fa-check text-emerald-400 mt-1 mr-2"></i> Hỗ trợ định hướng & xây dựng Thương hiệu cá nhân</li>
+                            </ul>
+                        </div>
+                        <div class="p-6 bg-gray-800 border-t border-gray-700 text-center mt-auto">
+                            <p class="text-xs font-semibold text-gray-400 mb-3">Phù hợp: Ritchi Team tập trung Dev, TVT (Tùng) thực thi 100% Marketing.</p>
+                            <button class="w-full py-2 bg-emerald-500 text-white rounded-lg text-sm font-bold hover:bg-emerald-600 transition shadow-lg">Liên Hệ Tùng Ngay</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION: XÁC NHẬN TRAO ĐỔI -->
+            <section id="confirmation" class="scroll-mt-24 pt-8 border-t border-gray-200">
+                <div class="flex items-center mb-6">
+                    <div class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-600 flex items-center justify-center mr-4">
+                        <i class="fas fa-clipboard-check text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-gray-800">Xác nhận Yêu cầu Hệ thống Alert</h3>
+                        <p class="text-gray-500 text-sm">Xác nhận quá trình tiếp nhận nội dung từ nhóm Tele @ritchi_tradingview + Đề xuất phương án tối ưu, dễ nhân bản</p>
+                    </div>
+                </div>
+
+                <div class="glass-panel p-8 rounded-2xl border border-indigo-100 shadow-sm">
+                    <!-- Confirmation Box -->
+                    <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-6 mb-8">
+                        <div class="flex items-start">
+                            <i class="fas fa-check-double text-indigo-600 text-2xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-indigo-800 text-lg mb-2">Đã xác nhận & tiếp nhận đầy đủ</h4>
+                                <ul class="text-sm text-gray-700 space-y-1.5">
+                                    <li><i class="fas fa-check text-green-500 mr-2"></i> Link nhóm Tele: <span class="font-semibold">@ritchi_tradingview</span> (8 thành viên, internal test)</li>
+                                    <li><i class="fas fa-check text-green-500 mr-2"></i> Screenshot chat thực tế (BILLUSDT 6x +10.88%, 4TP, SMC “Phao Cứu Sinh”)</li>
+                                    <li><i class="fas fa-check text-green-500 mr-2"></i> Yêu cầu format: ảnh chart tự động + % lãi + số TP + note multi-timeframe</li>
+                                    <li><i class="fas fa-check text-green-500 mr-2"></i> Tích hợp với kế hoạch 8 tháng TVT Agency (Phase 0 → Phase 3)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. FINAL CTA SECTION (LINKS TO FUNNELS) -->
+            <section id="funnel-links" class="mt-12 mb-8 bg-gradient-to-r from-brand-navy to-brand-dark p-10 rounded-3xl shadow-xl text-center relative overflow-hidden">
+                <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(circle at center, #ffffff 1px, transparent 1px); background-size: 20px 20px;"></div>
+                <div class="relative z-10">
+                    <h3 class="text-3xl font-bold text-white mb-4">Sẵn Sàng Triển Khai Thực Tế?</h3>
+                    <p class="text-gray-300 mb-8 max-w-2xl mx-auto">TVT Agency đã hoàn thiện bộ mã nguồn Front-end cho hệ thống phễu "Chị Em Tự Chủ". Bạn có thể bấm vào các nút dưới đây để trải nghiệm giao diện thực tế (Demo):</p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="index.html" target="_blank" class="px-8 py-4 bg-pink-500 hover:bg-pink-600 text-white font-bold rounded-xl shadow-[0_4px_20px_rgba(236,72,153,0.4)] transition transform hover:-translate-y-1 flex items-center justify-center">
+                            <i class="fas fa-female mr-3 text-xl"></i> Phễu Mẹ Bỉm (Trang Chính)
+                        </a>
+                        <a href="chi-em-tu-chu-100/index.html" target="_blank" class="px-8 py-4 bg-brand-gold hover:bg-yellow-500 text-brand-navy font-bold rounded-xl shadow-[0_4px_20px_rgba(240,165,0,0.4)] transition transform hover:-translate-y-1 flex items-center justify-center">
+                            <i class="fas fa-seedling mr-3 text-xl"></i> Phễu Đầu Tư 100$
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Playbook Modal -->
+    <div id="playbookModal" class="fixed inset-0 z-50 hidden flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm p-4 md:p-8 overflow-y-auto">
+        <div class="bg-white w-full max-w-5xl rounded-2xl shadow-2xl overflow-hidden flex flex-col max-h-[90vh]">
+            <!-- Modal Header -->
+            <div class="bg-gradient-to-r from-pink-500 to-purple-600 p-6 text-white flex justify-between items-center flex-shrink-0 relative overflow-hidden">
+                <div class="absolute right-0 top-0 opacity-20"><i class="fas fa-book-reader text-8xl transform rotate-12 -mt-4 -mr-4"></i></div>
+                <div class="relative z-10">
+                    <h2 class="text-2xl font-bold mb-1">👩‍💼 Playbook Thực Thi: Cộng Đồng "Chị Em Tự Chủ"</h2>
+                    <p class="text-pink-100 text-sm">Hỗ trợ tư vấn & thực thi bởi TVT Agency (Tùng) | Phiên bản 1.0</p>
+                </div>
+                <button onclick="document.getElementById('playbookModal').classList.add('hidden')" class="text-white hover:bg-white/20 p-2 rounded-full transition relative z-10 focus:outline-none">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Modal Body -->
+            <div class="p-6 md:p-8 overflow-y-auto bg-gray-50 flex-1">
+                <!-- Section I -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 border-b-2 border-pink-200 pb-2"><i class="fas fa-sitemap text-pink-500 mr-2"></i>I. Tổng Quan Chiến Lược Kênh</h3>
+                    <p class="text-sm text-gray-600 mb-4 italic">Chiến lược Phối hợp Phễu: Facebook/TikTok <i class="fas fa-arrow-right mx-1 text-pink-400"></i> Zalo Group (Phễu ấm) <i class="fas fa-arrow-right mx-1 text-pink-400"></i> Lọc 1-1 <i class="fas fa-arrow-right mx-1 text-pink-400"></i> Telegram Group (Phễu nóng).</p>
+                    
+                    <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+                        <table class="w-full text-sm text-left">
+                            <thead class="text-xs text-gray-700 uppercase bg-gray-100">
+                                <tr>
+                                    <th class="px-4 py-3">Kênh</th>
+                                    <th class="px-4 py-3">Vai Trò Chiến Lược</th>
+                                    <th class="px-4 py-3">Ưu Điểm</th>
+                                    <th class="px-4 py-3">Hạn Chế</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="bg-white border-b hover:bg-gray-50">
+                                    <td class="px-4 py-3 font-bold text-blue-600">ZALO (Tier 1)</td>
+                                    <td class="px-4 py-3 font-semibold">Phễu Lọc & Nuôi Dưỡng</td>
+                                    <td class="px-4 py-3">Thói quen dùng hàng ngày, độ trust cao, tỷ lệ chốt F1 cao do ko nick ảo.</td>
+                                    <td class="px-4 py-3 text-red-500">Trôi tin, khó quản lý đông, bot kém.</td>
+                                </tr>
+                                <tr class="bg-white hover:bg-gray-50">
+                                    <td class="px-4 py-3 font-bold text-blue-400">TELEGRAM (Tier 2)</td>
+                                    <td class="px-4 py-3 font-semibold">Hỗ Trợ Kỹ Thuật</td>
+                                    <td class="px-4 py-3">Có bot auto, chuyên dùng setup Indicator & share chart.</td>
+                                    <td class="px-4 py-3 text-red-500">Nữ ít dùng, dễ spam/scam, rào cản tech.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Section II -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 border-b-2 border-pink-200 pb-2"><i class="fas fa-comments text-pink-500 mr-2"></i>II. Case Study Mẫu (Kịch Bản Giao Tiếp)</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Case 1 -->
+                        <div class="bg-white p-5 rounded-xl border border-pink-100 shadow-sm relative overflow-hidden hover:shadow-md transition">
+                            <div class="absolute top-0 right-0 bg-pink-100 text-pink-600 text-xs font-bold px-3 py-1 rounded-bl-lg">Case 1</div>
+                            <h4 class="font-bold text-gray-800 mb-2 mt-2">🤱 Chị Bỉm Sữa</h4>
+                            <p class="text-xs text-gray-500 mb-3 line-clamp-2">"Sợ bị lừa, không biết công nghệ"</p>
+                            <div class="bg-pink-50 p-3 rounded-lg border-l-4 border-pink-400 text-sm text-gray-700 italic">
+                                "Chị cứ coi Ritchi như cái 'ví thông minh', cài sẵn sai số bằng ly cafe. Tự ngắt an toàn. Lúc rảnh nghe 'Ting' mới vô ngó 5p, không ép mua bán."
+                            </div>
+                        </div>
+                        <!-- Case 2 -->
+                        <div class="bg-white p-5 rounded-xl border border-purple-100 shadow-sm relative overflow-hidden hover:shadow-md transition">
+                            <div class="absolute top-0 right-0 bg-purple-100 text-purple-600 text-xs font-bold px-3 py-1 rounded-bl-lg">Case 2</div>
+                            <h4 class="font-bold text-gray-800 mb-2 mt-2">👩‍💼 Nữ Nhân Viên VP</h4>
+                            <p class="text-xs text-gray-500 mb-3 line-clamp-2">"Làm hành chính 8h-18h, ko có tgian"</p>
+                            <div class="bg-purple-50 p-3 rounded-lg border-l-4 border-purple-400 text-sm text-gray-700 italic">
+                                "Nó như Đèn Giao Thông. Đèn đỏ dừng, đèn xanh nó báo về ĐT mới thao tác. Tranh thủ giờ nghỉ trưa/tối rảnh 10p là đủ rồi chị ơi."
+                            </div>
+                        </div>
+                        <!-- Case 3 -->
+                        <div class="bg-white p-5 rounded-xl border border-orange-100 shadow-sm relative overflow-hidden hover:shadow-md transition">
+                            <div class="absolute top-0 right-0 bg-orange-100 text-orange-600 text-xs font-bold px-3 py-1 rounded-bl-lg">Case 3</div>
+                            <h4 class="font-bold text-gray-800 mb-2 mt-2">😰 Xử Lý Khủng Hoảng</h4>
+                            <p class="text-xs text-gray-500 mb-3 line-clamp-2">"Nay vào lệnh bị lỗ, chán muốn nghỉ"</p>
+                            <div class="bg-orange-50 p-3 rounded-lg border-l-4 border-orange-400 text-sm text-gray-700 italic">
+                                "(Gửi bill mình cũng lỗ) Nay dính cắt lỗ chung nè chị. Đi buôn có ngày ế. Mất 1$ tiền trà đá, trước được 3$ ăn sáng. Sai mai làm lại!"
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section III -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 border-b-2 border-pink-200 pb-2"><i class="fas fa-calendar-check text-pink-500 mr-2"></i>III. Quy Trình 30 Ngày Group Zalo</h3>
+                    <div class="bg-white rounded-xl border border-gray-200 p-4 shadow-sm">
+                        <ul class="space-y-4">
+                            <li class="flex items-start">
+                                <div class="bg-indigo-100 text-indigo-700 font-bold px-3 py-1 rounded-lg text-sm mr-4 w-20 text-center flex-shrink-0">Tuần 1</div>
+                                <div><strong class="text-gray-800">Khởi Tạo:</strong> Tên "Chị Em Tự Chủ - Quỹ Đen Thông Minh". Pin luật cấm spam. Welcome story.</div>
+                            </li>
+                            <li class="flex items-start border-t pt-4 border-gray-100">
+                                <div class="bg-indigo-100 text-indigo-700 font-bold px-3 py-1 rounded-lg text-sm mr-4 w-20 text-center flex-shrink-0">Tuần 2</div>
+                                <div><strong class="text-gray-800">Xây Niềm Tin:</strong> Share checklist quản lý quỹ. Đăng case study đời thường. Tương tác 1-1.</div>
+                            </li>
+                            <li class="flex items-start border-t pt-4 border-gray-100">
+                                <div class="bg-indigo-100 text-indigo-700 font-bold px-3 py-1 rounded-lg text-sm mr-4 w-20 text-center flex-shrink-0">Tuần 3</div>
+                                <div><strong class="text-gray-800">Giáo Dục Tool:</strong> Đưa concept "Đèn giao thông". Show kết quả mua sắm (không show PnL đỏ xanh).</div>
+                            </li>
+                            <li class="flex items-start border-t pt-4 border-gray-100">
+                                <div class="bg-indigo-100 text-indigo-700 font-bold px-3 py-1 rounded-lg text-sm mr-4 w-20 text-center flex-shrink-0">Tuần 4</div>
+                                <div><strong class="text-gray-800">Kích Hoạt (Conversion):</strong> Event "Thử thách 7 ngày". Tặng quyền truy cập Beta đưa sang Telegram.</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Section IV -->
+                <div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-4 border-b-2 border-pink-200 pb-2"><i class="fas fa-handshake text-pink-500 mr-2"></i>IV. TVT Agency Hỗ Trợ Thực Thi</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-gray-100 p-4 rounded-xl border border-gray-200">
+                            <h5 class="font-bold text-brand-navy mb-2">1. Hạ Tầng Online</h5>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li><i class="fas fa-check text-green-500 mr-1"></i> Setup Website Landing Page pastel nữ tính.</li>
+                                <li><i class="fas fa-check text-green-500 mr-1"></i> Hệ thống CRM tracking từ Zalo → Tele.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-100 p-4 rounded-xl border border-gray-200">
+                            <h5 class="font-bold text-brand-navy mb-2">2. Sản Xuất Nội Dung</h5>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li><i class="fas fa-check text-green-500 mr-1"></i> Kịch bản TikTok/Reels chạm nỗi đau.</li>
+                                <li><i class="fas fa-check text-green-500 mr-1"></i> Thiết kế Banner, Video edit dọc Mobile.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-100 p-4 rounded-xl border border-gray-200">
+                            <h5 class="font-bold text-brand-navy mb-2">3. Xây Dựng Thương Hiệu</h5>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li><i class="fas fa-check text-green-500 mr-1"></i> Định hướng Lifestyle cho Founder Nữ.</li>
+                                <li><i class="fas fa-check text-green-500 mr-1"></i> Kịch bản viết định vị profile cá nhân.</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-100 p-4 rounded-xl border border-gray-200">
+                            <h5 class="font-bold text-brand-navy mb-2">4. Cố Vấn Chiến Lược</h5>
+                            <ul class="text-sm text-gray-600 space-y-1">
+                                <li><i class="fas fa-check text-green-500 mr-1"></i> Chuyển đổi phễu Zalo sang Telegram Beta.</li>
+                                <li><i class="fas fa-check text-green-500 mr-1"></i> Xây Affiliate Program "Chị Em Tự Chủ".</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Modal Footer -->
+            <div class="p-4 bg-white border-t border-gray-200 flex justify-end">
+                <button onclick="document.getElementById('playbookModal').classList.add('hidden')" class="px-6 py-2 bg-pink-500 hover:bg-pink-600 text-white font-bold rounded-lg transition shadow">Đóng Playbook</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple script to highlight active nav link based on scroll
+        const sections = document.querySelectorAll("section");
+        const navLi = document.querySelectorAll(".nav-link");
+        
+        document.querySelector('main').addEventListener("scroll", () => {
+            let current = "";
+            let containerScrollTop = document.querySelector('main').scrollTop;
+            
+            sections.forEach((section) => {
+                const sectionTop = section.offsetTop;
+                if (containerScrollTop >= sectionTop - 100) {
+                    current = section.getAttribute("id");
+                }
+            });
+            
+            navLi.forEach((li) => {
+                li.classList.remove("active");
+                if (li.getAttribute("href").includes(current)) {
+                    li.classList.add("active");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
