@@ -25,3 +25,4 @@
 
 # Working / Source files not meant for deployment
 source_files_not_for_git/
+.claude/
