@@ -1,273 +1,106 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chị Em Tự Chủ — Phễu Cộng Đồng Nội Trợ 4.0</title>
-<meta name="description" content="Phụ nữ hiện đại không phải làm nhiều hơn, mà là làm thông minh hơn nhờ công nghệ. Hành trình Nội trợ 4.0 với AI.">
-<!-- SEO & Open Graph Tags -->
-<meta property="og:title" content="Chị Em Tự Chủ — Phễu Cộng Đồng Nội Trợ 4.0">
-<meta property="og:description" content="Phụ nữ hiện đại không phải làm nhiều hơn, mà là làm thông minh hơn nhờ công nghệ. Hành trình Nội trợ 4.0 với AI.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://phunulamchuai.vercel.app/">
-<meta property="og:image" content="https://phunulamchuai.vercel.app/assets/hero.png">
-<!-- Twitter Card -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Chị Em Tự Chủ — Phễu Cộng Đồng Nội Trợ 4.0">
-<meta name="twitter:description" content="Hành trình Nội trợ 4.0 với AI. Khám phá cách hàng trăm chị em đang giải phóng 2 giờ mỗi ngày.">
-<meta name="twitter:image" content="https://phunulamchuai.vercel.app/assets/hero.png">
-<!-- Canonical URL & Favicon -->
-<link rel="canonical" href="https://phunulamchuai.vercel.app/">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🪷</text></svg>">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TVT Agency | Ecosystem Portal</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #0f172a; color: #f8fafc; overflow-x: hidden; }
+        
+        /* Subtle Grid Background */
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: 
+                linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+        }
+        
+        /* Hover Effects */
+        .portal-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .portal-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .glow-blue { box-shadow: 0 0 20px rgba(59, 130, 246, 0.15); border-color: rgba(59, 130, 246, 0.3); }
+        .portal-card:hover.glow-blue { box-shadow: 0 0 30px rgba(59, 130, 246, 0.4); border-color: rgba(59, 130, 246, 0.8); }
+        
+        .glow-emerald { box-shadow: 0 0 20px rgba(16, 185, 129, 0.15); border-color: rgba(16, 185, 129, 0.3); }
+        .portal-card:hover.glow-emerald { box-shadow: 0 0 30px rgba(16, 185, 129, 0.4); border-color: rgba(16, 185, 129, 0.8); }
+        
+        .glow-purple { box-shadow: 0 0 20px rgba(168, 85, 247, 0.15); border-color: rgba(168, 85, 247, 0.3); }
+        .portal-card:hover.glow-purple { box-shadow: 0 0 30px rgba(168, 85, 247, 0.4); border-color: rgba(168, 85, 247, 0.8); }
+    </style>
 </head>
-<body>
+<body class="bg-grid min-h-screen flex flex-col items-center justify-center relative">
 
-<!-- PROGRESS BAR -->
-<div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
-<div class="funnel-labels" id="funnelLabels">
-  <span data-tier="1">Bước 1 · Làm quen</span>
-  <span data-tier="2">Bước 2 · Kết nối</span>
-  <span data-tier="3">Bước 3 · Gieo hạt</span>
-  <span data-tier="4">Bước 4 · Kích hoạt</span>
-  <span data-tier="5">Bước 5 · Lan tỏa</span>
-</div>
+    <!-- Ambient glow in background -->
+    <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-pulse"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-emerald-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-20 animate-pulse" style="animation-delay: 2s;"></div>
 
-<!-- NAVBAR -->
-<nav class="navbar" id="navbar">
-  <div class="nav-logo">🪷 Chị Em Tự Chủ</div>
-  <ul class="nav-links">
-    <li><a href="#t1">Lối sống 4.0</a></li>
-    <li><a href="#t2">Giải phóng thời gian</a></li>
-    <li><a href="#t3">Hạt giống tự chủ</a></li>
-    <li><a href="#t4">Thử thách 7 ngày</a></li>
-    <li><a href="#t5">Leader</a></li>
-    <li><button class="btn-gold" onclick="document.getElementById('t2').scrollIntoView({behavior:'smooth'})">Tham gia miễn phí</button></li>
-  </ul>
-</nav>
+    <div class="container mx-auto px-4 py-16 max-w-5xl relative z-10">
+        
+        <!-- Header -->
+        <div class="text-center mb-16">
+            <div class="inline-flex items-center justify-center p-3 bg-slate-800/80 rounded-2xl border border-slate-700 mb-6 shadow-lg backdrop-blur-sm">
+                <i class="fas fa-layer-group text-blue-400 text-3xl mr-3"></i>
+                <h1 class="text-3xl font-extrabold tracking-tight text-white">TVT AGENCY <span class="text-slate-500 font-light ml-2">| Portal</span></h1>
+            </div>
+            <p class="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">Hub trung tâm lưu trữ toàn bộ hệ sinh thái Dashboard Chiến Lược và Landing Page thuộc dự án Ritchi SMC & Nội Trợ 4.0.</p>
+        </div>
 
-<!-- HERO — TẦNG 1: THU HÚT -->
-<section class="hero" id="t1" data-tier="1">
-  <div class="hero-content">
-    <div class="hero-text fade-up">
-      <h1>Phụ nữ hiện đại không phải làm nhiều hơn,<br>mà là <span class="hl">làm thông minh hơn nhờ công nghệ</span></h1>
-      <p class="sub">Từ gian bếp đến tự do thời gian — Hành trình Nội trợ 4.0 với AI. Khám phá cách hàng trăm chị em đang giải phóng 2 giờ mỗi ngày.</p>
-      <div class="hero-ctas">
-        <button class="btn-gold" onclick="document.getElementById('t2').scrollIntoView({behavior:'smooth'})">✨ Khám phá ngay</button>
-        <button class="btn-outline">🎁 Nhận bộ công cụ AI miễn phí</button>
-      </div>
-    </div>
-    <div class="hero-img fade-up" style="transition-delay:.2s">
-      <img src="assets/hero.png" alt="Nội trợ 4.0 với AI">
-    </div>
-  </div>
-</section>
+        <!-- Cards Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            <!-- Card 1: Master Growth Dashboard -->
+            <a href="/telegram-dashboard/index.html" class="portal-card glow-blue bg-slate-900/80 border border-slate-700 p-8 rounded-3xl backdrop-blur-md group flex flex-col h-full cursor-pointer">
+                <div class="bg-blue-500/10 text-blue-400 w-16 h-16 rounded-2xl flex items-center justify-center text-2xl mb-6 border border-blue-500/20 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-chart-pie"></i>
+                </div>
+                <h2 class="text-xl font-bold text-white mb-3">Master Growth Dashboard</h2>
+                <p class="text-slate-400 text-sm leading-relaxed mb-8 flex-grow">Bảng điều khiển chiến lược Vận hành Telegram, Lộ trình Ngân sách $6K và Ma trận RACI chống FUD cho dự án Ritchi SMC.</p>
+                <div class="flex items-center text-blue-400 font-semibold text-sm group-hover:text-blue-300">
+                    Truy cập Dashboard <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </div>
+            </a>
 
-<!-- SECTION 1: NỘI TRỢ 4.0 -->
-<section class="section" data-tier="1">
-  <div class="fade-up">
-    <div class="section-label">Lối Sống 4.0</div>
-    <h2 class="section-title">Công nghệ giúp bạn thảnh thơi hơn mỗi ngày</h2>
-    <p class="section-desc">AI không thay thế bạn — AI giúp bạn có thêm thời gian cho những điều quan trọng nhất.</p>
-  </div>
-  <div class="card-grid col3">
-    <div class="card fade-up">
-      <img src="assets/meal.png" alt="Thực đơn AI">
-      <div class="card-body">
-        <h3>🍳 Thực đơn thông minh</h3>
-        <p>AI lên thực đơn cả tuần trong 30 giây — từ món bún bò đến canh chua, phù hợp dinh dưỡng và ngân sách gia đình.</p>
-      </div>
-    </div>
-    <div class="card fade-up" style="transition-delay:.15s">
-      <img src="assets/child.png" alt="Dạy con cùng AI">
-      <div class="card-body">
-        <h3>👶 Dạy con vui hơn</h3>
-        <p>Biến AI thành gia sư vui nhộn cho bé — kể chuyện, luyện tiếng Anh, giải toán bằng hình ảnh sinh động.</p>
-      </div>
-    </div>
-    <div class="card fade-up" style="transition-delay:.3s">
-      <img src="assets/relax.png" alt="Tự do thời gian">
-      <div class="card-body">
-        <h3>☕ Tự do thời gian</h3>
-        <p>Tự động hóa lời chúc, lịch hẹn, ghi chú mua sắm — để bạn có thêm 2 giờ mỗi ngày cho chính mình.</p>
-      </div>
-    </div>
-  </div>
-</section>
+            <!-- Card 2: Strategic Response -->
+            <a href="/TVT_Agency_Response_Dashboard.html" class="portal-card glow-emerald bg-slate-900/80 border border-slate-700 p-8 rounded-3xl backdrop-blur-md group flex flex-col h-full cursor-pointer">
+                <div class="bg-emerald-500/10 text-emerald-400 w-16 h-16 rounded-2xl flex items-center justify-center text-2xl mb-6 border border-emerald-500/20 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-comments-dollar"></i>
+                </div>
+                <h2 class="text-xl font-bold text-white mb-3">Strategic Response</h2>
+                <p class="text-slate-400 text-sm leading-relaxed mb-8 flex-grow">Hệ thống kịch bản đối đáp chiến lược (Q&A) với Core Team Ritchi, giải quyết bài toán Niềm tin, Năng lực và Phân quyền Agency.</p>
+                <div class="flex items-center text-emerald-400 font-semibold text-sm group-hover:text-emerald-300">
+                    Xem Kịch Bản Đối Đáp <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </div>
+            </a>
 
-<!-- SECTION 2: WORKSHOP & ZALO — TẦNG 2 -->
-<div class="workshop-section" id="t2" data-tier="2">
-  <div class="workshop-grid">
-    <div class="workshop-img">
-      <img src="assets/community.png" alt="Cộng đồng chị em">
-    </div>
-    <div class="workshop-form fade-up">
-      <div class="section-label">Bước 2 · Kết Nối</div>
-      <h2 class="section-title" style="margin-bottom:12px;">Giải phóng 2 giờ mỗi ngày — Workshop miễn phí</h2>
-      <p style="font-size:14px;color:var(--muted);margin-bottom:28px;">Tham gia workshop online 45 phút để học cách dùng AI trong đời sống hàng ngày. Hoàn toàn miễn phí, không ràng buộc.</p>
-      <div class="form-group"><input type="text" placeholder="Tên của bạn (vd: Chị Hương)" id="userName"></div>
-      <div class="form-group"><input type="email" placeholder="Email để nhận link Workshop" id="userEmail"></div>
-      <button class="btn-gold" style="width:100%;justify-content:center;margin-bottom:12px;">🌸 Đăng ký Workshop miễn phí</button>
-      <button class="btn-blush" style="width:100%;justify-content:center;">💬 Tham gia nhóm Zalo miễn phí</button>
-      <p style="font-size:11px;color:var(--muted);margin-top:16px;text-align:center;">Đã có <strong style="color:var(--gold);">847 chị em</strong> đăng ký · Không spam, không ràng buộc</p>
-    </div>
-  </div>
-</div>
+            <!-- Card 3: Landing Page -->
+            <a href="/phunulamchuai.html" class="portal-card glow-purple bg-slate-900/80 border border-slate-700 p-8 rounded-3xl backdrop-blur-md group flex flex-col h-full cursor-pointer">
+                <div class="bg-purple-500/10 text-purple-400 w-16 h-16 rounded-2xl flex items-center justify-center text-2xl mb-6 border border-purple-500/20 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-female"></i>
+                </div>
+                <h2 class="text-xl font-bold text-white mb-3">Landing Page "Nội Trợ 4.0"</h2>
+                <p class="text-slate-400 text-sm leading-relaxed mb-8 flex-grow">Phễu thu thập Lead (Chị em phụ nữ) bằng Ebook Quản lý Vốn. Đây là nguồn Traffic chính dẫn vào Group Zalo/Telegram VIP.</p>
+                <div class="flex items-center text-purple-400 font-semibold text-sm group-hover:text-purple-300">
+                    Truy cập Landing Page <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </div>
+            </a>
 
-<!-- SECTION 3: HẠT GIỐNG TỰ CHỦ — TẦNG 3 -->
-<section class="section" id="t3" data-tier="3">
-  <div class="fade-up">
-    <div class="section-label">Bước 3 · Gieo Hạt</div>
-    <h2 class="section-title">Hạt giống tự chủ — Giá trị nhỏ, thành quả lớn</h2>
-    <p class="section-desc">Khi bạn đã quen với AI trong bếp núc, hãy khám phá thêm một "Trợ lý thông minh" giúp bạn gieo những hạt giống tự chủ tài chính.</p>
-  </div>
-  <div class="seed-layout">
-    <div class="seed-img fade-up">
-      <img src="assets/seed.png" alt="Hạt giống tự chủ" style="border-radius:var(--r);">
-    </div>
-    <div class="seed-steps fade-up" style="transition-delay:.2s">
-      <div class="seed-step">
-        <div class="step-num">1</div>
-        <div><h4 style="font-size:15px;margin-bottom:4px;">Hiểu "Công thức nấu ăn" tài chính</h4><p style="font-size:13px;color:var(--muted);">Giống như nấu một món ngon — bạn cần đúng nguyên liệu, đúng bước, đúng thời điểm. AI sẽ hướng dẫn bạn.</p></div>
-      </div>
-      <div class="seed-step">
-        <div class="step-num">2</div>
-        <div><h4 style="font-size:15px;margin-bottom:4px;">Trợ lý AI Ritdex — Người bạn đồng hành</h4><p style="font-size:13px;color:var(--muted);">Như chiếc "nồi chiên không dầu" — bạn set thông số, bấm nút, và đi làm việc khác. AI canh chừng thay bạn.</p></div>
-      </div>
-      <div class="seed-step">
-        <div class="step-num">3</div>
-        <div><h4 style="font-size:15px;margin-bottom:4px;">Thành quả tự do đầu tiên</h4><p style="font-size:13px;color:var(--muted);">Mỗi ngày gieo một hạt giống nhỏ — thu hoạch đủ tiền cafe, tiền chợ buổi sáng cho gia đình.</p></div>
-      </div>
-      <div class="seed-step">
-        <div class="step-num">4</div>
-        <div><h4 style="font-size:15px;margin-bottom:4px;">Kỷ luật nhẹ nhàng, kết quả bền vững</h4><p style="font-size:13px;color:var(--muted);">Checklist 5 bước mỗi sáng — dành 15 phút rồi quay lại chăm sóc gia đình. Không cần ôm màn hình.</p></div>
-      </div>
-    </div>
-  </div>
-</section>
+        </div>
 
-<!-- SECTION 4: THỬ THÁCH 7 NGÀY — TẦNG 4 -->
-<section class="section" id="t4" data-tier="4">
-  <div class="challenge-layout">
-    <div class="challenge-content fade-up">
-      <div class="section-label">Bước 4 · Kích Hoạt</div>
-      <h2 class="section-title" style="margin-bottom: 16px;">Thử thách 7 ngày: Kích hoạt hệ thống tự do của bạn</h2>
-      <p class="section-desc">Chỉ cần 15 phút và một hạt giống nhỏ — bạn đã bắt đầu hành trình tự chủ.</p>
-      
-      <div class="challenge-box" style="text-align: left; padding: 36px;">
-        <h3 style="font-size:22px;margin-bottom:16px;">🌟 Checklist "Gieo hạt" 5 bước mỗi sáng</h3>
-        <ul class="challenge-checklist" style="margin: 0 0 24px;">
-          <li>Kiểm tra tâm trạng — Bình an thì tiếp tục, mệt thì nghỉ ngơi</li>
-          <li>Mở Trợ lý AI — Xem "Công thức" hôm nay</li>
-          <li>Đọc tín hiệu "Đèn giao thông" — Xanh mới hành động</li>
-          <li>Gieo hạt giống với kỷ luật — AI tự quản lý cho bạn</li>
-          <li>Ghi nhật ký — Chụp "thành quả tự do" chia sẻ trong nhóm</li>
-        </ul>
-        <p style="font-size:15px;font-weight:600;color:var(--navy);margin-bottom:24px;">Chỉ cần một hạt giống nhỏ 100$ để bắt đầu 🌱</p>
-        <button class="btn-gold" style="font-size:15px;padding:14px 32px;">🚀 Bắt đầu thử thách ngay</button>
-      </div>
+        <div class="text-center mt-16 text-slate-500 text-sm font-medium">
+            <p>Ready for Production Deployment via Vercel Edge Network.</p>
+        </div>
     </div>
-    <div class="challenge-img fade-up" style="transition-delay: .2s;">
-      <img src="assets/challenge.png" alt="Thử thách 7 ngày" style="border-radius: var(--r); box-shadow: var(--shadow-lg); width: 100%; height: 100%; object-fit: cover;">
-    </div>
-  </div>
-</section>
 
-<!-- SECTION 5: GROWTH & LEADER — TẦNG 5 -->
-<section class="section" id="t5" data-tier="5">
-  <div class="fade-up">
-    <div class="section-label">Bước 5 · Lan Tỏa</div>
-    <h2 class="section-title">Xây dựng Quỹ tự do gia đình & Trở thành Người truyền lửa</h2>
-    <p class="section-desc">Khi hạt giống đã nảy mầm, bạn có thể mở rộng vườn và dẫn dắt những chị em khác cùng hành trình.</p>
-  </div>
-  <div class="growth-grid">
-    <div class="growth-card fade-up">
-      <div class="growth-icon">🏡</div>
-      <h4 style="font-size:16px;margin-bottom:8px;">Quỹ tự do gia đình</h4>
-      <p style="font-size:13px;color:var(--muted);">Xây dựng quỹ riêng cho gia đình — du lịch, học phí, mua sắm mà không phải lo lắng.</p>
-    </div>
-    <div class="growth-card fade-up" style="transition-delay:.1s">
-      <div class="growth-icon">🌊</div>
-      <h4 style="font-size:16px;margin-bottom:8px;">Thành quả thụ động</h4>
-      <p style="font-size:13px;color:var(--muted);">Hệ thống AI hoạt động nhẹ nhàng mỗi ngày — bạn thu hoạch thành quả ngay cả khi đang chơi với con.</p>
-    </div>
-    <div class="growth-card fade-up" style="transition-delay:.2s">
-      <div class="growth-icon">👑</div>
-      <h4 style="font-size:16px;margin-bottom:8px;">Leader — Người truyền lửa</h4>
-      <p style="font-size:13px;color:var(--muted);">Dẫn dắt nhóm chị em khác — nhận hoa hồng khi giới thiệu và xây dựng đội ngũ tự chủ.</p>
-    </div>
-    <div class="growth-card fade-up" style="transition-delay:.3s">
-      <div class="growth-icon">🤖</div>
-      <h4 style="font-size:16px;margin-bottom:8px;">AI Agent cao cấp</h4>
-      <p style="font-size:13px;color:var(--muted);">Nâng cấp Trợ lý AI với nhiều tính năng hơn — tự động hơn, thông minh hơn, hiệu quả hơn.</p>
-    </div>
-  </div>
-  <div style="margin-top:48px;">
-    <img src="assets/leaders.png" alt="Nhóm Leader" style="border-radius:var(--r);box-shadow:var(--shadow-lg);width:100%;" class="fade-up">
-  </div>
-</section>
-
-<!-- TESTIMONIALS + FINAL CTA -->
-<section class="final-cta" id="cta">
-  <div class="testimonial-row fade-up">
-    <div class="testimonial">
-      <p>"Mình là mẹ bỉm, trước giờ chỉ biết chăm con. Giờ mỗi sáng dành 15 phút gieo hạt, chiều có tiền mua sữa cho bé. Hạnh phúc lắm!"</p>
-      <div class="author">— Chị Hương, 32 tuổi, HCM</div>
-    </div>
-    <div class="testimonial">
-      <p>"Ban đầu sợ lắm, nhưng chị em trong nhóm hướng dẫn từng bước. Giờ mình tự tin chia sẻ lại cho bạn bè."</p>
-      <div class="author">— Chị Lan, 28 tuổi, Hà Nội</div>
-    </div>
-    <div class="testimonial">
-      <p>"Chồng mình giờ nể phục vì vợ cũng biết dùng công nghệ kiếm tiền. Cảm giác tự chủ tuyệt vời!"</p>
-      <div class="author">— Chị Mai, 35 tuổi, Đà Nẵng</div>
-    </div>
-  </div>
-  <h2 class="fade-up">Khi bạn sẵn sàng gieo hạt giống tự chủ,<br>cộng đồng sẽ ở bên hỗ trợ bạn suốt hành trình.</h2>
-  <p class="fade-up">"Chúng ta không chỉ tìm kiếm một cơ hội — chúng ta đang xây dựng con đường dẫn đến sự Tự do và Hạnh phúc cho mọi người phụ nữ."</p>
-  <button class="btn-gold fade-up" style="transition-delay:.2s">🌟 Tôi muốn bắt đầu hành trình Tự Chủ ngay hôm nay</button>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <p><strong>🪷 Chị Em Tự Chủ</strong> — Cộng đồng Phụ nữ Tự do Tài chính & Thời gian</p>
-  <p style="margin-top:8px;">© 2026 Chị Em Tự Chủ · Powered by AI & Community</p>
-</footer>
-
-<script>
-// Navbar scroll
-const navbar=document.getElementById('navbar');
-const funnelLabels=document.getElementById('funnelLabels');
-window.addEventListener('scroll',()=>{
-  const s=window.scrollY>60;
-  navbar.classList.toggle('scrolled',s);
-  funnelLabels.classList.toggle('show',s);
-});
-
-// Progress bar + funnel tier highlight
-const progressBar=document.getElementById('progressBar');
-const tiers=document.querySelectorAll('[data-tier]');
-const labelSpans=document.querySelectorAll('.funnel-labels span');
-window.addEventListener('scroll',()=>{
-  const h=document.documentElement;
-  const pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;
-  progressBar.style.width=pct+'%';
-
-  let currentTier='1';
-  tiers.forEach(el=>{
-    const rect=el.getBoundingClientRect();
-    if(rect.top<window.innerHeight*.5) currentTier=el.dataset.tier;
-  });
-  labelSpans.forEach(sp=>{
-    sp.classList.toggle('active',sp.dataset.tier===currentTier);
-  });
-});
-
-// Fade-up observer
-const obs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible');});
-},{threshold:.1,rootMargin:'0px 0px -60px 0px'});
-document.querySelectorAll('.fade-up').forEach(el=>obs.observe(el));
-</script>
 </body>
 </html>
